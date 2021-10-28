@@ -29,3 +29,14 @@
 ## Security
 1. Create user service to load user from  database and place in package com.nnk.springboot.services
 2. Add configuration class and place in package com.nnk.springboot.config
+
+## User Management / User List
+1. Log admin in the page login
+2. And clic logout
+3. And clic user management
+
+## Logs
+1. Log : admin
+2. Password : admin
+3. Log : user
+4. Password : user

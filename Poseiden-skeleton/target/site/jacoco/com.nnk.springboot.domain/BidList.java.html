@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BidList.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.domain</a> &gt; <span class="el_source">BidList.java</span></div><h1>BidList.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.domain;
+
+import jakarta.validation.constraints.Pattern;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import javax.persistence.*;
+import java.security.Timestamp;
+
+@Entity
+@Getter
+<span class="nc" id="L13">@Setter</span>
+<span class="nc" id="L14">@AllArgsConstructor // Generate all Arg Contructor</span>
+<span class="fc" id="L15">@NoArgsConstructor</span>
+@Table(name = &quot;bidlist&quot;)
+public class BidList {
+
+    @Transient
+    @Temporal(TemporalType.TIMESTAMP)
+<span class="nc" id="L21">    private Timestamp date;</span>
+
+    @Id
+    @Column(name = &quot;BidListId&quot;, nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+<span class="nc" id="L26">    Integer BidListId;</span>
+    @Column(name = &quot;account&quot;)
+<span class="nc" id="L28">    String account;</span>
+    @Column(name = &quot;type&quot;)
+<span class="nc" id="L30">    String type;</span>
+    @Column(name = &quot;bidquantity&quot;)
+
+    @Pattern(regexp = &quot;[+-]?([0-9]*[.])?[0-9]+&quot;)
+<span class="nc" id="L34">    Double bidQuantity;</span>
+
+    @Column(name = &quot;askQuantity&quot;)
+<span class="nc" id="L37">    Double askQuantity;</span>
+    @Column(name = &quot;bid&quot;)
+<span class="nc" id="L39">    Double bid;</span>
+    @Column(name = &quot;ask&quot;)
+<span class="nc" id="L41">    Double ask;</span>
+    @Column(name = &quot;benchmark&quot;)
+<span class="nc" id="L43">    String benchmark;</span>
+    @Transient
+    @Column(name = &quot;bidListDate&quot;)
+<span class="nc" id="L46">    Timestamp bidListDate;</span>
+    @Column(name = &quot;commentary&quot;)
+<span class="nc" id="L48">    String commentary;</span>
+    @Column(name = &quot;security&quot;)
+<span class="nc" id="L50">    String security;</span>
+    @Column(name = &quot;status&quot;)
+<span class="nc" id="L52">    String status;</span>
+    @Column(name = &quot;trader&quot;)
+<span class="nc" id="L54">    String trader;</span>
+    @Column(name = &quot;book&quot;)
+<span class="nc" id="L56">    String book;</span>
+    @Column(name = &quot;creationName&quot;)
+<span class="nc" id="L58">    String creationName;</span>
+<span class="pc" id="L59">    @Transient</span>
+    @Column(name = &quot;creationDate&quot;)
+<span class="nc" id="L61">    Timestamp creationDate = date;</span>
+    @Column(name = &quot;revisionName&quot;)
+<span class="nc" id="L63">    String revisionName;</span>
+    @Transient
+    @Column(name = &quot;revisionDate&quot;)
+<span class="nc" id="L66">    Timestamp revisionDate;</span>
+    @Column(name = &quot;dealName&quot;)
+<span class="nc" id="L68">    String dealName;</span>
+    @Column(name = &quot;dealType&quot;)
+<span class="nc" id="L70">    String dealType;</span>
+    @Column(name = &quot;sourceListId&quot;)
+<span class="nc" id="L72">    String sourceListId;</span>
+    @Column(name = &quot;side&quot;)
+<span class="nc" id="L74">    String side;</span>
+
+
+// TODO: Map columns in data table BIDLIST with corresponding java fields
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

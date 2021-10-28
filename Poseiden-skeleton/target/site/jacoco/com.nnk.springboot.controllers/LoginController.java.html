@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LoginController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.controllers</a> &gt; <span class="el_source">LoginController.java</span></div><h1>LoginController.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.controllers;
+
+import com.nnk.springboot.domain.User;
+import com.nnk.springboot.repositories.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
+import org.springframework.security.oauth2.client.OAuth2AuthorizedClientService;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
+import org.springframework.security.oauth2.core.oidc.OidcIdToken;
+import org.springframework.security.oauth2.core.oidc.user.DefaultOidcUser;
+import org.springframework.security.oauth2.core.user.DefaultOAuth2User;
+import org.springframework.security.oauth2.core.user.OAuth2User;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.annotation.security.RolesAllowed;
+import javax.servlet.http.HttpSession;
+import java.security.Principal;
+import java.util.List;
+
+@Controller
+public class LoginController {
+<span class="fc" id="L28">    private static final Logger logger = LoggerFactory.getLogger(LoginController.class);</span>
+    private final OAuth2AuthorizedClientService authorizedClientService; // stock token secured
+    private String FULLNAME;
+
+    @Autowired
+    private UserRepository userRepository;
+
+    // Constructor
+<span class="fc" id="L36">    public LoginController(OAuth2AuthorizedClientService authorizedClientService) {</span>
+<span class="fc" id="L37">        this.authorizedClientService = authorizedClientService;</span>
+<span class="fc" id="L38">    }</span>
+
+    @RequestMapping(&quot;/loginUser&quot;)
+    public String getUser(Principal user, HttpSession session) {
+
+        // Authenticate Form Login
+<span class="pc bpc" id="L44" title="1 of 2 branches missed.">        if (user instanceof UsernamePasswordAuthenticationToken) {</span>
+<span class="nc" id="L45">            getUsernamePasswordLoginInfo(user, session);</span>
+<span class="nc" id="L46">            logger.info(&quot;SUCCESS REQUEST LOGIN  &quot;);</span>
+        } // Authenticate Form Token Google
+<span class="pc bpc" id="L48" title="1 of 2 branches missed.">        else if (user instanceof OAuth2AuthenticationToken) {</span>
+            // Get Name Token
+<span class="nc" id="L50">            getOauth2LoginInfo(user);</span>
+            // Get Name in Base
+<span class="nc" id="L52">            List&lt;User&gt; userList = userRepository.findAll(); // get User list</span>
+<span class="nc bnc" id="L53" title="All 2 branches missed.">            for (User userName : userList) {</span>
+                // Compare fullname in bdd with fullname token
+<span class="nc bnc" id="L55" title="All 2 branches missed.">                if (userName.getFullname().equals(FULLNAME)) {</span>
+<span class="nc" id="L56">                    session.setAttribute(&quot;name&quot;, FULLNAME);</span>
+<span class="nc" id="L57">                    logger.info(&quot;SUCCESS REQUEST LOGIN TOKEN GOOGLE &quot;);</span>
+<span class="nc" id="L58">                    return &quot;redirect:/bidList/list&quot;;</span>
+                }
+<span class="nc" id="L60">            }</span>
+<span class="nc" id="L61">            return &quot;403&quot;; // bad Crédential</span>
+        }
+<span class="fc" id="L63">        return &quot;redirect:/bidList/list&quot;;</span>
+    }
+
+    @RequestMapping(&quot;/logout&quot;)
+    public String logoutUser() {
+<span class="fc" id="L68">        return &quot;/loginUser&quot;;</span>
+    }
+
+    // authenticated by login
+    private void getUsernamePasswordLoginInfo(Principal user, HttpSession session) {
+<span class="nc" id="L73">        UsernamePasswordAuthenticationToken token = ((UsernamePasswordAuthenticationToken) user);</span>
+<span class="nc bnc" id="L74" title="All 2 branches missed.">        if (token.isAuthenticated()) {</span>
+<span class="nc" id="L75">            session.setAttribute(&quot;name&quot;, token.getName());</span>
+        }
+<span class="nc" id="L77">    }</span>
+
+    // authenticated by token
+    private void getOauth2LoginInfo(Principal user) {
+<span class="nc" id="L81">        OAuth2AuthenticationToken authToken = ((OAuth2AuthenticationToken) user);</span>
+<span class="nc" id="L82">        OAuth2User principal = ((OAuth2AuthenticationToken) user).getPrincipal();</span>
+<span class="nc" id="L83">        OAuth2AuthorizedClient authClient = this.authorizedClientService.loadAuthorizedClient(authToken.getAuthorizedClientRegistrationId(), authToken.getName());</span>
+<span class="nc" id="L84">        logger.info(&quot;Token Client&quot;+authClient);</span>
+<span class="nc bnc" id="L85" title="All 2 branches missed.">        if (authToken.isAuthenticated()) {</span>
+<span class="nc" id="L86">            OidcIdToken idToken = getIdToken(principal);</span>
+<span class="nc" id="L87">            FULLNAME = idToken.getFullName();</span>
+        }
+<span class="nc" id="L89">    }</span>
+
+    private OidcIdToken getIdToken(OAuth2User principal) {
+<span class="nc bnc" id="L92" title="All 2 branches missed.">        if (principal instanceof DefaultOAuth2User) {</span>
+<span class="nc" id="L93">            DefaultOidcUser oidcUser = (DefaultOidcUser) principal;</span>
+<span class="nc" id="L94">            return oidcUser.getIdToken();</span>
+        }
+<span class="nc" id="L96">        return null;</span>
+    }
+
+    @GetMapping(&quot;secure/article-details&quot;)
+    @RolesAllowed(&quot;ADMIN&quot;)
+    public ModelAndView getAllUser() {
+<span class="nc" id="L102">        ModelAndView mav = new ModelAndView();</span>
+<span class="nc" id="L103">        mav.addObject(&quot;users&quot;, userRepository.findAll());</span>
+<span class="nc" id="L104">        mav.setViewName(&quot;user/list&quot;);</span>
+<span class="nc" id="L105">        return mav;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

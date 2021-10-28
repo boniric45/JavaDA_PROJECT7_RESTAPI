@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TradeController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.controllers</a> &gt; <span class="el_source">TradeController.java</span></div><h1>TradeController.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.controllers;
+
+import com.nnk.springboot.domain.Trade;
+import com.nnk.springboot.repositories.TradeRepository;
+import com.nnk.springboot.services.TradeService;
+import com.nnk.springboot.utils.DigitalFormValidator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.validation.Valid;
+import java.util.Optional;
+
+@Controller
+<span class="fc" id="L22">public class TradeController {</span>
+    // TODO: Inject Trade service
+<span class="fc" id="L24">    private static final Logger logger = LoggerFactory.getLogger(RuleNameController.class);</span>
+
+    @Autowired
+    private TradeService tradeService;
+
+    @Autowired
+    private TradeRepository tradeRepository;
+
+    @RequestMapping(&quot;/trade/list&quot;)
+    public String home(Model model) {
+<span class="fc" id="L34">        model.addAttribute(&quot;trade&quot;, tradeService.findAllTrade());</span>
+        // TODO: find all Trade, add to model
+<span class="fc" id="L36">        return &quot;trade/list&quot;;</span>
+    }
+
+    /**
+     * Create - Add a new Trade
+     */
+    @GetMapping(&quot;/trade/add&quot;)
+    public String addTrade(Trade trade) {
+<span class="fc" id="L44">        return &quot;trade/add&quot;;</span>
+    }
+
+
+    /**
+     * Validate new Trade
+     */
+    @PostMapping(&quot;/trade/validate&quot;)
+    public String validate(@Valid Trade trade, BindingResult result, Model model) {
+        // TODO: check data valid and save to db, after saving return Trade list
+<span class="pc bpc" id="L54" title="1 of 4 branches missed.">        if (!result.hasErrors() &amp;&amp; DigitalFormValidator.formIsOk(trade.getBuyQuantity()))  {</span>
+<span class="fc" id="L55">                tradeService.createTrade(trade);</span>
+<span class="fc" id="L56">                model.addAttribute(&quot;trade&quot;, tradeService.findAllTrade());</span>
+<span class="fc" id="L57">                logger.info(&quot; SUCCESS POST /trade/validate&quot;);</span>
+<span class="fc" id="L58">                return &quot;redirect:/trade/list&quot;;</span>
+        } else {
+<span class="fc" id="L60">            logger.error(&quot; ERROR POST /trade/validate&quot;);</span>
+<span class="fc" id="L61">            trade.setBuyQuantity(0.00);</span>
+<span class="fc" id="L62">            return &quot;trade/add&quot;;</span>
+        }
+    }
+
+    /**
+     * Read - Get one Trade
+     *
+     * @param id The id of the Trade
+     * @return An trade object full filled
+     */
+    @GetMapping(&quot;/trade/{id}&quot;)
+    public Trade getTradeById(@PathVariable(&quot;id&quot;) int id) {
+
+<span class="fc" id="L75">        Optional&lt;Trade&gt; tradeOptional = tradeService.findById(id);</span>
+
+<span class="fc bfc" id="L77" title="All 2 branches covered.">        if (tradeOptional.isPresent()) {</span>
+<span class="fc" id="L78">            logger.info(&quot; SUCCESS READ /trade/&quot; + id);</span>
+<span class="fc" id="L79">            return tradeOptional.get();</span>
+        } else {
+<span class="fc" id="L81">            logger.error(&quot; ERROR READ /trade/&quot; + id);</span>
+<span class="fc" id="L82">            return null;</span>
+        }
+    }
+
+    /**
+     * Update Trade
+     */
+    @GetMapping(&quot;/trade/update/{id}&quot;)
+    public String showUpdateForm(@PathVariable(&quot;id&quot;) Integer id, Model model) {
+        // TODO: get Trade by Id and to model then show to the form
+<span class="fc" id="L92">        Trade trade = tradeService.findById(id).orElseThrow(() -&gt; new IllegalArgumentException(&quot;Invalid Update Trade Id:&quot; + id));</span>
+<span class="fc" id="L93">        model.addAttribute(&quot;trade&quot;, trade);</span>
+<span class="fc" id="L94">        logger.info(&quot; SUCCESS GET /trade/update/&quot; + id);</span>
+<span class="fc" id="L95">        return &quot;trade/update&quot;;</span>
+    }
+
+    /**
+     * Update Validate Trade
+     */
+    @PostMapping(&quot;/trade/update/{id}&quot;)
+    public String updateTrade(@PathVariable(&quot;id&quot;) Integer id, @Valid Trade trade,
+                              BindingResult result, Model model) {
+        // TODO: check required fields, if valid call service to update Trade and return Trade list
+
+<span class="pc bpc" id="L106" title="1 of 4 branches missed.">        if (!result.hasErrors() &amp;&amp; DigitalFormValidator.formIsOk(trade.getBuyQuantity())) {</span>
+<span class="fc" id="L107">            trade.setTradeId(id);</span>
+<span class="fc" id="L108">            tradeService.updateTrade(trade);</span>
+<span class="fc" id="L109">            model.addAttribute(&quot;trade&quot;, tradeService.findAllTrade());</span>
+<span class="fc" id="L110">            logger.info(&quot; SUCCESS POST /trade/update/&quot; + id);</span>
+<span class="fc" id="L111">            return &quot;redirect:/trade/list&quot;;</span>
+        } else {
+<span class="fc" id="L113">            logger.error(&quot; ERROR POST /trade/update/&quot; + id);</span>
+<span class="fc" id="L114">            trade.setBuyQuantity(0.00);</span>
+<span class="fc" id="L115">            return &quot;trade/update&quot;;</span>
+        }
+
+      }
+
+    /**
+     * Delete Trade
+     */
+    @GetMapping(&quot;/trade/delete/{id}&quot;)
+    public String deleteTrade(@PathVariable(&quot;id&quot;) Integer id, Model model) {
+        // TODO: Find Trade by Id and delete the Trade, return to Trade list
+
+<span class="fc" id="L127">        Trade trade = tradeService.findById(id).orElseThrow(() -&gt; new IllegalArgumentException(&quot;Invalid Delete Trade Id:&quot; + id));</span>
+<span class="fc" id="L128">        tradeService.deleteTradeById(trade.getTradeId());</span>
+<span class="fc" id="L129">        model.addAttribute(&quot;trade&quot;, tradeService.findAllTrade());</span>
+<span class="fc" id="L130">        logger.info(&quot; SUCCESS DELETE /trade/delete/&quot; + id);</span>
+
+<span class="fc" id="L132">        return &quot;redirect:/trade/list&quot;;</span>
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
