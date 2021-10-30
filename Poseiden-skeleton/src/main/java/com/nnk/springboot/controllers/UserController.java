@@ -1,7 +1,6 @@
 package com.nnk.springboot.controllers;
 
 import com.nnk.springboot.domain.User;
-import com.nnk.springboot.repositories.UserRepository;
 import com.nnk.springboot.services.UserService;
 import com.nnk.springboot.utils.PasswordValidator;
 import org.slf4j.Logger;
@@ -24,23 +23,23 @@ import java.util.Optional;
 public class UserController {
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
     private final String errorMessageInvalidPassword = "Invalid Password";
+
     @Autowired
     private UserService userService;
-    @Autowired
-    private UserRepository userRepository;
 
-    @RequestMapping("/user/list")
-    public String home(Model model) {
-        List userList = userService.findAll();
-        model.addAttribute("users", userList);
-        return "user/list";
-    }
-
+    /**
+     * Create User Show Form add
+     *
+     * @return form user add
+     */
     @GetMapping("/user/add")
-    public String addUser() {
+    public String addUser(User user) {
         return "user/add";
     }
 
+    /**
+     * Create user validate
+     */
     @PostMapping("/user/validate")
     public String validate(@Valid User user, BindingResult result, Model model) {
 
@@ -60,12 +59,50 @@ public class UserController {
         if (!passwordIsValid) {
             model.addAttribute("errorMsg", errorMessageInvalidPassword);
             logger.error(" ERROR POST /user/validate > Invalid Password");
-        }
 
+        }
 
         return "user/add";
     }
 
+
+    /**
+     * Read all user
+     *
+     * @return user list
+     */
+    @RequestMapping("/user/list")
+    public String home(Model model) {
+        List userList = userService.findAll();
+        model.addAttribute("users", userList);
+        return "user/list";
+    }
+
+    /**
+     * Read - Get one User
+     *
+     * @param id The id of the user
+     * @return An user list object full filled
+     */
+    @GetMapping("/user/{id}")
+    public User getUserById(@PathVariable("id") int id) {
+
+        Optional<User> userOptional = userService.findById(id);
+
+        if (userOptional.isPresent()) {
+            logger.info(" SUCCESS READ /user/" + id);
+            return userOptional.get();
+        } else {
+            logger.error(" ERROR READ /user/" + id);
+            return null;
+        }
+    }
+
+
+    /**
+     * Update
+     * show form update
+     */
     @GetMapping("/user/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
         User user = userService.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
@@ -74,6 +111,11 @@ public class UserController {
         return "user/update";
     }
 
+    /**
+     * Update valid user
+     *
+     * @return user list
+     */
     @PostMapping("/user/update/{id}")
     public String updateUser(@PathVariable("id") Integer id, @Valid User user,
                              BindingResult result, Model model) {
@@ -97,6 +139,10 @@ public class UserController {
         return "redirect:/user/list";
     }
 
+
+    /**
+     * Delete User by Id
+     */
     @GetMapping("/user/delete/{id}")
     public String deleteUser(@PathVariable("id") Integer id, Model model) {
         User user = userService.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
@@ -105,23 +151,4 @@ public class UserController {
         return "redirect:/user/list";
     }
 
-    /**
-     * Read - Get one User
-     *
-     * @param id The id of the user
-     * @return An user list object full filled
-     */
-    @GetMapping("/user/{id}")
-    public User getUserById(@PathVariable("id") int id) {
-
-        Optional<User> userOptional = userService.findById(id);
-
-        if (userOptional.isPresent()) {
-            logger.info(" SUCCESS READ /user/" + id);
-            return userOptional.get();
-        } else {
-            logger.error(" ERROR READ /user/" + id);
-            return null;
-        }
-    }
 }

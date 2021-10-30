@@ -23,27 +23,40 @@ public class RuleNameServiceTest {
     @Mock
     RuleNameRepository ruleNameRepository;
 
+    /**
+     * Test Create Rule Name
+     */
     @Test
-    public void findByIdTest() {
-        ruleNameService.findById(id);
-        verify(ruleNameRepository).findById(id);
-    }
-
-    @Test
-    public void getAllTest() {
-        ruleNameService.findAll();
-        verify(ruleNameRepository).findAll();
-    }
-
-    @Test
-    public void saveTest() {
+    public void testCreateRulename() {
         RuleName ruleName = mock(RuleName.class);
         ruleNameService.createRuleName(ruleName);
         verify(ruleNameRepository).save(ruleName);
     }
 
+    /**
+     * Test Read Rule Name by id
+     */
     @Test
-    public void updateTest() {
+    public void testReadRulenameById() {
+        ruleNameService.findById(id);
+        verify(ruleNameRepository).findById(id);
+    }
+
+    /**
+     * Test Read all Rule Name
+     */
+    @Test
+    public void testReadAllRulename() {
+        ruleNameService.findAll();
+        verify(ruleNameRepository).findAll();
+    }
+
+
+    /**
+     * Test Update Rule Name
+     */
+    @Test
+    public void testUpdateRulename() {
         RuleName ruleName = mock(RuleName.class);
         when(ruleName.getId()).thenReturn(id);
         when(ruleName.getName()).thenReturn("Test Name");
@@ -57,8 +70,11 @@ public class RuleNameServiceTest {
         verify(ruleNameRepository).save(ruleName);
     }
 
+    /**
+     * Test Delete Rule Name by id
+     */
     @Test
-    public void deleteTest() {
+    public void testDeleteRulenameById() {
         ruleNameService.deleteById(id);
         verify(ruleNameRepository).deleteById(id);
     }

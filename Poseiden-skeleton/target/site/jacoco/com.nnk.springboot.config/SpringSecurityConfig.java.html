@@ -10,8 +10,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import javax.sql.DataSource;
 
+import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
@@ -35,8 +35,8 @@ import javax.sql.DataSource;
     public void configure(HttpSecurity http) throws Exception {
 <span class="fc" id="L36">        http.csrf().disable();</span>
 
-        // Pages do not require login
-<span class="fc" id="L39">        http.authorizeRequests().antMatchers(&quot;/&quot;, &quot;/login&quot;, &quot;/loginUser&quot;,&quot;/bidList&quot;).permitAll();</span>
+        // Pages do not require authenticate
+<span class="fc" id="L39">        http.authorizeRequests().antMatchers(&quot;/&quot;, &quot;/login&quot;, &quot;/loginUser&quot;, &quot;/bidList&quot;).permitAll();</span>
 
         // For ADMIN only.
 <span class="fc" id="L42">        http.authorizeRequests().mvcMatchers(HttpMethod.GET, &quot;user/list&quot;).hasAuthority(&quot;ADMIN&quot;);</span>
@@ -55,12 +55,10 @@ import javax.sql.DataSource;
 <span class="fc" id="L55">        http.authorizeRequests().anyRequest().authenticated().and().oauth2Login().defaultSuccessUrl(&quot;/loginUser&quot;);</span>
 <span class="fc" id="L56">    }</span>
 
-
     @Bean
     public PasswordEncoder passwordEncoder() {
-<span class="fc" id="L61">        return new BCryptPasswordEncoder();</span>
+<span class="fc" id="L60">        return new BCryptPasswordEncoder();</span>
     }
-
 
 }
 

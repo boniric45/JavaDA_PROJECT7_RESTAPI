@@ -10,8 +10,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import javax.sql.DataSource;
 
+import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
@@ -35,8 +35,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
 
-        // Pages do not require login
-        http.authorizeRequests().antMatchers("/", "/login", "/loginUser","/bidList").permitAll();
+        // Pages do not require authenticate
+        http.authorizeRequests().antMatchers("/", "/login", "/loginUser", "/bidList").permitAll();
 
         // For ADMIN only.
         http.authorizeRequests().mvcMatchers(HttpMethod.GET, "user/list").hasAuthority("ADMIN");
@@ -55,12 +55,10 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().anyRequest().authenticated().and().oauth2Login().defaultSuccessUrl("/loginUser");
     }
 
-
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
 
 }
 

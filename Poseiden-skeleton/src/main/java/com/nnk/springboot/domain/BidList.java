@@ -73,6 +73,4 @@ public class BidList {
     @Column(name = "side")
     String side;
 
-
-// TODO: Map columns in data table BIDLIST with corresponding java fields
 }

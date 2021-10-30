@@ -15,33 +15,46 @@ import static org.mockito.Mockito.*;
 public class RatingServiceTest {
 
     private static final int id = 1;
+
     @InjectMocks
     RatingService ratingService;
 
     @Mock
     RatingRepository ratingRepository;
 
+    /**
+     * Test Create Rating
+     */
     @Test
-    public void findByIdTest() {
-        ratingService.findById(id);
-        verify(ratingRepository).findById(1);
-    }
-
-    @Test
-    public void getAllTest() {
-        ratingService.findAll();
-        verify(ratingRepository).findAll();
-    }
-
-    @Test
-    public void saveTest() {
+    public void testCreateRating() {
         Rating rating = mock(Rating.class);
         ratingService.createRating(rating);
         verify(ratingRepository).save(rating);
     }
 
+    /**
+     * Test Read Rating by id
+     */
     @Test
-    public void updateTest() {
+    public void testReadRatingById() {
+        ratingService.findById(id);
+        verify(ratingRepository).findById(1);
+    }
+
+    /**
+     * Test Read all Rating
+     */
+    @Test
+    public void testReadAllRating() {
+        ratingService.findAll();
+        verify(ratingRepository).findAll();
+    }
+
+    /**
+     * Test Update Rating
+     */
+    @Test
+    public void testUpdateRating() {
         Rating rating = mock(Rating.class);
         when(rating.getId()).thenReturn(id);
         when(rating.getMoodysRating()).thenReturn("Test Moodys");
@@ -53,8 +66,11 @@ public class RatingServiceTest {
         verify(ratingRepository).save(rating);
     }
 
+    /**
+     * Test Delete Rating by id
+     */
     @Test
-    public void deleteTest() {
+    public void testDeleteRatingById() {
         ratingService.deleteRatingById(1);
         verify(ratingRepository).deleteById(1);
     }

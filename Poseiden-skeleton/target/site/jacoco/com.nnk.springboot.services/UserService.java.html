@@ -2,8 +2,6 @@
 
 import com.nnk.springboot.domain.User;
 import com.nnk.springboot.repositories.UserRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,34 +9,45 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-<span class="fc" id="L14">public class UserService {</span>
+<span class="fc" id="L12">public class UserService {</span>
 
-<span class="fc" id="L16">    private static final Logger LOGGER = LoggerFactory.getLogger(UserService.class);</span>
     @Autowired
     UserRepository userRepository;
 
-    public List findAll() {
-<span class="fc" id="L21">        return userRepository.findAll();</span>
-    }
-
-    public Optional&lt;User&gt; findById(Integer id) {
-<span class="fc" id="L25">        return userRepository.findById(id);</span>
-    }
-
+    /**
+     * Create a user
+     */
     public User createUser(User user) {
-<span class="fc" id="L29">        LOGGER.info(&quot;Adding new User list&quot;);</span>
-<span class="fc" id="L30">        return userRepository.save(user);</span>
+<span class="fc" id="L21">        return userRepository.save(user);</span>
     }
 
+    /**
+     * Read all user
+     */
+    public List findAll() {
+<span class="fc" id="L28">        return userRepository.findAll();</span>
+    }
+
+    /**
+     * Read a user by id
+     */
+    public Optional&lt;User&gt; findById(Integer id) {
+<span class="fc" id="L35">        return userRepository.findById(id);</span>
+    }
+
+    /**
+     * Update a user
+     */
     public User updateUser(User user) {
-<span class="fc" id="L34">        LOGGER.info(&quot;Updating User list&quot;);</span>
-<span class="fc" id="L35">        return userRepository.save(user);</span>
+<span class="fc" id="L42">        return userRepository.save(user);</span>
     }
 
+    /**
+     * Delete a user by id
+     */
     public void deleteUserById(Integer userId) {
-<span class="fc" id="L39">        LOGGER.info(&quot;Deleting User list&quot;);</span>
-<span class="fc" id="L40">        userRepository.deleteById(userId);</span>
-<span class="fc" id="L41">    }</span>
+<span class="fc" id="L49">        userRepository.deleteById(userId);</span>
+<span class="fc" id="L50">    }</span>
 
 
 }

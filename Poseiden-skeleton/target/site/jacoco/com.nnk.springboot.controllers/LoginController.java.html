@@ -41,11 +41,11 @@ public class LoginController {
     public String getUser(Principal user, HttpSession session) {
 
         // Authenticate Form Login
-<span class="pc bpc" id="L44" title="1 of 2 branches missed.">        if (user instanceof UsernamePasswordAuthenticationToken) {</span>
+<span class="nc bnc" id="L44" title="All 2 branches missed.">        if (user instanceof UsernamePasswordAuthenticationToken) {</span>
 <span class="nc" id="L45">            getUsernamePasswordLoginInfo(user, session);</span>
 <span class="nc" id="L46">            logger.info(&quot;SUCCESS REQUEST LOGIN  &quot;);</span>
         } // Authenticate Form Token Google
-<span class="pc bpc" id="L48" title="1 of 2 branches missed.">        else if (user instanceof OAuth2AuthenticationToken) {</span>
+<span class="nc bnc" id="L48" title="All 2 branches missed.">        else if (user instanceof OAuth2AuthenticationToken) {</span>
             // Get Name Token
 <span class="nc" id="L50">            getOauth2LoginInfo(user);</span>
             // Get Name in Base
@@ -60,7 +60,7 @@ public class LoginController {
 <span class="nc" id="L60">            }</span>
 <span class="nc" id="L61">            return &quot;403&quot;; // bad Crédential</span>
         }
-<span class="fc" id="L63">        return &quot;redirect:/bidList/list&quot;;</span>
+<span class="nc" id="L63">        return &quot;redirect:/bidList/list&quot;;</span>
     }
 
     @RequestMapping(&quot;/logout&quot;)

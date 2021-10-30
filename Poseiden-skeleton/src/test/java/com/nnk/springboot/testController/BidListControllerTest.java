@@ -1,6 +1,5 @@
 package com.nnk.springboot.testController;
 
-
 import com.nnk.springboot.controllers.BidListController;
 import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.services.BidListService;
@@ -205,14 +204,6 @@ public class BidListControllerTest {
         assertThat(bidListController.deleteBid(ID, model), is("redirect:/bidList/list"));
     }
 
-    /**
-     * Test Delete a BidList is null
-     */
-    @Test
-    public void testDeleteBidListWhenBidListIsNull() {
-        when(bindingResult.hasErrors()).thenReturn(true);
-        assertThat(bidListController.deleteBid(null, model), is("redirect:/bidList/list"));
-    }
 
     /**
      * Test IllegalArgument Delete a BidList

@@ -2,8 +2,6 @@
 
 import com.nnk.springboot.domain.Trade;
 import com.nnk.springboot.repositories.TradeRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,39 +9,45 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-<span class="fc" id="L14">public class TradeService {</span>
+<span class="fc" id="L12">public class TradeService {</span>
 
-<span class="fc" id="L16">    private static final Logger LOGGER = LoggerFactory.getLogger(TradeService.class);</span>
     @Autowired
     TradeRepository tradeRepository;
 
+    /**
+     * Create Trade
+     */
     public Trade createTrade(Trade trade) {
-<span class="fc" id="L21">        System.out.println(trade);</span>
-//        if (!DigitalFormValidator.formIsOk(trade.getBuyQuantity())){
-//            return null;
-//        }
-<span class="fc" id="L25">        return tradeRepository.save(trade);</span>
+<span class="fc" id="L21">        return tradeRepository.save(trade);</span>
     }
 
+    /**
+     * Read all trade
+     */
     public List findAllTrade() {
-<span class="fc" id="L29">        return tradeRepository.findAll();</span>
+<span class="fc" id="L28">        return tradeRepository.findAll();</span>
     }
 
+    /**
+     * Read trade by id
+     */
     public Optional&lt;Trade&gt; findById(Integer id) {
-<span class="fc" id="L33">        LOGGER.info(&quot;Getting trade identified by id&quot;);</span>
-<span class="fc" id="L34">        return tradeRepository.findById(id);</span>
+<span class="fc" id="L35">        return tradeRepository.findById(id);</span>
     }
 
+    /**
+     * Update Trade
+     */
     public Trade updateTrade(Trade trade) {
-<span class="fc" id="L38">        LOGGER.info(&quot;update trade&quot;);</span>
-<span class="fc" id="L39">        return tradeRepository.save(trade);</span>
+<span class="fc" id="L42">        return tradeRepository.save(trade);</span>
     }
 
+    /**
+     * Delete Trade by id
+     */
     public void deleteTradeById(Integer id) {
-<span class="fc" id="L43">        LOGGER.info(&quot;delete trade id: &quot; + id);</span>
-<span class="fc" id="L44">        tradeRepository.deleteById(id);</span>
-<span class="fc" id="L45">    }</span>
-
+<span class="fc" id="L49">        tradeRepository.deleteById(id);</span>
+<span class="fc" id="L50">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

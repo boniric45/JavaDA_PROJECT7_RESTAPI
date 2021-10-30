@@ -7,7 +7,6 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-
 @Getter
 @Setter
 @Entity
@@ -36,7 +35,10 @@ public class CurvePoint {
     @Column(name = "creationDate")
     private Timestamp creationDate;
 
-    public Timestamp getAsOfDate() { return (Timestamp) asOfDate.clone(); }
+    // Fix Bugs
+    public Timestamp getAsOfDate() {
+        return (Timestamp) asOfDate.clone();
+    }
 
     public void setAsOfDate(Timestamp asOfDate) {
         this.asOfDate = (Timestamp) asOfDate.clone();
@@ -52,5 +54,5 @@ public class CurvePoint {
 }
 
 
-// TODO: Map columns in data table CURVEPOINT with corresponding java fields
+
 

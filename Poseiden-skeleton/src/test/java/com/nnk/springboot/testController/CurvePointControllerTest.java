@@ -178,18 +178,19 @@ public class CurvePointControllerTest {
         int curvePointId = -25;
 
         try {
-            curveController.showUpdateForm(curvePointId,model);
+            curveController.showUpdateForm(curvePointId, model);
         } catch (IllegalArgumentException illegalArgumentException) {
             assert (illegalArgumentException.getMessage().contains("Invalid Curve Point Id:" + curvePointId));
         }
     }
+
     /**
      * Test Delete a Curvepoint is Present
      */
     @Test
     public void testDeleteCurvePointWhenCurvePointIsPresent() {
         final Model model = new ExtendedModelMap();
-        when(curvePointService.save(curvePoint)).thenReturn(curvePoint);
+        when(curvePointService.createCurvePoint(curvePoint)).thenReturn(curvePoint);
         when(curvePointService.getCurveById(ID)).thenReturn(java.util.Optional.ofNullable(curvePoint));
         assertThat(curveController.deleteCurve(ID, model), is("redirect:/curvePoint/list"));
     }
@@ -201,7 +202,7 @@ public class CurvePointControllerTest {
     public void testIllegalArgumentDeleteCurvePoint() {
         int curvePointId = -25;
         try {
-            curveController.deleteCurve(curvePointId,model);
+            curveController.deleteCurve(curvePointId, model);
         } catch (IllegalArgumentException illegalArgumentException) {
             assert (illegalArgumentException.getMessage().contains("Invalid Curve Point Id:" + curvePointId));
         }

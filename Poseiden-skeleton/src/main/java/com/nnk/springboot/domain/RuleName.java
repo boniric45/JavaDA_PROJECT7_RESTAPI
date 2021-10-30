@@ -31,5 +31,4 @@ public class RuleName {
     @Column(name = "sqlPart")
     String sqlPart;
 
-// TODO: Map columns in data table RULENAME with corresponding java fields
 }

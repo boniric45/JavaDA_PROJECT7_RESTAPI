@@ -20,7 +20,7 @@ import java.util.Optional;
 
 @Controller
 public class RatingController {
-    // TODO: Inject Rating service
+
     private static final Logger logger = LoggerFactory.getLogger(RatingController.class);
 
     @Autowired
@@ -43,7 +43,6 @@ public class RatingController {
      */
     @PostMapping("/rating/validate")
     public String validate(@Valid Rating rating, BindingResult result, Model model) {
-        // TODO: check data valid and save to db, after saving return Rating list
 
         if (!result.hasErrors() && DigitalFormValidator.formIsOk(rating.getOrderNumber())) {
             logger.info(" SUCCESS POST /rating/validate");
@@ -65,7 +64,6 @@ public class RatingController {
      */
     @RequestMapping("/rating/list")
     public String home(Model model) {
-        // TODO: find all Rating, add to model
         model.addAttribute("rating", ratingService.findAll());
         return "rating/list";
     }
@@ -78,7 +76,6 @@ public class RatingController {
      */
     @GetMapping("/rating/{id}")
     public Rating getRatingById(@PathVariable("id") int id) {
-
         Optional<Rating> ratingOptional = ratingService.findById(id);
 
         if (ratingOptional.isPresent()) {
@@ -95,12 +92,10 @@ public class RatingController {
      */
     @GetMapping("/rating/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
-        // TODO: get Rating by Id and to model then show to the form
 
         Rating rating = ratingService.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid Rating Id:" + id));
         model.addAttribute("rating", rating);
         logger.info(" SUCCESS GET /rating/update/" + id);
-
         return "rating/update";
     }
 
@@ -110,7 +105,6 @@ public class RatingController {
     @PostMapping("/rating/update/{id}")
     public String updateRating(@PathVariable("id") Integer id, @Valid Rating rating,
                                BindingResult result, Model model) {
-        // TODO: check required fields, if valid call service to update Rating and return Rating list
 
         if (!result.hasErrors() && DigitalFormValidator.formIsOk(rating.getOrderNumber())) {
             rating.setId(id);
@@ -132,11 +126,11 @@ public class RatingController {
      */
     @GetMapping("/rating/delete/{id}")
     public String deleteRating(@PathVariable("id") Integer id, Model model) {
-        // TODO: Find Rating by Id and delete the Rating, return to Rating list
-                Rating rating = ratingService.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid rating Id:" + id));
-            ratingService.deleteRatingById(rating.getId());
-            model.addAttribute("rating", ratingService.findAll());
-            logger.info(" SUCCESS DELETE /rating/delete/" + id);
+
+        Rating rating = ratingService.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid rating Id:" + id));
+        ratingService.deleteRatingById(rating.getId());
+        model.addAttribute("rating", ratingService.findAll());
+        logger.info(" SUCCESS DELETE /rating/delete/" + id);
         return "redirect:/rating/list";
     }
 }

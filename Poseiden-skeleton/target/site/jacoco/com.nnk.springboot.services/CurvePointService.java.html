@@ -2,8 +2,6 @@
 
 import com.nnk.springboot.domain.CurvePoint;
 import com.nnk.springboot.repositories.CurvePointRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,33 +9,44 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-<span class="fc" id="L14">public class CurvePointService {</span>
+<span class="fc" id="L12">public class CurvePointService {</span>
 
-<span class="fc" id="L16">    private static final Logger LOGGER = LoggerFactory.getLogger(CurvePointService.class);</span>
     @Autowired
     CurvePointRepository curvePointRepository;
 
-    public CurvePoint save(CurvePoint curvePoint) {
+    /**
+     * Create CurvePoint
+     */
+    public CurvePoint createCurvePoint(CurvePoint curvePoint) {
 <span class="fc" id="L21">        return curvePointRepository.save(curvePoint);</span>
     }
 
+    /**
+     * Read CurvePoint by Id
+     */
     public Optional&lt;CurvePoint&gt; getCurveById(int id) {
-<span class="fc" id="L25">        LOGGER.info(&quot;Getting curve list identified by id&quot;);</span>
-<span class="fc" id="L26">        return curvePointRepository.findById(id);</span>
+<span class="fc" id="L28">        return curvePointRepository.findById(id);</span>
     }
 
+    /**
+     * Read all CurvePoint
+     */
     public List findAll() {
-<span class="fc" id="L30">        return curvePointRepository.findAll();</span>
+<span class="fc" id="L35">        return curvePointRepository.findAll();</span>
     }
 
+    /**
+     * Update CurvePoint
+     */
     public CurvePoint updateCurvePoint(CurvePoint curvePoint) {
-<span class="fc" id="L34">        LOGGER.info(&quot;Updating curvePoint list&quot;);</span>
-<span class="fc" id="L35">        return curvePointRepository.save(curvePoint);</span>
+<span class="fc" id="L42">        return curvePointRepository.save(curvePoint);</span>
     }
 
+    /**
+     * Delete CurvePoint by Id
+     */
     public void deleteById(Integer curveId) {
-<span class="fc" id="L39">        LOGGER.info(&quot;Deleting curvePoint list&quot;);</span>
-<span class="fc" id="L40">        curvePointRepository.deleteById(curveId);</span>
-<span class="fc" id="L41">    }</span>
+<span class="fc" id="L49">        curvePointRepository.deleteById(curveId);</span>
+<span class="fc" id="L50">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

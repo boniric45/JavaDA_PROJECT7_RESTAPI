@@ -66,7 +66,7 @@ public class UserControllerTest {
      */
     @Test
     public void testCreateUser() {
-        assertThat(userController.addUser(), is("user/add"));
+        assertThat(userController.addUser(user), is("user/add"));
     }
 
     /**

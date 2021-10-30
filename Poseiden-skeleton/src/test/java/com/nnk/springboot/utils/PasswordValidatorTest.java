@@ -1,6 +1,5 @@
 package com.nnk.springboot.utils;
 
-
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -10,21 +9,9 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * test password
+ * test password validator
  */
 public class PasswordValidatorTest {
-
-    @ParameterizedTest(name = "#{index} - Run test with password = {0}")
-    @MethodSource("validPasswordProvider")
-    void test_password_regex_valid(String password) {
-        assertTrue(PasswordValidator.isValid(password));
-    }
-
-    @ParameterizedTest(name = "#{index} - Run test with password = {0}")
-    @MethodSource("invalidPasswordProvider")
-    void test_password_regex_invalid(String password) {
-        assertFalse(PasswordValidator.isValid(password));
-    }
 
     static Stream<String> validPasswordProvider() {
         return Stream.of(
@@ -58,5 +45,23 @@ public class PasswordValidatorTest {
                 "--------",                 // invalid
                 " ",                        // empty
                 "");                        // empty
+    }
+
+    /**
+     * test password regex is valid
+     */
+    @ParameterizedTest(name = "#{index} - Run test with password = {0}")
+    @MethodSource("validPasswordProvider")
+    void testPasswordRegexValid(String password) {
+        assertTrue(PasswordValidator.isValid(password));
+    }
+
+    /**
+     * test password regex is not valid
+     */
+    @ParameterizedTest(name = "#{index} - Run test with password = {0}")
+    @MethodSource("invalidPasswordProvider")
+    void testPasswordRegexInvalid(String password) {
+        assertFalse(PasswordValidator.isValid(password));
     }
 }

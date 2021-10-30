@@ -1,7 +1,6 @@
 package com.nnk.springboot.controllers;
 
 import com.nnk.springboot.domain.Trade;
-import com.nnk.springboot.repositories.TradeRepository;
 import com.nnk.springboot.services.TradeService;
 import com.nnk.springboot.utils.DigitalFormValidator;
 import org.slf4j.Logger;
@@ -20,19 +19,21 @@ import java.util.Optional;
 
 @Controller
 public class TradeController {
-    // TODO: Inject Trade service
+
     private static final Logger logger = LoggerFactory.getLogger(RuleNameController.class);
 
     @Autowired
     private TradeService tradeService;
 
-    @Autowired
-    private TradeRepository tradeRepository;
+    /**
+     * Load and Display Trade list
+     *
+     * @return String
+     */
 
     @RequestMapping("/trade/list")
     public String home(Model model) {
         model.addAttribute("trade", tradeService.findAllTrade());
-        // TODO: find all Trade, add to model
         return "trade/list";
     }
 
@@ -44,18 +45,17 @@ public class TradeController {
         return "trade/add";
     }
 
-
     /**
      * Validate new Trade
      */
     @PostMapping("/trade/validate")
     public String validate(@Valid Trade trade, BindingResult result, Model model) {
-        // TODO: check data valid and save to db, after saving return Trade list
-        if (!result.hasErrors() && DigitalFormValidator.formIsOk(trade.getBuyQuantity()))  {
-                tradeService.createTrade(trade);
-                model.addAttribute("trade", tradeService.findAllTrade());
-                logger.info(" SUCCESS POST /trade/validate");
-                return "redirect:/trade/list";
+
+        if (!result.hasErrors() && DigitalFormValidator.formIsOk(trade.getBuyQuantity())) {
+            tradeService.createTrade(trade);
+            model.addAttribute("trade", tradeService.findAllTrade());
+            logger.info(" SUCCESS POST /trade/validate");
+            return "redirect:/trade/list";
         } else {
             logger.error(" ERROR POST /trade/validate");
             trade.setBuyQuantity(0.00);
@@ -88,7 +88,6 @@ public class TradeController {
      */
     @GetMapping("/trade/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
-        // TODO: get Trade by Id and to model then show to the form
         Trade trade = tradeService.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid Update Trade Id:" + id));
         model.addAttribute("trade", trade);
         logger.info(" SUCCESS GET /trade/update/" + id);
@@ -101,7 +100,6 @@ public class TradeController {
     @PostMapping("/trade/update/{id}")
     public String updateTrade(@PathVariable("id") Integer id, @Valid Trade trade,
                               BindingResult result, Model model) {
-        // TODO: check required fields, if valid call service to update Trade and return Trade list
 
         if (!result.hasErrors() && DigitalFormValidator.formIsOk(trade.getBuyQuantity())) {
             trade.setTradeId(id);
@@ -115,14 +113,13 @@ public class TradeController {
             return "trade/update";
         }
 
-      }
+    }
 
     /**
      * Delete Trade
      */
     @GetMapping("/trade/delete/{id}")
     public String deleteTrade(@PathVariable("id") Integer id, Model model) {
-        // TODO: Find Trade by Id and delete the Trade, return to Trade list
 
         Trade trade = tradeService.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid Delete Trade Id:" + id));
         tradeService.deleteTradeById(trade.getTradeId());
@@ -131,6 +128,5 @@ public class TradeController {
 
         return "redirect:/trade/list";
     }
-
 
 }

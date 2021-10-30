@@ -20,27 +20,40 @@ public class BidListServiceTest {
     @Mock
     BidListRepository bidListRepository;
 
+    /**
+     * Test Create a new BidList
+     */
     @Test
-    public void findByIdTest() {
-        bidListService.findById(1);
-        verify(bidListRepository).findById(1);
-    }
-
-    @Test
-    public void getAllTest() {
-        bidListService.findAll();
-        verify(bidListRepository).findAll();
-    }
-
-    @Test
-    public void saveTest() {
+    public void testCreateBidlist() {
         BidList bidList = mock(BidList.class);
         bidListService.createBidList(bidList);
         verify(bidListRepository).save(bidList);
     }
 
+    /**
+     * Test Read BidList by ID
+     */
     @Test
-    public void updateTest() {
+    public void testReadBidlistById() {
+        bidListService.findById(1);
+        verify(bidListRepository).findById(1);
+    }
+
+    /**
+     * Test Read all BidList
+     */
+    @Test
+    public void testGetAllBidlist() {
+        bidListService.findAll();
+        verify(bidListRepository).findAll();
+    }
+
+
+    /**
+     * Test Update BidList
+     */
+    @Test
+    public void testUpdateBidlist() {
         BidList bidList = mock(BidList.class);
         when(bidList.getBidListId()).thenReturn(1);
         when(bidList.getAccount()).thenReturn("Test account");
@@ -51,8 +64,11 @@ public class BidListServiceTest {
         verify(bidListRepository).save(bidList);
     }
 
+    /**
+     * Test Delete BidList by ID
+     */
     @Test
-    public void deleteTest() {
+    public void testDeleteBidlistById() {
         bidListService.deleteById(1);
         verify(bidListRepository).deleteById(1);
     }

@@ -201,7 +201,7 @@ public class TradeControllerTest {
     public void testIllegalArgumentDeleteTrade() {
         int tradeId = -25;
         try {
-            tradeController.deleteTrade(tradeId,model);
+            tradeController.deleteTrade(tradeId, model);
         } catch (IllegalArgumentException illegalArgumentException) {
             assert (illegalArgumentException.getMessage().contains("Invalid Delete Trade Id:" + tradeId));
         }

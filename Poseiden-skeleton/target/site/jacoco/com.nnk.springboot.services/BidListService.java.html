@@ -2,8 +2,6 @@
 
 import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.repositories.BidListRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,9 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-<span class="fc" id="L14">public class BidListService {</span>
-
-<span class="fc" id="L16">    Logger LOGGER = LoggerFactory.getLogger(BidListService.class);</span>
+<span class="fc" id="L12">public class BidListService {</span>
 
     @Autowired
     BidListRepository bidListRepository;
@@ -22,29 +18,38 @@ import java.util.Optional;
      * Create a new BidList
      */
     public BidList createBidList(BidList bidList) {
-<span class="fc" id="L25">        LOGGER.info(&quot;Adding new bid list&quot;);</span>
-<span class="fc" id="L26">        return bidListRepository.save(bidList);</span>
+<span class="fc" id="L21">        return bidListRepository.save(bidList);</span>
     }
 
+    /**
+     * Read all bidlist
+     *
+     * @return bidlist list
+     */
     public List findAll() {
 <span class="fc" id="L30">        return bidListRepository.findAll();</span>
     }
 
+    /**
+     * Read Bidlist by Id
+     */
     public Optional&lt;BidList&gt; findById(Integer BidListId) {
-<span class="fc" id="L34">        LOGGER.info(&quot;Getting bid list identified by id&quot;);</span>
-<span class="fc" id="L35">        return bidListRepository.findById(BidListId);</span>
+<span class="fc" id="L37">        return bidListRepository.findById(BidListId);</span>
     }
 
+    /**
+     * Update Bidlist
+     */
     public BidList updateBidList(BidList bidList) {
-<span class="fc" id="L39">        LOGGER.info(&quot;Updating bid list&quot;);</span>
-<span class="fc" id="L40">        return bidListRepository.save(bidList);</span>
+<span class="fc" id="L44">        return bidListRepository.save(bidList);</span>
     }
 
+    /**
+     * Delete Bidlist
+     */
     public void deleteById(Integer BidListId) {
-<span class="fc" id="L44">        LOGGER.info(&quot;Deleting bid list&quot;);</span>
-<span class="fc" id="L45">        bidListRepository.deleteById(BidListId);</span>
-<span class="fc" id="L46">    }</span>
-
+<span class="fc" id="L51">        bidListRepository.deleteById(BidListId);</span>
+<span class="fc" id="L52">    }</span>
 
 }
 

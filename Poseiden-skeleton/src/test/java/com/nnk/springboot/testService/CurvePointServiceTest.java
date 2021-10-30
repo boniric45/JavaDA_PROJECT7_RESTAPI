@@ -14,34 +14,46 @@ import static org.mockito.Mockito.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class CurvePointServiceTest {
 
-    private static final long id = 1;
     @InjectMocks
     CurvePointService curvePointService;
 
     @Mock
     CurvePointRepository curvePointRepository;
 
+
+    /**
+     * Test Create Curvepoint
+     */
     @Test
-    public void findByIdTest() {
+    public void testCreateCurvepoint() {
+        CurvePoint curvePoint = mock(CurvePoint.class);
+        curvePointService.createCurvePoint(curvePoint);
+        verify(curvePointRepository).save(curvePoint);
+    }
+
+    /**
+     * Test Read Curvepoint by id
+     */
+    @Test
+    public void testReadCurvepointByID() {
         curvePointService.getCurveById(1);
         verify(curvePointRepository).findById(1);
     }
 
+    /**
+     * Test Read all Curvepoint
+     */
     @Test
-    public void getAllTest() {
+    public void testGetAllCurvepoint() {
         curvePointService.findAll();
         verify(curvePointRepository).findAll();
     }
 
+    /**
+     * Test Update Curvepoint
+     */
     @Test
-    public void saveTest() {
-        CurvePoint curvePoint = mock(CurvePoint.class);
-        curvePointService.save(curvePoint);
-        verify(curvePointRepository).save(curvePoint);
-    }
-
-    @Test
-    public void updateTest() {
+    public void testUpdateCurvepoint() {
         CurvePoint curvePoint = mock(CurvePoint.class);
         when(curvePoint.getCurveId()).thenReturn(1);
         when(curvePoint.getId()).thenReturn(1);
@@ -52,8 +64,11 @@ public class CurvePointServiceTest {
         verify(curvePointRepository).save(curvePoint);
     }
 
+    /**
+     * Test Delete Curvepoint by id
+     */
     @Test
-    public void deleteTest() {
+    public void testDeleteCurvepointById() {
         curvePointService.deleteById(1);
         verify(curvePointRepository).deleteById(1);
     }

@@ -2,8 +2,6 @@
 
 import com.nnk.springboot.domain.RuleName;
 import com.nnk.springboot.repositories.RuleNameRepository;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,31 +9,45 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-<span class="fc" id="L14">public class RuleNameService {</span>
+<span class="fc" id="L12">public class RuleNameService {</span>
 
-<span class="fc" id="L16">    private static final Logger LOGGER = LoggerFactory.getLogger(RuleNameService.class);</span>
     @Autowired
     RuleNameRepository ruleNameRepository;
 
+    /**
+     * Create rule name
+     */
     public RuleName createRuleName(RuleName ruleName) {
 <span class="fc" id="L21">        return ruleNameRepository.save(ruleName);</span>
     }
 
+    /**
+     * Read rule name by id
+     */
     public Optional&lt;RuleName&gt; findById(Integer id) {
-<span class="fc" id="L25">        return ruleNameRepository.findById(id);</span>
+<span class="fc" id="L28">        return ruleNameRepository.findById(id);</span>
     }
 
+    /**
+     * Read all rule name
+     */
     public List findAll() {
-<span class="fc" id="L29">        return ruleNameRepository.findAll();</span>
+<span class="fc" id="L35">        return ruleNameRepository.findAll();</span>
     }
 
+    /**
+     * Update rule name
+     */
     public RuleName updateRuleName(RuleName ruleName) {
-<span class="fc" id="L33">        return ruleNameRepository.save(ruleName);</span>
+<span class="fc" id="L42">        return ruleNameRepository.save(ruleName);</span>
     }
 
+    /**
+     * Delete rule name by id
+     */
     public void deleteById(Integer id) {
-<span class="fc" id="L37">        ruleNameRepository.deleteById(id);</span>
-<span class="fc" id="L38">    }</span>
+<span class="fc" id="L49">        ruleNameRepository.deleteById(id);</span>
+<span class="fc" id="L50">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

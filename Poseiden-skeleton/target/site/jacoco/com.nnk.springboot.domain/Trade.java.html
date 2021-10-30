@@ -33,61 +33,62 @@ import java.sql.Timestamp;
     @Column(name = &quot;sellPrice&quot;)
     @Pattern(regexp = &quot;[+-]?([0-9]*[.])?[0-9]+&quot;)
 <span class="nc" id="L35">    Double sellPrice;</span>
+    @Column(name = &quot;security&quot;)
+<span class="nc" id="L37">    String security;</span>
+    @Column(name = &quot;status&quot;)
+<span class="nc" id="L39">    String status;</span>
+    @Column(name = &quot;trader&quot;)
+<span class="nc" id="L41">    String trader;</span>
+    @Column(name = &quot;benchmark&quot;)
+<span class="nc" id="L43">    String benchmark;</span>
+    @Column(name = &quot;book&quot;)
+<span class="nc" id="L45">    String book;</span>
+    @Column(name = &quot;creationName&quot;)
+<span class="nc" id="L47">    String creationName;</span>
+    @Column(name = &quot;revisionName&quot;)
+<span class="nc" id="L49">    String revisionName;</span>
+    @Column(name = &quot;dealName&quot;)
+<span class="nc" id="L51">    String dealName;</span>
+    @Column(name = &quot;dealType&quot;)
+<span class="nc" id="L53">    String dealType;</span>
+    @Column(name = &quot;sourceListId&quot;)
+<span class="nc" id="L55">    String sourceListId;</span>
+    @Column(name = &quot;side&quot;)
+<span class="nc" id="L57">    String side;</span>
     @Transient
     @Column(name = &quot;tradeDate&quot;)
     private Timestamp tradeDate;
-    @Column(name = &quot;security&quot;)
-<span class="nc" id="L40">    String security;</span>
-    @Column(name = &quot;status&quot;)
-<span class="nc" id="L42">    String status;</span>
-    @Column(name = &quot;trader&quot;)
-<span class="nc" id="L44">    String trader;</span>
-    @Column(name = &quot;benchmark&quot;)
-<span class="nc" id="L46">    String benchmark;</span>
-    @Column(name = &quot;book&quot;)
-<span class="nc" id="L48">    String book;</span>
-    @Column(name = &quot;creationName&quot;)
-<span class="nc" id="L50">    String creationName;</span>
     @Transient
     @Column(name = &quot;creationDate&quot;)
     private Timestamp creationDate;
-    @Column(name = &quot;revisionName&quot;)
-<span class="nc" id="L55">    String revisionName;</span>
     @Transient
     @Column(name = &quot;revisionDate&quot;)
     private Timestamp revisionDate;
-    @Column(name = &quot;dealName&quot;)
-<span class="nc" id="L60">    String dealName;</span>
-    @Column(name = &quot;dealType&quot;)
-<span class="nc" id="L62">    String dealType;</span>
-    @Column(name = &quot;sourceListId&quot;)
-<span class="nc" id="L64">    String sourceListId;</span>
-    @Column(name = &quot;side&quot;)
-<span class="nc" id="L66">    String side;</span>
 
+    // fix Bugs
     public Timestamp getTradeDate() {
-<span class="nc" id="L69">        return (Timestamp) tradeDate.clone();</span>
+<span class="nc" id="L70">        return (Timestamp) tradeDate.clone();</span>
     }
 
     public void setTradeDate(Timestamp tradeDate) {
-<span class="nc" id="L73">        this.tradeDate = (Timestamp) tradeDate.clone();</span>
-<span class="nc" id="L74">    }</span>
+<span class="nc" id="L74">        this.tradeDate = (Timestamp) tradeDate.clone();</span>
+<span class="nc" id="L75">    }</span>
 
     public Timestamp getCreationDate() {
-<span class="nc" id="L77">        return (Timestamp) creationDate.clone();</span>
+<span class="nc" id="L78">        return (Timestamp) creationDate.clone();</span>
     }
 
     public void setCreationDate(Timestamp creationDate) {
-<span class="nc" id="L81">        this.creationDate = (Timestamp) creationDate.clone();</span>
-<span class="nc" id="L82">    }</span>
+<span class="nc" id="L82">        this.creationDate = (Timestamp) creationDate.clone();</span>
+<span class="nc" id="L83">    }</span>
 
     public Timestamp getRevisionDate() {
-<span class="nc" id="L85">        return (Timestamp) revisionDate.clone();</span>
+<span class="nc" id="L86">        return (Timestamp) revisionDate.clone();</span>
     }
 
     public void setRevisionDate(Timestamp revisionDate) {
-<span class="nc" id="L89">        this.revisionDate = (Timestamp) revisionDate.clone();</span>
-<span class="nc" id="L90">    }</span>
-// TODO: Map columns in data table TRADE with corresponding java fields
+<span class="nc" id="L90">        this.revisionDate = (Timestamp) revisionDate.clone();</span>
+<span class="nc" id="L91">    }</span>
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

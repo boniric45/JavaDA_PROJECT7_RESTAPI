@@ -21,27 +21,41 @@ public class UserServiceTest {
     @Mock
     UserRepository userRepository;
 
+    /**
+     * Test Create User
+     */
     @Test
-    public void findByIdTest() {
-        userService.findById(1);
-        verify(userRepository).findById(1);
-    }
-
-    @Test
-    public void getAllTest() {
-        userService.findAll();
-        verify(userRepository).findAll();
-    }
-
-    @Test
-    public void saveTest() {
+    public void testCreateUser() {
         User user = mock(User.class);
         userService.createUser(user);
         verify(userRepository).save(user);
     }
 
+
+    /**
+     * Test Read User by id
+     */
     @Test
-    public void updateTest() {
+    public void testReadUser() {
+        userService.findById(1);
+        verify(userRepository).findById(1);
+    }
+
+    /**
+     * Test Read all User
+     */
+    @Test
+    public void testReadAllUser() {
+        userService.findAll();
+        verify(userRepository).findAll();
+    }
+
+
+    /**
+     * Test Update User
+     */
+    @Test
+    public void testUpdateUser() {
         User user = mock(User.class);
         when(user.getId()).thenReturn(1);
         when(user.getFullname()).thenReturn("Test Fullname");
@@ -54,8 +68,12 @@ public class UserServiceTest {
         verify(userRepository).save(user);
     }
 
+
+    /**
+     * Test Delete User by id
+     */
     @Test
-    public void deleteTest() {
+    public void testDeleteUserById() {
         userService.deleteUserById(1);
         verify(userRepository).deleteById(1);
     }

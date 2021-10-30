@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import javax.persistence.*;
 
@@ -16,7 +15,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Rating {
 
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @Column(name = "Id", nullable = false)
     Integer id;
@@ -33,6 +32,4 @@ public class Rating {
     @Column(name = "orderNumber")
     Integer orderNumber;
 
-
-    // TODO: Map columns in data table RATING with corresponding java fields
 }

@@ -16,8 +16,8 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class User {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name = "Id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "Id", unique = true, nullable = false)
     private Integer id;
     @NotBlank(message = "Username is mandatory")
     @Column(name = "username")

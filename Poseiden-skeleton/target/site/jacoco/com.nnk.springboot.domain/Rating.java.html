@@ -4,36 +4,33 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import javax.persistence.*;
 
 @Getter
-<span class="nc" id="L12">@Setter</span>
-<span class="nc" id="L13">@AllArgsConstructor</span>
+<span class="nc" id="L11">@Setter</span>
+<span class="nc" id="L12">@AllArgsConstructor</span>
 @Entity
 @Table(name = &quot;rating&quot;)
-<span class="fc" id="L16">@NoArgsConstructor</span>
+<span class="fc" id="L15">@NoArgsConstructor</span>
 public class Rating {
 
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @Column(name = &quot;Id&quot;, nullable = false)
-<span class="nc" id="L22">    Integer id;</span>
+<span class="nc" id="L21">    Integer id;</span>
 
     @Column(name = &quot;moodysRating&quot;)
-<span class="nc" id="L25">    String moodysRating;</span>
+<span class="nc" id="L24">    String moodysRating;</span>
 
     @Column(name = &quot;sandPRating&quot;)
-<span class="nc" id="L28">    String sandPRating;</span>
+<span class="nc" id="L27">    String sandPRating;</span>
 
     @Column(name = &quot;fitchRating&quot;)
-<span class="nc" id="L31">    String fitchRating;</span>
+<span class="nc" id="L30">    String fitchRating;</span>
 
     @Column(name = &quot;orderNumber&quot;)
-<span class="nc" id="L34">    Integer orderNumber;</span>
+<span class="nc" id="L33">    Integer orderNumber;</span>
 
-
-    // TODO: Map columns in data table RATING with corresponding java fields
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

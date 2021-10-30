@@ -33,9 +33,6 @@ public class Trade {
     @Column(name = "sellPrice")
     @Pattern(regexp = "[+-]?([0-9]*[.])?[0-9]+")
     Double sellPrice;
-    @Transient
-    @Column(name = "tradeDate")
-    private Timestamp tradeDate;
     @Column(name = "security")
     String security;
     @Column(name = "status")
@@ -48,14 +45,8 @@ public class Trade {
     String book;
     @Column(name = "creationName")
     String creationName;
-    @Transient
-    @Column(name = "creationDate")
-    private Timestamp creationDate;
     @Column(name = "revisionName")
     String revisionName;
-    @Transient
-    @Column(name = "revisionDate")
-    private Timestamp revisionDate;
     @Column(name = "dealName")
     String dealName;
     @Column(name = "dealType")
@@ -64,7 +55,17 @@ public class Trade {
     String sourceListId;
     @Column(name = "side")
     String side;
+    @Transient
+    @Column(name = "tradeDate")
+    private Timestamp tradeDate;
+    @Transient
+    @Column(name = "creationDate")
+    private Timestamp creationDate;
+    @Transient
+    @Column(name = "revisionDate")
+    private Timestamp revisionDate;
 
+    // fix Bugs
     public Timestamp getTradeDate() {
         return (Timestamp) tradeDate.clone();
     }
@@ -88,5 +89,5 @@ public class Trade {
     public void setRevisionDate(Timestamp revisionDate) {
         this.revisionDate = (Timestamp) revisionDate.clone();
     }
-// TODO: Map columns in data table TRADE with corresponding java fields
+
 }

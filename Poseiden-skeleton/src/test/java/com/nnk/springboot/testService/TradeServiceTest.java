@@ -26,27 +26,41 @@ public class TradeServiceTest {
     @Mock
     TradeRepository tradeRepository;
 
+    /**
+     * Test Create Trade
+     */
     @Test
-    public void findByIdTest() {
-        tradeService.findById(id);
-        verify(tradeRepository).findById(id);
-    }
-
-    @Test
-    public void getAllTest() {
-        tradeService.findAllTrade();
-        verify(tradeRepository).findAll();
-    }
-
-    @Test
-    public void saveTest() {
+    public void testCreateTrade() {
         Trade trade = mock(Trade.class);
         tradeService.createTrade(trade);
         verify(tradeRepository).save(trade);
     }
 
+
+    /**
+     * Test Read Trade by id
+     */
     @Test
-    public void updateTest() {
+    public void testReadTradeById() {
+        tradeService.findById(id);
+        verify(tradeRepository).findById(id);
+    }
+
+    /**
+     * Test Read all Trade
+     */
+    @Test
+    public void testReadAllTrade() {
+        tradeService.findAllTrade();
+        verify(tradeRepository).findAll();
+    }
+
+
+    /**
+     * Test Update Trade
+     */
+    @Test
+    public void testUpdateTrade() {
         Trade trade = mock(Trade.class);
 
         when(trade.getTradeId()).thenReturn(id);
@@ -58,8 +72,12 @@ public class TradeServiceTest {
         verify(tradeRepository).save(trade);
     }
 
+
+    /**
+     * Test Delete Trade by id
+     */
     @Test
-    public void deleteTest() {
+    public void testDeleteTradeById() {
         tradeService.deleteTradeById(id);
         verify(tradeRepository).deleteById(id);
     }

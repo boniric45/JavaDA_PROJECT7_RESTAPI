@@ -7,26 +7,25 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-
 @Getter
-<span class="nc" id="L12">@Setter</span>
+<span class="nc" id="L11">@Setter</span>
 @Entity
 @Table(name = &quot;curvepoint&quot;)
 
-<span class="fc" id="L16">public class CurvePoint {</span>
+<span class="fc" id="L15">public class CurvePoint {</span>
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = &quot;Id&quot;, nullable = false)
-<span class="nc" id="L21">    Integer id;</span>
+<span class="nc" id="L20">    Integer id;</span>
     @Column(name = &quot;CurveId&quot;)
-<span class="nc" id="L23">    Integer curveId;</span>
+<span class="nc" id="L22">    Integer curveId;</span>
     @Column(name = &quot;term&quot;)
     @Pattern(regexp = &quot;[+-]?([0-9]*[.])?[0-9]+&quot;)
-<span class="nc" id="L26">    Double term;</span>
+<span class="nc" id="L25">    Double term;</span>
     @Column(name = &quot;value&quot;)
     @Pattern(regexp = &quot;[+-]?([0-9]*[.])?[0-9]+&quot;)
-<span class="nc" id="L29">    Double value;</span>
+<span class="nc" id="L28">    Double value;</span>
 
     @Transient
     @Column(name = &quot;asOfDate&quot;)
@@ -36,22 +35,25 @@ import java.sql.Timestamp;
     @Column(name = &quot;creationDate&quot;)
     private Timestamp creationDate;
 
-<span class="nc" id="L39">    public Timestamp getAsOfDate() { return (Timestamp) asOfDate.clone(); }</span>
+    // Fix Bugs
+    public Timestamp getAsOfDate() {
+<span class="nc" id="L40">        return (Timestamp) asOfDate.clone();</span>
+    }
 
     public void setAsOfDate(Timestamp asOfDate) {
-<span class="nc" id="L42">        this.asOfDate = (Timestamp) asOfDate.clone();</span>
-<span class="nc" id="L43">    }</span>
+<span class="nc" id="L44">        this.asOfDate = (Timestamp) asOfDate.clone();</span>
+<span class="nc" id="L45">    }</span>
 
     public Timestamp getCreationDate() {
-<span class="nc" id="L46">        return (Timestamp) creationDate.clone();</span>
+<span class="nc" id="L48">        return (Timestamp) creationDate.clone();</span>
     }
 
     public void setCreationDate(Timestamp creationDate) {
-<span class="nc" id="L50">        this.creationDate = (Timestamp) creationDate.clone();</span>
-<span class="nc" id="L51">    }</span>
+<span class="nc" id="L52">        this.creationDate = (Timestamp) creationDate.clone();</span>
+<span class="nc" id="L53">    }</span>
 }
 
 
-// TODO: Map columns in data table CURVEPOINT with corresponding java fields
+
 
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

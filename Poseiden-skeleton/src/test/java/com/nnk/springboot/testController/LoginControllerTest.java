@@ -1,5 +1,7 @@
 package com.nnk.springboot.testController;
+
 import static org.junit.Assert.assertThat;
+
 import com.nnk.springboot.controllers.LoginController;
 import com.nnk.springboot.domain.User;
 import com.nnk.springboot.services.UserService;
@@ -42,18 +44,6 @@ public class LoginControllerTest {
     @InjectMocks
     LoginController loginController;
 
-    @Mock
-    UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken;
-    @Mock
-    OAuth2AuthenticationToken oAuth2AuthenticationToken;
-
-
-    @Mock
-    private HttpSession httpSession;
-
-    @Mock
-    private Principal principal;
-
     @Autowired
     private MockMvc mvc;
 
@@ -73,7 +63,7 @@ public class LoginControllerTest {
      */
     @Test
     public void testLogOut() {
-    assertThat(loginController.logoutUser(), is("/loginUser"));
+        assertThat(loginController.logoutUser(), is("/loginUser"));
     }
 
 }

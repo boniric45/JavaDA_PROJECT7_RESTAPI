@@ -132,7 +132,7 @@ public class RuleNameControllerTest {
     public void testIllegalArgumentUpdateBidList() {
         int ruleNameIdTest = -25;
         try {
-            ruleNameController.showUpdateForm(ruleNameIdTest,model);
+            ruleNameController.showUpdateForm(ruleNameIdTest, model);
         } catch (IllegalArgumentException illegalArgumentException) {
             assert (illegalArgumentException.getMessage().contains("Invalid Update RuleName Id:" + ruleNameIdTest));
         }

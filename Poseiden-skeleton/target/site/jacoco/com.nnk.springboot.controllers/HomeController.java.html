@@ -1,37 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HomeController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.controllers</a> &gt; <span class="el_source">HomeController.java</span></div><h1>HomeController.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.controllers;
 
+import com.nnk.springboot.domain.User;
+import com.nnk.springboot.repositories.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-<span class="fc" id="L11">@Slf4j</span>
-<span class="fc" id="L12">public class HomeController {</span>
-<span class="fc" id="L13">    private static final Logger logger = LoggerFactory.getLogger(HomeController.class);</span>
+<span class="fc" id="L14">@Slf4j</span>
+<span class="fc" id="L15">public class HomeController {</span>
+<span class="fc" id="L16">    private static final Logger logger = LoggerFactory.getLogger(HomeController.class);</span>
+
+    @Autowired
+    UserRepository userRepository;
 
     /**
-     *
      * Home Page
      */
     @RequestMapping(&quot;/&quot;)
     public String home() {
-<span class="fc" id="L21">        logger.info(&quot;SUCCESS REQUEST /home&quot;);</span>
-<span class="fc" id="L22">        return &quot;home&quot;;</span>
-    }
 
-    /**
-     *
-     * Home page admin
-     */
-    @RequestMapping(&quot;/admin/home&quot;)
-    public String adminHome() {
-<span class="fc" id="L31">        logger.info(&quot;SUCCESS REQUEST /admin/home&quot;);</span>
-<span class="fc" id="L32">        return &quot;redirect:/bidList/list&quot;;</span>
-    }
+        // Init Account Administrator
+<span class="fc" id="L28">        User user = new User(1,&quot;admin&quot;,&quot;$2a$10$M.JLktEWbkrQr2HeLMmV7.PdsHBq8vxnuoCYHPFtowLagohMnI4Ci&quot;,&quot;Administrator&quot;,&quot;ADMIN&quot;);</span>
 
+       // if User Administrator is not present, Create Account
+<span class="pc bpc" id="L31" title="1 of 2 branches missed.">        if (!userRepository.findById(1).isPresent()){</span>
+<span class="nc" id="L32">            userRepository.save(user);</span>
+        }
+
+<span class="fc" id="L35">        logger.info(&quot;SUCCESS REQUEST /home&quot;);</span>
+<span class="fc" id="L36">        return &quot;home&quot;;</span>
+    }
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

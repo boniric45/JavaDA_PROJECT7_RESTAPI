@@ -25,11 +25,9 @@ public class CurveController {
     @Autowired
     CurvePointRepository curvePointRepository;
 
-    // TODO: Inject Curve Point service
     @Autowired
     CurvePointService curvePointService;
 
-    // TODO: find all Curve Point, add to model
     @GetMapping("/curvePoint/list")
     public String home(Model model) {
         model.addAttribute("curvePoint", curvePointService.findAll());
@@ -39,7 +37,7 @@ public class CurveController {
     /**
      * Create - Add a new CurvePoint
      */
-    //TODO  ajouter mandatory
+
     @GetMapping("/curvePoint/add")
     public String addCurvePointForm(CurvePoint curvePoint) {
         return "curvePoint/add";
@@ -48,13 +46,13 @@ public class CurveController {
     /**
      * Validate CurvePoint
      */
-    // TODO: check data valid and save to db, after saving return Curve list
+
     @PostMapping("/curvePoint/validate")
     public String validate(@Valid CurvePoint curvePoint, BindingResult result, Model model) {
 
         if (!result.hasErrors() && DigitalFormValidator.formIsOk(curvePoint.getValue()) && DigitalFormValidator.formIsOk(curvePoint.getTerm())) {
             logger.info(" SUCCESS POST /curvePoint/validate ");
-            curvePointService.save(curvePoint);
+            curvePointService.createCurvePoint(curvePoint);
             model.addAttribute("curvePoint", curvePointService.findAll());
             return "redirect:/curvePoint/list";
         } else {
@@ -63,7 +61,6 @@ public class CurveController {
             curvePoint.setValue(0.00);
             return "curvePoint/add";
         }
-
     }
 
     /**
@@ -87,7 +84,7 @@ public class CurveController {
     /**
      * Update  CurvePoint
      */
-    // TODO: get CurvePoint by Id and to model then show to the form
+
     @GetMapping("/curvePoint/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
 
@@ -100,7 +97,7 @@ public class CurveController {
     /**
      * Post Update Curve Point
      */
-    // TODO: check required fields, if valid call service to update Curve and return Curve list
+
     @PostMapping("/curvePoint/update/{id}")
     public String updateCurvePoint(@PathVariable("id") Integer id, @Valid CurvePoint curvePoint,
                                    BindingResult result, Model model) {
@@ -125,7 +122,7 @@ public class CurveController {
      *
      * @return Curve List
      */
-    // TODO: Find Curve by Id and delete the Curve, return to Curve list
+
     @GetMapping("/curvePoint/delete/{id}")
     public String deleteCurve(@PathVariable("id") Integer id, Model model) {
 
