@@ -22,7 +22,7 @@ public class BidList {
     @Id
     @Column(name = &quot;BidListId&quot;, nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
-<span class="fc" id="L25">    Integer BidListId;</span>
+<span class="fc" id="L25">    Integer bidListId;</span>
     @Column(name = &quot;account&quot;)
 <span class="fc" id="L27">    String account;</span>
     @Column(name = &quot;type&quot;)
@@ -74,7 +74,7 @@ public class BidList {
 
 // Constructor for test
 <span class="fc" id="L76">    public BidList(int BidListId,String account, String type, Double bidQuantity) {</span>
-<span class="fc" id="L77">        this.BidListId=BidListId;</span>
+<span class="fc" id="L77">        this.bidListId=BidListId;</span>
 <span class="fc" id="L78">        this.account = account;</span>
 <span class="fc" id="L79">        this.type = type;</span>
 <span class="fc" id="L80">        this.bidQuantity = bidQuantity;</span>

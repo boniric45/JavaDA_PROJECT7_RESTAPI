@@ -186,5 +186,8 @@
     <orderEntry type="library" name="Maven: org.ow2.asm:asm-analysis:9.1" level="project" />
     <orderEntry type="library" name="Maven: org.ow2.asm:asm-tree:9.1" level="project" />
     <orderEntry type="library" name="Maven: org.jacoco:org.jacoco.report:0.8.7" level="project" />
+    <orderEntry type="library" name="Maven: com.google.code.findbugs:annotations:3.0.1" level="project" />
+    <orderEntry type="library" name="Maven: net.jcip:jcip-annotations:1.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:3.0.1" level="project" />
   </component>
 </module>

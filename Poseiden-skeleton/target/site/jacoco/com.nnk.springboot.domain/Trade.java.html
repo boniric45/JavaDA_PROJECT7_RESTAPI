@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Trade.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.domain</a> &gt; <span class="el_source">Trade.java</span></div><h1>Trade.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.domain;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import jakarta.validation.constraints.Pattern;
 import lombok.*;
 
@@ -7,56 +8,57 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Getter
-<span class="pc" id="L10">@Setter</span>
+<span class="pc" id="L11">@Setter</span>
 @Entity
 @Table(name = &quot;trade&quot;)
-<span class="pc" id="L13">@Builder</span>
-<span class="fc" id="L14">@NoArgsConstructor</span>
-<span class="fc" id="L15">@AllArgsConstructor</span>
+<span class="pc" id="L14">@Builder</span>
+<span class="fc" id="L15">@NoArgsConstructor</span>
+<span class="fc" id="L16">@AllArgsConstructor</span>
+@SuppressFBWarnings(value = {&quot;EI_EXPOSE_REP2&quot;})
 public class Trade {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = &quot;TradeId&quot;, nullable = false)
-<span class="fc" id="L21">    Integer tradeId;</span>
+<span class="fc" id="L23">    Integer tradeId;</span>
     @Column(name = &quot;account&quot;)
-<span class="fc" id="L23">    String account;</span>
+<span class="fc" id="L25">    String account;</span>
     @Column(name = &quot;type&quot;)
-<span class="fc" id="L25">    String type;</span>
+<span class="fc" id="L27">    String type;</span>
     @Column(name = &quot;buyQuantity&quot;)
     @Pattern(regexp = &quot;[+-]?([0-9]*[.])?[0-9]+&quot;)
-<span class="fc" id="L28">    Double buyQuantity;</span>
+<span class="fc" id="L30">    Double buyQuantity;</span>
     @Column(name = &quot;sellQuantity&quot;)
     @Pattern(regexp = &quot;[+-]?([0-9]*[.])?[0-9]+&quot;)
-<span class="nc" id="L31">    Double sellQuantity;</span>
+<span class="nc" id="L33">    Double sellQuantity;</span>
     @Column(name = &quot;buyPrice&quot;)
     @Pattern(regexp = &quot;[+-]?([0-9]*[.])?[0-9]+&quot;)
-<span class="nc" id="L34">    Double buyPrice;</span>
+<span class="nc" id="L36">    Double buyPrice;</span>
     @Column(name = &quot;sellPrice&quot;)
     @Pattern(regexp = &quot;[+-]?([0-9]*[.])?[0-9]+&quot;)
-<span class="nc" id="L37">    Double sellPrice;</span>
+<span class="nc" id="L39">    Double sellPrice;</span>
     @Column(name = &quot;security&quot;)
-<span class="nc" id="L39">    String security;</span>
+<span class="nc" id="L41">    String security;</span>
     @Column(name = &quot;status&quot;)
-<span class="nc" id="L41">    String status;</span>
+<span class="nc" id="L43">    String status;</span>
     @Column(name = &quot;trader&quot;)
-<span class="nc" id="L43">    String trader;</span>
+<span class="nc" id="L45">    String trader;</span>
     @Column(name = &quot;benchmark&quot;)
-<span class="nc" id="L45">    String benchmark;</span>
+<span class="nc" id="L47">    String benchmark;</span>
     @Column(name = &quot;book&quot;)
-<span class="nc" id="L47">    String book;</span>
+<span class="nc" id="L49">    String book;</span>
     @Column(name = &quot;creationName&quot;)
-<span class="nc" id="L49">    String creationName;</span>
+<span class="nc" id="L51">    String creationName;</span>
     @Column(name = &quot;revisionName&quot;)
-<span class="nc" id="L51">    String revisionName;</span>
+<span class="nc" id="L53">    String revisionName;</span>
     @Column(name = &quot;dealName&quot;)
-<span class="nc" id="L53">    String dealName;</span>
+<span class="nc" id="L55">    String dealName;</span>
     @Column(name = &quot;dealType&quot;)
-<span class="nc" id="L55">    String dealType;</span>
+<span class="nc" id="L57">    String dealType;</span>
     @Column(name = &quot;sourceListId&quot;)
-<span class="nc" id="L57">    String sourceListId;</span>
+<span class="nc" id="L59">    String sourceListId;</span>
     @Column(name = &quot;side&quot;)
-<span class="nc" id="L59">    String side;</span>
+<span class="nc" id="L61">    String side;</span>
     @Transient
     @Column(name = &quot;tradeDate&quot;)
     private Timestamp tradeDate;
@@ -67,37 +69,37 @@ public class Trade {
     @Column(name = &quot;revisionDate&quot;)
     private Timestamp revisionDate;
 
-<span class="fc" id="L70">    public Trade(Integer tradeId, String account, String type, Double buyQuantity) {</span>
-<span class="fc" id="L71">        this.tradeId = tradeId;</span>
-<span class="fc" id="L72">        this.account = account;</span>
-<span class="fc" id="L73">        this.type = type;</span>
-<span class="fc" id="L74">        this.buyQuantity = buyQuantity;</span>
-<span class="fc" id="L75">    }</span>
+<span class="fc" id="L72">    public Trade(Integer tradeId, String account, String type, Double buyQuantity) {</span>
+<span class="fc" id="L73">        this.tradeId = tradeId;</span>
+<span class="fc" id="L74">        this.account = account;</span>
+<span class="fc" id="L75">        this.type = type;</span>
+<span class="fc" id="L76">        this.buyQuantity = buyQuantity;</span>
+<span class="fc" id="L77">    }</span>
 
     // fix Bugs
     public Timestamp getTradeDate() {
-<span class="nc" id="L79">        return (Timestamp) tradeDate.clone();</span>
+<span class="nc" id="L81">        return (Timestamp) tradeDate.clone();</span>
     }
 
     public void setTradeDate(Timestamp tradeDate) {
-<span class="nc" id="L83">        this.tradeDate = (Timestamp) tradeDate.clone();</span>
-<span class="nc" id="L84">    }</span>
+<span class="nc" id="L85">        this.tradeDate = (Timestamp) tradeDate.clone();</span>
+<span class="nc" id="L86">    }</span>
 
     public Timestamp getCreationDate() {
-<span class="nc" id="L87">        return (Timestamp) creationDate.clone();</span>
+<span class="nc" id="L89">        return (Timestamp) creationDate.clone();</span>
     }
 
     public void setCreationDate(Timestamp creationDate) {
-<span class="nc" id="L91">        this.creationDate = (Timestamp) creationDate.clone();</span>
-<span class="nc" id="L92">    }</span>
+<span class="nc" id="L93">        this.creationDate = (Timestamp) creationDate.clone();</span>
+<span class="nc" id="L94">    }</span>
 
     public Timestamp getRevisionDate() {
-<span class="nc" id="L95">        return (Timestamp) revisionDate.clone();</span>
+<span class="nc" id="L97">        return (Timestamp) revisionDate.clone();</span>
     }
 
     public void setRevisionDate(Timestamp revisionDate) {
-<span class="nc" id="L99">        this.revisionDate = (Timestamp) revisionDate.clone();</span>
-<span class="nc" id="L100">    }</span>
+<span class="nc" id="L101">        this.revisionDate = (Timestamp) revisionDate.clone();</span>
+<span class="nc" id="L102">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

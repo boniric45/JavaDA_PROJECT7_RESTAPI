@@ -84,8 +84,6 @@ public class UserControllerTest {
     @Test
     public void testCreateUserThenPasswordNotValid() {
         User user = new User(ID, "usename", "125", "fullname", "user");
-        boolean passwordValid = PasswordValidator.isValid(user.getPassword());
-        when(bindingResult.hasErrors() && passwordValid).thenReturn(false);
         assertThat(userController.validate(user, bindingResult, model), is("user/add"));
     }
 
@@ -115,7 +113,6 @@ public class UserControllerTest {
         final Model model = new ExtendedModelMap();
         assertThat(userController.home(model), is("user/list"));
     }
-
 
     /**
      * Test Update a Home User
@@ -167,7 +164,6 @@ public class UserControllerTest {
         }
     }
 
-
     /**
      * Test Delete a User is Present
      */
@@ -178,7 +174,6 @@ public class UserControllerTest {
         when(userService.findById(ID)).thenReturn(java.util.Optional.ofNullable(user));
         assertThat(userController.deleteUser(ID, model), is("redirect:/user/list"));
     }
-
 
     /**
      * Test IllegalArgument Delete a User

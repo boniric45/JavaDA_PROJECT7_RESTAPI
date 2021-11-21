@@ -1,5 +1,6 @@
 package com.nnk.springboot.domain;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import jakarta.validation.constraints.Pattern;
 import lombok.*;
 
@@ -13,6 +14,7 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @Builder
 @Table(name = "curvepoint")
+@SuppressFBWarnings(value = {"EI_EXPOSE_REP2"})
 public class CurvePoint {
 
     @Id

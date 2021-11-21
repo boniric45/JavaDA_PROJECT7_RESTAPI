@@ -146,7 +146,6 @@ public class RatingEntityRepositoryTest {
 
         // Then
         Assertions.assertThat(ratingResult).isNull();
-
     }
 
     // Junit test for delete Rating by Id

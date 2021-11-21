@@ -50,7 +50,7 @@ public class BidListEntityRepositoryTest {
     public void createBidListTest() {
         // Given
         BidList bidList = BidList.builder()
-                .BidListId(1)
+                .bidListId(1)
                 .account("TestRepoAccount")
                 .type("TestRepoType")
                 .bidQuantity(12.45)
@@ -60,7 +60,7 @@ public class BidListEntityRepositoryTest {
         bidListRepository.save(bidList);
 
         // Then
-        Assertions.assertThat(bidList.getBidListId()).isGreaterThan(0);
+        assertThat(bidList.getBidListId()).isGreaterThan(0);
     }
 
     // Junit test for Read Bidlist
@@ -69,7 +69,7 @@ public class BidListEntityRepositoryTest {
        public void getBidlistTest() {
         // Given
         BidList bidList = BidList.builder()
-                .BidListId(1)
+                .bidListId(1)
                 .account("TestRepoAccount")
                 .type("TestRepoType")
                 .bidQuantity(12.45)
@@ -91,7 +91,7 @@ public class BidListEntityRepositoryTest {
 
         // Given
         BidList bidList = BidList.builder()
-                .BidListId(1)
+                .bidListId(1)
                 .account("TestRepoAccount")
                 .type("TestRepoType")
                 .bidQuantity(12.45)
@@ -111,7 +111,7 @@ public class BidListEntityRepositoryTest {
     public void updateBidlistTest() {
         // Given
         BidList bidList = BidList.builder()
-                .BidListId(1)
+                .bidListId(1)
                 .account("TestRepoAccount")
                 .type("TestRepoType")
                 .bidQuantity(12.45)
@@ -139,7 +139,7 @@ public class BidListEntityRepositoryTest {
     public void deleteBidlistTest() {
         // Given
         BidList bidList = BidList.builder()
-                .BidListId(1)
+                .bidListId(1)
                 .account("TestRepoAccount")
                 .type("TestRepoType")
                 .bidQuantity(12.45)
@@ -167,7 +167,7 @@ public class BidListEntityRepositoryTest {
     public void deleteBidlistByIdTest() {
         // Given
         BidList bidList = BidList.builder()
-                .BidListId(1)
+                .bidListId(1)
                 .account("TestRepoAccount")
                 .type("TestRepoType")
                 .bidQuantity(12.45)

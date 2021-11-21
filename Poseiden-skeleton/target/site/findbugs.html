@@ -68,7 +68,7 @@ spring-boot-skeleton
 <th>Missing Classes</th></tr>
 <tr class="b">
 <td>35</td>
-<td>11</td>
+<td>0</td>
 <td>0</td>
 <td>0</td></tr></table></div>
 <div class="section">
@@ -76,133 +76,7 @@ spring-boot-skeleton
 <table border="0" class="bodyTable">
 <tr class="a">
 <th>Class</th>
-<th>Bugs</th></tr>
-<tr class="b">
-<td><a href="#com.nnk.springboot.domain.BidList$BidListBuilder">com.nnk.springboot.domain.BidList$BidListBuilder</a></td>
-<td>1</td></tr>
-<tr class="a">
-<td><a href="#com.nnk.springboot.domain.CurvePoint">com.nnk.springboot.domain.CurvePoint</a></td>
-<td>2</td></tr>
-<tr class="b">
-<td><a href="#com.nnk.springboot.domain.CurvePoint$CurvePointBuilder">com.nnk.springboot.domain.CurvePoint$CurvePointBuilder</a></td>
-<td>2</td></tr>
-<tr class="a">
-<td><a href="#com.nnk.springboot.domain.Trade">com.nnk.springboot.domain.Trade</a></td>
-<td>3</td></tr>
-<tr class="b">
-<td><a href="#com.nnk.springboot.domain.Trade$TradeBuilder">com.nnk.springboot.domain.Trade$TradeBuilder</a></td>
-<td>3</td></tr></table></div><a name="com.nnk.springboot.domain.BidListBidListBuilder"></a>
-<div class="section">
-<h3><a name="com.nnk.springboot.domain.BidList.24BidListBuilder"></a>com.nnk.springboot.domain.BidList$BidListBuilder</h3>
-<table border="0" class="bodyTable">
-<tr class="a">
-<th>Bug</th>
-<th>Category</th>
-<th>Details</th>
-<th>Line</th>
-<th>Priority</th></tr>
-<tr class="b">
-<td>Le nom de la m&#xe9;thode com.nnk.springboot.domain.BidList$BidListBuilder.BidListId(Integer) ne commence pas par une minuscule</td>
-<td>BAD_PRACTICE</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#NM_METHOD_NAMING_CONVENTION">NM_METHOD_NAMING_CONVENTION</a></td>
-<td>14</td>
-<td>Medium</td></tr></table></div><a name="com.nnk.springboot.domain.CurvePoint"></a>
-<div class="section">
-<h3><a name="com.nnk.springboot.domain.CurvePoint"></a>com.nnk.springboot.domain.CurvePoint</h3>
-<table border="0" class="bodyTable">
-<tr class="a">
-<th>Bug</th>
-<th>Category</th>
-<th>Details</th>
-<th>Line</th>
-<th>Priority</th></tr>
-<tr class="b">
-<td>La m&#xe9;thode new com.nnk.springboot.domain.CurvePoint(Integer, Integer, Double, Double, Timestamp, Timestamp) risque d'exposer sa repr&#xe9;sentation interne en stockant un objet externe modifiable dans com.nnk.springboot.domain.CurvePoint.asOfDate</td>
-<td>MALICIOUS_CODE</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
-<td>12</td>
-<td>Medium</td></tr>
-<tr class="a">
-<td>La m&#xe9;thode new com.nnk.springboot.domain.CurvePoint(Integer, Integer, Double, Double, Timestamp, Timestamp) risque d'exposer sa repr&#xe9;sentation interne en stockant un objet externe modifiable dans com.nnk.springboot.domain.CurvePoint.creationDate</td>
-<td>MALICIOUS_CODE</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
-<td>12</td>
-<td>Medium</td></tr></table></div><a name="com.nnk.springboot.domain.CurvePointCurvePointBuilder"></a>
-<div class="section">
-<h3><a name="com.nnk.springboot.domain.CurvePoint.24CurvePointBuilder"></a>com.nnk.springboot.domain.CurvePoint$CurvePointBuilder</h3>
-<table border="0" class="bodyTable">
-<tr class="b">
-<th>Bug</th>
-<th>Category</th>
-<th>Details</th>
-<th>Line</th>
-<th>Priority</th></tr>
-<tr class="a">
-<td>La m&#xe9;thode com.nnk.springboot.domain.CurvePoint$CurvePointBuilder.asOfDate(Timestamp) risque d'exposer sa repr&#xe9;sentation interne en stockant un objet externe modifiable dans com.nnk.springboot.domain.CurvePoint$CurvePointBuilder.asOfDate</td>
-<td>MALICIOUS_CODE</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
-<td>14</td>
-<td>Medium</td></tr>
-<tr class="b">
-<td>La m&#xe9;thode com.nnk.springboot.domain.CurvePoint$CurvePointBuilder.creationDate(Timestamp) risque d'exposer sa repr&#xe9;sentation interne en stockant un objet externe modifiable dans com.nnk.springboot.domain.CurvePoint$CurvePointBuilder.creationDate</td>
-<td>MALICIOUS_CODE</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
-<td>14</td>
-<td>Medium</td></tr></table></div><a name="com.nnk.springboot.domain.Trade"></a>
-<div class="section">
-<h3><a name="com.nnk.springboot.domain.Trade"></a>com.nnk.springboot.domain.Trade</h3>
-<table border="0" class="bodyTable">
-<tr class="a">
-<th>Bug</th>
-<th>Category</th>
-<th>Details</th>
-<th>Line</th>
-<th>Priority</th></tr>
-<tr class="b">
-<td>La m&#xe9;thode new com.nnk.springboot.domain.Trade(Integer, String, String, Double, Double, Double, Double, String, String, String, String, String, String, String, String, String, String, String, Timestamp, Timestamp, Timestamp) risque d'exposer sa repr&#xe9;sentation interne en stockant un objet externe modifiable dans com.nnk.springboot.domain.Trade.creationDate</td>
-<td>MALICIOUS_CODE</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
-<td>15</td>
-<td>Medium</td></tr>
-<tr class="a">
-<td>La m&#xe9;thode new com.nnk.springboot.domain.Trade(Integer, String, String, Double, Double, Double, Double, String, String, String, String, String, String, String, String, String, String, String, Timestamp, Timestamp, Timestamp) risque d'exposer sa repr&#xe9;sentation interne en stockant un objet externe modifiable dans com.nnk.springboot.domain.Trade.revisionDate</td>
-<td>MALICIOUS_CODE</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
-<td>15</td>
-<td>Medium</td></tr>
-<tr class="b">
-<td>La m&#xe9;thode new com.nnk.springboot.domain.Trade(Integer, String, String, Double, Double, Double, Double, String, String, String, String, String, String, String, String, String, String, String, Timestamp, Timestamp, Timestamp) risque d'exposer sa repr&#xe9;sentation interne en stockant un objet externe modifiable dans com.nnk.springboot.domain.Trade.tradeDate</td>
-<td>MALICIOUS_CODE</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
-<td>15</td>
-<td>Medium</td></tr></table></div><a name="com.nnk.springboot.domain.TradeTradeBuilder"></a>
-<div class="section">
-<h3><a name="com.nnk.springboot.domain.Trade.24TradeBuilder"></a>com.nnk.springboot.domain.Trade$TradeBuilder</h3>
-<table border="0" class="bodyTable">
-<tr class="a">
-<th>Bug</th>
-<th>Category</th>
-<th>Details</th>
-<th>Line</th>
-<th>Priority</th></tr>
-<tr class="b">
-<td>La m&#xe9;thode com.nnk.springboot.domain.Trade$TradeBuilder.creationDate(Timestamp) risque d'exposer sa repr&#xe9;sentation interne en stockant un objet externe modifiable dans com.nnk.springboot.domain.Trade$TradeBuilder.creationDate</td>
-<td>MALICIOUS_CODE</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
-<td>13</td>
-<td>Medium</td></tr>
-<tr class="a">
-<td>La m&#xe9;thode com.nnk.springboot.domain.Trade$TradeBuilder.revisionDate(Timestamp) risque d'exposer sa repr&#xe9;sentation interne en stockant un objet externe modifiable dans com.nnk.springboot.domain.Trade$TradeBuilder.revisionDate</td>
-<td>MALICIOUS_CODE</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
-<td>13</td>
-<td>Medium</td></tr>
-<tr class="b">
-<td>La m&#xe9;thode com.nnk.springboot.domain.Trade$TradeBuilder.tradeDate(Timestamp) risque d'exposer sa repr&#xe9;sentation interne en stockant un objet externe modifiable dans com.nnk.springboot.domain.Trade$TradeBuilder.tradeDate</td>
-<td>MALICIOUS_CODE</td>
-<td><a class="externalLink" href="http://findbugs.sourceforge.net/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
-<td>13</td>
-<td>Medium</td></tr></table></div>
+<th>Bugs</th></tr></table></div>
       </div>
     </div>
     <div class="clear">
