@@ -1,4 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: com.nnk.springboot.testRepository.RuleNameEntityRepositoryTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in com.nnk.springboot.testRepository.RuleNameEntityRepositoryTest
+Tests run: 7, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.072 s <<< FAILURE! - in com.nnk.springboot.testRepository.RuleNameEntityRepositoryTest
+getRuleNameTest  Time elapsed: 0.007 s  <<< ERROR!
+java.util.NoSuchElementException: No value present
+	at com.nnk.springboot.testRepository.RuleNameEntityRepositoryTest.getRuleNameTest(RuleNameEntityRepositoryTest.java:88)
+
+updateRuleNameTest  Time elapsed: 0.009 s  <<< ERROR!
+java.util.NoSuchElementException: No value present
+	at com.nnk.springboot.testRepository.RuleNameEntityRepositoryTest.updateRuleNameTest(RuleNameEntityRepositoryTest.java:136)
+
+deleteRuleNameByIdTest  Time elapsed: 0.012 s  <<< ERROR!
+org.springframework.dao.EmptyResultDataAccessException: No class com.nnk.springboot.domain.RuleName entity with id 1 exists!
+	at com.nnk.springboot.testRepository.RuleNameEntityRepositoryTest.deleteRuleNameByIdTest(RuleNameEntityRepositoryTest.java:206)
+

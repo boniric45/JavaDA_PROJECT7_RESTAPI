@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.nnk.springboot.testController.BidListControlTest" time="1.702" tests="2" errors="2" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="windows"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="D:\Openclassrooms\Projet7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\target\test-classes;D:\Openclassrooms\Projet7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\target\classes;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-oauth2-client\2.5.5\spring-boot-starter-oauth2-client-2.5.5.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter\2.0.4.RELEASE\spring-boot-starter-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-logging\2.0.4.RELEASE\spring-boot-starter-logging-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;C:\Users\Eric\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar;C:\Users\Eric\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.10.0\log4j-to-slf4j-2.10.0.jar;C:\Users\Eric\.m2\repository\org\apache\logging\log4j\log4j-api\2.10.0\log4j-api-2.10.0.jar;C:\Users\Eric\.m2\repository\org\slf4j\jul-to-slf4j\1.7.25\jul-to-slf4j-1.7.25.jar;C:\Users\Eric\.m2\repository\javax\annotation\javax.annotation-api\1.3.2\javax.annotation-api-1.3.2.jar;C:\Users\Eric\.m2\repository\org\yaml\snakeyaml\1.19\snakeyaml-1.19.jar;C:\Users\Eric\.m2\repository\com\sun\mail\jakarta.mail\1.6.7\jakarta.mail-1.6.7.jar;C:\Users\Eric\.m2\repository\com\sun\activation\jakarta.activation\1.2.1\jakarta.activation-1.2.1.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-oauth2-client\5.0.7.RELEASE\spring-security-oauth2-client-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\com\nimbusds\oauth2-oidc-sdk\5.64.2\oauth2-oidc-sdk-5.64.2.jar;C:\Users\Eric\.m2\repository\javax\mail\mail\1.4.7\mail-1.4.7.jar;C:\Users\Eric\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\Eric\.m2\repository\com\github\stephenc\jcip\jcip-annotations\1.0-1\jcip-annotations-1.0-1.jar;C:\Users\Eric\.m2\repository\com\nimbusds\lang-tag\1.5\lang-tag-1.5.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-oauth2-core\5.0.7.RELEASE\spring-security-oauth2-core-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-oauth2-jose\5.0.7.RELEASE\spring-security-oauth2-jose-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\com\nimbusds\nimbus-jose-jwt\5.14\nimbus-jose-jwt-5.14.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-security\2.0.4.RELEASE\spring-boot-starter-security-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-aop\5.0.8.RELEASE\spring-aop-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-web\5.0.7.RELEASE\spring-security-web-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-core\5.5.1\spring-security-core-5.5.1.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-crypto\5.0.7.RELEASE\spring-security-crypto-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-beans\5.0.8.RELEASE\spring-beans-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-context\5.0.8.RELEASE\spring-context-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-core\5.0.8.RELEASE\spring-core-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-jcl\5.0.8.RELEASE\spring-jcl-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-expression\5.0.8.RELEASE\spring-expression-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-config\5.0.7.RELEASE\spring-security-config-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-test\5.0.5.RELEASE\spring-security-test-5.0.5.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-test\5.0.8.RELEASE\spring-test-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\mysql\mysql-connector-java\8.0.17\mysql-connector-java-8.0.17.jar;C:\Users\Eric\.m2\repository\com\google\protobuf\protobuf-java\3.6.1\protobuf-java-3.6.1.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\2.0.4.RELEASE\spring-boot-starter-data-jpa-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-aop\2.0.4.RELEASE\spring-boot-starter-aop-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\aspectj\aspectjweaver\1.8.13\aspectjweaver-1.8.13.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\2.0.4.RELEASE\spring-boot-starter-jdbc-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\com\zaxxer\HikariCP\2.7.9\HikariCP-2.7.9.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-jdbc\5.0.8.RELEASE\spring-jdbc-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\hibernate\hibernate-core\5.2.17.Final\hibernate-core-5.2.17.Final.jar;C:\Users\Eric\.m2\repository\org\jboss\logging\jboss-logging\3.3.2.Final\jboss-logging-3.3.2.Final.jar;C:\Users\Eric\.m2\repository\org\hibernate\javax\persistence\hibernate-jpa-2.1-api\1.0.2.Final\hibernate-jpa-2.1-api-1.0.2.Final.jar;C:\Users\Eric\.m2\repository\org\javassist\javassist\3.22.0-GA\javassist-3.22.0-GA.jar;C:\Users\Eric\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\Eric\.m2\repository\org\jboss\jandex\2.0.3.Final\jandex-2.0.3.Final.jar;C:\Users\Eric\.m2\repository\com\fasterxml\classmate\1.3.4\classmate-1.3.4.jar;C:\Users\Eric\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;C:\Users\Eric\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.0.1.Final\hibernate-commons-annotations-5.0.1.Final.jar;C:\Users\Eric\.m2\repository\javax\transaction\javax.transaction-api\1.2\javax.transaction-api-1.2.jar;C:\Users\Eric\.m2\repository\org\springframework\data\spring-data-jpa\2.0.9.RELEASE\spring-data-jpa-2.0.9.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\data\spring-data-commons\2.0.9.RELEASE\spring-data-commons-2.0.9.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-orm\5.0.8.RELEASE\spring-orm-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-tx\5.0.8.RELEASE\spring-tx-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-aspects\5.0.8.RELEASE\spring-aspects-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-web\2.0.4.RELEASE\spring-boot-starter-web-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-json\2.0.4.RELEASE\spring-boot-starter-json-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.9.6\jackson-databind-2.9.6.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.9.0\jackson-annotations-2.9.0.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.9.6\jackson-core-2.9.6.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.9.6\jackson-datatype-jdk8-2.9.6.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.9.6\jackson-datatype-jsr310-2.9.6.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.9.6\jackson-module-parameter-names-2.9.6.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\2.0.4.RELEASE\spring-boot-starter-tomcat-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\8.5.32\tomcat-embed-core-8.5.32.jar;C:\Users\Eric\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\8.5.32\tomcat-embed-el-8.5.32.jar;C:\Users\Eric\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\8.5.32\tomcat-embed-websocket-8.5.32.jar;C:\Users\Eric\.m2\repository\org\hibernate\validator\hibernate-validator\6.0.11.Final\hibernate-validator-6.0.11.Final.jar;C:\Users\Eric\.m2\repository\javax\validation\validation-api\2.0.1.Final\validation-api-2.0.1.Final.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-web\5.0.8.RELEASE\spring-web-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-webmvc\5.0.8.RELEASE\spring-webmvc-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-test\2.0.4.RELEASE\spring-boot-starter-test-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-test\2.0.4.RELEASE\spring-boot-test-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\2.0.4.RELEASE\spring-boot-test-autoconfigure-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\com\jayway\jsonpath\json-path\2.4.0\json-path-2.4.0.jar;C:\Users\Eric\.m2\repository\net\minidev\json-smart\2.3\json-smart-2.3.jar;C:\Users\Eric\.m2\repository\net\minidev\accessors-smart\1.2\accessors-smart-1.2.jar;C:\Users\Eric\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\Eric\.m2\repository\org\assertj\assertj-core\3.9.1\assertj-core-3.9.1.jar;C:\Users\Eric\.m2\repository\org\mockito\mockito-core\2.15.0\mockito-core-2.15.0.jar;C:\Users\Eric\.m2\repository\net\bytebuddy\byte-buddy\1.7.11\byte-buddy-1.7.11.jar;C:\Users\Eric\.m2\repository\net\bytebuddy\byte-buddy-agent\1.7.11\byte-buddy-agent-1.7.11.jar;C:\Users\Eric\.m2\repository\org\objenesis\objenesis\2.6\objenesis-2.6.jar;C:\Users\Eric\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Eric\.m2\repository\org\hamcrest\hamcrest-library\1.3\hamcrest-library-1.3.jar;C:\Users\Eric\.m2\repository\org\skyscreamer\jsonassert\1.5.0\jsonassert-1.5.0.jar;C:\Users\Eric\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Eric\.m2\repository\org\xmlunit\xmlunit-core\2.5.1\xmlunit-core-2.5.1.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-thymeleaf\2.0.4.RELEASE\spring-boot-starter-thymeleaf-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\thymeleaf\thymeleaf-spring5\3.0.9.RELEASE\thymeleaf-spring5-3.0.9.RELEASE.jar;C:\Users\Eric\.m2\repository\org\thymeleaf\thymeleaf\3.0.9.RELEASE\thymeleaf-3.0.9.RELEASE.jar;C:\Users\Eric\.m2\repository\org\attoparser\attoparser\2.0.4.RELEASE\attoparser-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\unbescape\unbescape\1.1.5.RELEASE\unbescape-1.1.5.RELEASE.jar;C:\Users\Eric\.m2\repository\org\thymeleaf\extras\thymeleaf-extras-java8time\3.0.1.RELEASE\thymeleaf-extras-java8time-3.0.1.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-devtools\2.0.4.RELEASE\spring-boot-devtools-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot\2.0.4.RELEASE\spring-boot-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\2.0.4.RELEASE\spring-boot-autoconfigure-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\com\h2database\h2\1.4.197\h2-1.4.197.jar;C:\Users\Eric\.m2\repository\org\projectlombok\lombok\1.16.22\lombok-1.16.22.jar;C:\Users\Eric\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.0\jakarta.validation-api-3.0.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\plugins\maven-surefire-plugin\2.22.2\maven-surefire-plugin-2.22.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\surefire\maven-surefire-common\2.22.2\maven-surefire-common-2.22.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\plugin-tools\maven-plugin-annotations\3.5.2\maven-plugin-annotations-3.5.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\surefire\surefire-api\2.22.2\surefire-api-2.22.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\surefire\surefire-logger-api\2.22.2\surefire-logger-api-2.22.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\surefire\surefire-booter\2.22.2\surefire-booter-2.22.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-artifact\2.2.1\maven-artifact-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-plugin-descriptor\2.2.1\maven-plugin-descriptor-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-project\2.2.1\maven-project-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-profile\2.2.1\maven-profile-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-artifact-manager\2.2.1\maven-artifact-manager-2.2.1.jar;C:\Users\Eric\.m2\repository\backport-util-concurrent\backport-util-concurrent\3.1\backport-util-concurrent-3.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-plugin-registry\2.2.1\maven-plugin-registry-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-model\2.2.1\maven-model-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-toolchain\2.2.1\maven-toolchain-2.2.1.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-java\0.9.10\plexus-java-0.9.10.jar;C:\Users\Eric\.m2\repository\com\thoughtworks\qdox\qdox\2.0-M8\qdox-2.0-M8.jar;C:\Users\Eric\.m2\repository\org\junit\vintage\junit-vintage-engine\5.8.0-M1\junit-vintage-engine-5.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\apiguardian\apiguardian-api\1.1.1\apiguardian-api-1.1.1.jar;C:\Users\Eric\.m2\repository\org\junit\platform\junit-platform-engine\1.8.0-M1\junit-platform-engine-1.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.0-M1\junit-jupiter-api-5.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Eric\.m2\repository\org\junit\platform\junit-platform-commons\1.8.0-M1\junit-platform-commons-1.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.0-M1\junit-jupiter-engine-5.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk8\1.2.51\kotlin-stdlib-jdk8-1.2.51.jar;C:\Users\Eric\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\1.2.51\kotlin-stdlib-1.2.51.jar;C:\Users\Eric\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-common\1.2.51\kotlin-stdlib-common-1.2.51.jar;C:\Users\Eric\.m2\repository\org\jetbrains\annotations\13.0\annotations-13.0.jar;C:\Users\Eric\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk7\1.2.51\kotlin-stdlib-jdk7-1.2.51.jar;C:\Users\Eric\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.0-M1\junit-jupiter-params-5.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\mockito\mockito-junit-jupiter\2.23.4\mockito-junit-jupiter-2.23.4.jar;C:\Users\Eric\.m2\repository\org\jacoco\jacoco-maven-plugin\0.8.7\jacoco-maven-plugin-0.8.7.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-plugin-api\3.0\maven-plugin-api-3.0.jar;C:\Users\Eric\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\1.4.2\sisu-inject-plexus-1.4.2.jar;C:\Users\Eric\.m2\repository\org\sonatype\sisu\sisu-inject-bean\1.4.2\sisu-inject-bean-1.4.2.jar;C:\Users\Eric\.m2\repository\org\sonatype\sisu\sisu-guice\2.1.7\sisu-guice-2.1.7-noaop.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-core\3.0\maven-core-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-settings\3.0\maven-settings-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-settings-builder\3.0\maven-settings-builder-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-repository-metadata\3.0\maven-repository-metadata-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-model-builder\3.0\maven-model-builder-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-aether-provider\3.0\maven-aether-provider-3.0.jar;C:\Users\Eric\.m2\repository\org\sonatype\aether\aether-impl\1.7\aether-impl-1.7.jar;C:\Users\Eric\.m2\repository\org\sonatype\aether\aether-spi\1.7\aether-spi-1.7.jar;C:\Users\Eric\.m2\repository\org\sonatype\aether\aether-api\1.7\aether-api-1.7.jar;C:\Users\Eric\.m2\repository\org\sonatype\aether\aether-util\1.7\aether-util-1.7.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-interpolation\1.14\plexus-interpolation-1.14.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.3\plexus-classworlds-2.2.3.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-component-annotations\1.5.5\plexus-component-annotations-1.5.5.jar;C:\Users\Eric\.m2\repository\org\sonatype\plexus\plexus-sec-dispatcher\1.3\plexus-sec-dispatcher-1.3.jar;C:\Users\Eric\.m2\repository\org\sonatype\plexus\plexus-cipher\1.4\plexus-cipher-1.4.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.22\plexus-utils-3.0.22.jar;C:\Users\Eric\.m2\repository\org\apache\maven\shared\file-management\1.2.1\file-management-1.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\shared\maven-shared-io\1.1\maven-shared-io-1.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\wagon\wagon-provider-api\1.0-alpha-6\wagon-provider-api-1.0-alpha-6.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-container-default\1.0-alpha-9\plexus-container-default-1.0-alpha-9.jar;C:\Users\Eric\.m2\repository\classworlds\classworlds\1.1-alpha-2\classworlds-1.1-alpha-2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\reporting\maven-reporting-api\3.0\maven-reporting-api-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\doxia\doxia-sink-api\1.0\doxia-sink-api-1.0.jar;C:\Users\Eric\.m2\repository\org\jacoco\org.jacoco.agent\0.8.7\org.jacoco.agent-0.8.7-runtime.jar;C:\Users\Eric\.m2\repository\org\jacoco\org.jacoco.core\0.8.7\org.jacoco.core-0.8.7.jar;C:\Users\Eric\.m2\repository\org\ow2\asm\asm\9.1\asm-9.1.jar;C:\Users\Eric\.m2\repository\org\ow2\asm\asm-commons\9.1\asm-commons-9.1.jar;C:\Users\Eric\.m2\repository\org\ow2\asm\asm-analysis\9.1\asm-analysis-9.1.jar;C:\Users\Eric\.m2\repository\org\ow2\asm\asm-tree\9.1\asm-tree-9.1.jar;C:\Users\Eric\.m2\repository\org\jacoco\org.jacoco.report\0.8.7\org.jacoco.report-0.8.7.jar;"/>
+    <property name="java.vm.vendor" value="Amazon.com Inc."/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://aws.amazon.com/corretto/"/>
+    <property name="user.timezone" value="Europe/Paris"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="user.country" value="FR"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\Eric\AppData\Local\Temp\surefire6834877416704990460\surefirebooter5809142637053755257.jar C:\Users\Eric\AppData\Local\Temp\surefire6834877416704990460 2021-11-21T01-23-52_437-jvmRun1 surefire2614814516058556068tmp surefire_07771502125366587021tmp"/>
+    <property name="surefire.test.class.path" value="D:\Openclassrooms\Projet7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\target\test-classes;D:\Openclassrooms\Projet7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\target\classes;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-oauth2-client\2.5.5\spring-boot-starter-oauth2-client-2.5.5.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter\2.0.4.RELEASE\spring-boot-starter-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-logging\2.0.4.RELEASE\spring-boot-starter-logging-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;C:\Users\Eric\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar;C:\Users\Eric\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.10.0\log4j-to-slf4j-2.10.0.jar;C:\Users\Eric\.m2\repository\org\apache\logging\log4j\log4j-api\2.10.0\log4j-api-2.10.0.jar;C:\Users\Eric\.m2\repository\org\slf4j\jul-to-slf4j\1.7.25\jul-to-slf4j-1.7.25.jar;C:\Users\Eric\.m2\repository\javax\annotation\javax.annotation-api\1.3.2\javax.annotation-api-1.3.2.jar;C:\Users\Eric\.m2\repository\org\yaml\snakeyaml\1.19\snakeyaml-1.19.jar;C:\Users\Eric\.m2\repository\com\sun\mail\jakarta.mail\1.6.7\jakarta.mail-1.6.7.jar;C:\Users\Eric\.m2\repository\com\sun\activation\jakarta.activation\1.2.1\jakarta.activation-1.2.1.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-oauth2-client\5.0.7.RELEASE\spring-security-oauth2-client-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\com\nimbusds\oauth2-oidc-sdk\5.64.2\oauth2-oidc-sdk-5.64.2.jar;C:\Users\Eric\.m2\repository\javax\mail\mail\1.4.7\mail-1.4.7.jar;C:\Users\Eric\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\Eric\.m2\repository\com\github\stephenc\jcip\jcip-annotations\1.0-1\jcip-annotations-1.0-1.jar;C:\Users\Eric\.m2\repository\com\nimbusds\lang-tag\1.5\lang-tag-1.5.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-oauth2-core\5.0.7.RELEASE\spring-security-oauth2-core-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-oauth2-jose\5.0.7.RELEASE\spring-security-oauth2-jose-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\com\nimbusds\nimbus-jose-jwt\5.14\nimbus-jose-jwt-5.14.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-security\2.0.4.RELEASE\spring-boot-starter-security-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-aop\5.0.8.RELEASE\spring-aop-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-web\5.0.7.RELEASE\spring-security-web-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-core\5.5.1\spring-security-core-5.5.1.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-crypto\5.0.7.RELEASE\spring-security-crypto-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-beans\5.0.8.RELEASE\spring-beans-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-context\5.0.8.RELEASE\spring-context-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-core\5.0.8.RELEASE\spring-core-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-jcl\5.0.8.RELEASE\spring-jcl-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-expression\5.0.8.RELEASE\spring-expression-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-config\5.0.7.RELEASE\spring-security-config-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-test\5.0.5.RELEASE\spring-security-test-5.0.5.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-test\5.0.8.RELEASE\spring-test-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\mysql\mysql-connector-java\8.0.17\mysql-connector-java-8.0.17.jar;C:\Users\Eric\.m2\repository\com\google\protobuf\protobuf-java\3.6.1\protobuf-java-3.6.1.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\2.0.4.RELEASE\spring-boot-starter-data-jpa-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-aop\2.0.4.RELEASE\spring-boot-starter-aop-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\aspectj\aspectjweaver\1.8.13\aspectjweaver-1.8.13.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\2.0.4.RELEASE\spring-boot-starter-jdbc-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\com\zaxxer\HikariCP\2.7.9\HikariCP-2.7.9.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-jdbc\5.0.8.RELEASE\spring-jdbc-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\hibernate\hibernate-core\5.2.17.Final\hibernate-core-5.2.17.Final.jar;C:\Users\Eric\.m2\repository\org\jboss\logging\jboss-logging\3.3.2.Final\jboss-logging-3.3.2.Final.jar;C:\Users\Eric\.m2\repository\org\hibernate\javax\persistence\hibernate-jpa-2.1-api\1.0.2.Final\hibernate-jpa-2.1-api-1.0.2.Final.jar;C:\Users\Eric\.m2\repository\org\javassist\javassist\3.22.0-GA\javassist-3.22.0-GA.jar;C:\Users\Eric\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\Eric\.m2\repository\org\jboss\jandex\2.0.3.Final\jandex-2.0.3.Final.jar;C:\Users\Eric\.m2\repository\com\fasterxml\classmate\1.3.4\classmate-1.3.4.jar;C:\Users\Eric\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;C:\Users\Eric\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.0.1.Final\hibernate-commons-annotations-5.0.1.Final.jar;C:\Users\Eric\.m2\repository\javax\transaction\javax.transaction-api\1.2\javax.transaction-api-1.2.jar;C:\Users\Eric\.m2\repository\org\springframework\data\spring-data-jpa\2.0.9.RELEASE\spring-data-jpa-2.0.9.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\data\spring-data-commons\2.0.9.RELEASE\spring-data-commons-2.0.9.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-orm\5.0.8.RELEASE\spring-orm-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-tx\5.0.8.RELEASE\spring-tx-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-aspects\5.0.8.RELEASE\spring-aspects-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-web\2.0.4.RELEASE\spring-boot-starter-web-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-json\2.0.4.RELEASE\spring-boot-starter-json-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.9.6\jackson-databind-2.9.6.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.9.0\jackson-annotations-2.9.0.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.9.6\jackson-core-2.9.6.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.9.6\jackson-datatype-jdk8-2.9.6.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.9.6\jackson-datatype-jsr310-2.9.6.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.9.6\jackson-module-parameter-names-2.9.6.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\2.0.4.RELEASE\spring-boot-starter-tomcat-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\8.5.32\tomcat-embed-core-8.5.32.jar;C:\Users\Eric\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\8.5.32\tomcat-embed-el-8.5.32.jar;C:\Users\Eric\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\8.5.32\tomcat-embed-websocket-8.5.32.jar;C:\Users\Eric\.m2\repository\org\hibernate\validator\hibernate-validator\6.0.11.Final\hibernate-validator-6.0.11.Final.jar;C:\Users\Eric\.m2\repository\javax\validation\validation-api\2.0.1.Final\validation-api-2.0.1.Final.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-web\5.0.8.RELEASE\spring-web-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-webmvc\5.0.8.RELEASE\spring-webmvc-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-test\2.0.4.RELEASE\spring-boot-starter-test-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-test\2.0.4.RELEASE\spring-boot-test-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\2.0.4.RELEASE\spring-boot-test-autoconfigure-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\com\jayway\jsonpath\json-path\2.4.0\json-path-2.4.0.jar;C:\Users\Eric\.m2\repository\net\minidev\json-smart\2.3\json-smart-2.3.jar;C:\Users\Eric\.m2\repository\net\minidev\accessors-smart\1.2\accessors-smart-1.2.jar;C:\Users\Eric\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\Eric\.m2\repository\org\assertj\assertj-core\3.9.1\assertj-core-3.9.1.jar;C:\Users\Eric\.m2\repository\org\mockito\mockito-core\2.15.0\mockito-core-2.15.0.jar;C:\Users\Eric\.m2\repository\net\bytebuddy\byte-buddy\1.7.11\byte-buddy-1.7.11.jar;C:\Users\Eric\.m2\repository\net\bytebuddy\byte-buddy-agent\1.7.11\byte-buddy-agent-1.7.11.jar;C:\Users\Eric\.m2\repository\org\objenesis\objenesis\2.6\objenesis-2.6.jar;C:\Users\Eric\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Eric\.m2\repository\org\hamcrest\hamcrest-library\1.3\hamcrest-library-1.3.jar;C:\Users\Eric\.m2\repository\org\skyscreamer\jsonassert\1.5.0\jsonassert-1.5.0.jar;C:\Users\Eric\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Eric\.m2\repository\org\xmlunit\xmlunit-core\2.5.1\xmlunit-core-2.5.1.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-thymeleaf\2.0.4.RELEASE\spring-boot-starter-thymeleaf-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\thymeleaf\thymeleaf-spring5\3.0.9.RELEASE\thymeleaf-spring5-3.0.9.RELEASE.jar;C:\Users\Eric\.m2\repository\org\thymeleaf\thymeleaf\3.0.9.RELEASE\thymeleaf-3.0.9.RELEASE.jar;C:\Users\Eric\.m2\repository\org\attoparser\attoparser\2.0.4.RELEASE\attoparser-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\unbescape\unbescape\1.1.5.RELEASE\unbescape-1.1.5.RELEASE.jar;C:\Users\Eric\.m2\repository\org\thymeleaf\extras\thymeleaf-extras-java8time\3.0.1.RELEASE\thymeleaf-extras-java8time-3.0.1.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-devtools\2.0.4.RELEASE\spring-boot-devtools-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot\2.0.4.RELEASE\spring-boot-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\2.0.4.RELEASE\spring-boot-autoconfigure-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\com\h2database\h2\1.4.197\h2-1.4.197.jar;C:\Users\Eric\.m2\repository\org\projectlombok\lombok\1.16.22\lombok-1.16.22.jar;C:\Users\Eric\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.0\jakarta.validation-api-3.0.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\plugins\maven-surefire-plugin\2.22.2\maven-surefire-plugin-2.22.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\surefire\maven-surefire-common\2.22.2\maven-surefire-common-2.22.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\plugin-tools\maven-plugin-annotations\3.5.2\maven-plugin-annotations-3.5.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\surefire\surefire-api\2.22.2\surefire-api-2.22.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\surefire\surefire-logger-api\2.22.2\surefire-logger-api-2.22.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\surefire\surefire-booter\2.22.2\surefire-booter-2.22.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-artifact\2.2.1\maven-artifact-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-plugin-descriptor\2.2.1\maven-plugin-descriptor-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-project\2.2.1\maven-project-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-profile\2.2.1\maven-profile-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-artifact-manager\2.2.1\maven-artifact-manager-2.2.1.jar;C:\Users\Eric\.m2\repository\backport-util-concurrent\backport-util-concurrent\3.1\backport-util-concurrent-3.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-plugin-registry\2.2.1\maven-plugin-registry-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-model\2.2.1\maven-model-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-toolchain\2.2.1\maven-toolchain-2.2.1.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-java\0.9.10\plexus-java-0.9.10.jar;C:\Users\Eric\.m2\repository\com\thoughtworks\qdox\qdox\2.0-M8\qdox-2.0-M8.jar;C:\Users\Eric\.m2\repository\org\junit\vintage\junit-vintage-engine\5.8.0-M1\junit-vintage-engine-5.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\apiguardian\apiguardian-api\1.1.1\apiguardian-api-1.1.1.jar;C:\Users\Eric\.m2\repository\org\junit\platform\junit-platform-engine\1.8.0-M1\junit-platform-engine-1.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.0-M1\junit-jupiter-api-5.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Eric\.m2\repository\org\junit\platform\junit-platform-commons\1.8.0-M1\junit-platform-commons-1.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.0-M1\junit-jupiter-engine-5.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk8\1.2.51\kotlin-stdlib-jdk8-1.2.51.jar;C:\Users\Eric\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\1.2.51\kotlin-stdlib-1.2.51.jar;C:\Users\Eric\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-common\1.2.51\kotlin-stdlib-common-1.2.51.jar;C:\Users\Eric\.m2\repository\org\jetbrains\annotations\13.0\annotations-13.0.jar;C:\Users\Eric\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk7\1.2.51\kotlin-stdlib-jdk7-1.2.51.jar;C:\Users\Eric\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.0-M1\junit-jupiter-params-5.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\mockito\mockito-junit-jupiter\2.23.4\mockito-junit-jupiter-2.23.4.jar;C:\Users\Eric\.m2\repository\org\jacoco\jacoco-maven-plugin\0.8.7\jacoco-maven-plugin-0.8.7.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-plugin-api\3.0\maven-plugin-api-3.0.jar;C:\Users\Eric\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\1.4.2\sisu-inject-plexus-1.4.2.jar;C:\Users\Eric\.m2\repository\org\sonatype\sisu\sisu-inject-bean\1.4.2\sisu-inject-bean-1.4.2.jar;C:\Users\Eric\.m2\repository\org\sonatype\sisu\sisu-guice\2.1.7\sisu-guice-2.1.7-noaop.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-core\3.0\maven-core-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-settings\3.0\maven-settings-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-settings-builder\3.0\maven-settings-builder-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-repository-metadata\3.0\maven-repository-metadata-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-model-builder\3.0\maven-model-builder-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-aether-provider\3.0\maven-aether-provider-3.0.jar;C:\Users\Eric\.m2\repository\org\sonatype\aether\aether-impl\1.7\aether-impl-1.7.jar;C:\Users\Eric\.m2\repository\org\sonatype\aether\aether-spi\1.7\aether-spi-1.7.jar;C:\Users\Eric\.m2\repository\org\sonatype\aether\aether-api\1.7\aether-api-1.7.jar;C:\Users\Eric\.m2\repository\org\sonatype\aether\aether-util\1.7\aether-util-1.7.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-interpolation\1.14\plexus-interpolation-1.14.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.3\plexus-classworlds-2.2.3.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-component-annotations\1.5.5\plexus-component-annotations-1.5.5.jar;C:\Users\Eric\.m2\repository\org\sonatype\plexus\plexus-sec-dispatcher\1.3\plexus-sec-dispatcher-1.3.jar;C:\Users\Eric\.m2\repository\org\sonatype\plexus\plexus-cipher\1.4\plexus-cipher-1.4.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.22\plexus-utils-3.0.22.jar;C:\Users\Eric\.m2\repository\org\apache\maven\shared\file-management\1.2.1\file-management-1.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\shared\maven-shared-io\1.1\maven-shared-io-1.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\wagon\wagon-provider-api\1.0-alpha-6\wagon-provider-api-1.0-alpha-6.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-container-default\1.0-alpha-9\plexus-container-default-1.0-alpha-9.jar;C:\Users\Eric\.m2\repository\classworlds\classworlds\1.1-alpha-2\classworlds-1.1-alpha-2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\reporting\maven-reporting-api\3.0\maven-reporting-api-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\doxia\doxia-sink-api\1.0\doxia-sink-api-1.0.jar;C:\Users\Eric\.m2\repository\org\jacoco\org.jacoco.agent\0.8.7\org.jacoco.agent-0.8.7-runtime.jar;C:\Users\Eric\.m2\repository\org\jacoco\org.jacoco.core\0.8.7\org.jacoco.core-0.8.7.jar;C:\Users\Eric\.m2\repository\org\ow2\asm\asm\9.1\asm-9.1.jar;C:\Users\Eric\.m2\repository\org\ow2\asm\asm-commons\9.1\asm-commons-9.1.jar;C:\Users\Eric\.m2\repository\org\ow2\asm\asm-analysis\9.1\asm-analysis-9.1.jar;C:\Users\Eric\.m2\repository\org\ow2\asm\asm-tree\9.1\asm-tree-9.1.jar;C:\Users\Eric\.m2\repository\org\jacoco\org.jacoco.report\0.8.7\org.jacoco.report-0.8.7.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Eric"/>
+    <property name="user.language" value="fr"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="C:\Users\Eric\.jdks\corretto-1.8.0_282\jre"/>
+    <property name="basedir" value="D:\Openclassrooms\Projet7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton"/>
+    <property name="file.separator" value="\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="C:\Users\Eric\AppData\Local\Temp\surefire6834877416704990460\surefirebooter5809142637053755257.jar;C:\\Users\\Eric\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.7\\org.jacoco.agent-0.8.7-runtime.jar"/>
+    <property name="sun.boot.class.path" value="C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\lib\resources.jar;C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\lib\rt.jar;C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\lib\sunrsasign.jar;C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\lib\jsse.jar;C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\lib\jce.jar;C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\lib\charsets.jar;C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\lib\jfr.jar;C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\classes"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_282-b08"/>
+    <property name="user.name" value="Eric"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.endorsed.dirs" value="C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\lib\endorsed"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\Eric\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/corretto/corretto-8/issues/"/>
+    <property name="java.io.tmpdir" value="C:\Users\Eric\AppData\Local\Temp\"/>
+    <property name="idea.version" value="2021.2"/>
+    <property name="java.version" value="1.8.0_282"/>
+    <property name="user.dir" value="D:\Openclassrooms\Projet7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Oculus\Support\oculus-runtime;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Eric\AppData\Local\Microsoft\WindowsApps;C:\Users\Eric\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\apache-maven-3.6.3\bin;C:\Program Files\Java\jdk1.8.0_202;C:\Program Files\apache-log4j-1.2.17;;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Amazon.com Inc."/>
+    <property name="java.vm.version" value="25.282-b08"/>
+    <property name="java.ext.dirs" value="C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="test" classname="com.nnk.springboot.testController.BidListControlTest" time="0">
+    <error message="Error creating bean with name &apos;com.nnk.springboot.testController.BidListControlTest&apos;: Unsatisfied dependency expressed through field &apos;bidListRepository&apos;; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type &apos;com.nnk.springboot.repositories.BidListRepository&apos; available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}" type="org.springframework.beans.factory.UnsatisfiedDependencyException">org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.nnk.springboot.testController.BidListControlTest': Unsatisfied dependency expressed through field 'bidListRepository'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.nnk.springboot.repositories.BidListRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.nnk.springboot.repositories.BidListRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+</error>
+    <system-out><![CDATA[01:23:54.225 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.nnk.springboot.testController.BidListControlTest]
+01:23:54.225 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.nnk.springboot.testController.BidListControlTest]
+01:23:54.225 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.nnk.springboot.testController.BidListControlTest]
+01:23:54.225 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.nnk.springboot.testController.BidListControlTest]
+01:23:54.225 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.nnk.springboot.testController.BidListControlTest]
+01:23:54.225 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.nnk.springboot.testController.BidListControlTest]
+01:23:54.227 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@15ce261 testClass = BidListControlTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@54c3e686 testClass = BidListControlTest, locations = '{}', classes = '{class com.nnk.springboot.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true}', contextCustomizers = set[[ImportsContextCustomizer@39840986 key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.context.MessageSourceAutoConfiguration, org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration, org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration, org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration, org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration, org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration, org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration, org.springframework.boot.autoconfigure.jsonb.JsonbAutoConfiguration, org.springframework.boot.autoconfigure.mustache.MustacheAutoConfiguration, org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration, org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@4887de2b, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@610d28b8, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@b61fc728, org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@76e90da5, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@a81a7728, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@e1d814ae, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@25a94b55], resourceBasePath = '', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+01:23:54.227 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.nnk.springboot.testController.BidListControlTest]
+01:23:54.227 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.nnk.springboot.testController.BidListControlTest]
+01:23:54.260 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding PropertySource 'systemProperties' with lowest search precedence
+01:23:54.260 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding PropertySource 'systemEnvironment' with lowest search precedence
+01:23:54.260 [main] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [MapPropertySource@2102803475 {name='systemProperties', properties={idea.version=2021.2, java.runtime.name=OpenJDK Runtime Environment, sun.boot.library.path=C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\bin, java.vm.version=25.282-b08, java.vm.vendor=Amazon.com Inc., java.vendor.url=https://aws.amazon.com/corretto/, path.separator=;, java.vm.name=OpenJDK 64-Bit Server VM, file.encoding.pkg=sun.io, user.country=FR, user.script=, sun.java.launcher=SUN_STANDARD, sun.os.patch.level=, java.vm.specification.name=Java Virtual Machine Specification, user.dir=D:\Openclassrooms\Projet7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton, java.runtime.version=1.8.0_282-b08, basedir=D:\Openclassrooms\Projet7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton, java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment, java.endorsed.dirs=C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\lib\endorsed, os.arch=amd64, surefire.real.class.path=C:\Users\Eric\AppData\Local\Temp\surefire6834877416704990460\surefirebooter5809142637053755257.jar;C:\\Users\\Eric\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.7\\org.jacoco.agent-0.8.7-runtime.jar, java.io.tmpdir=C:\Users\Eric\AppData\Local\Temp\, line.separator=
+, java.vm.specification.vendor=Oracle Corporation, user.variant=, os.name=Windows 10, sun.jnu.encoding=Cp1252, java.library.path=C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Oculus\Support\oculus-runtime;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Eric\AppData\Local\Microsoft\WindowsApps;C:\Users\Eric\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\apache-maven-3.6.3\bin;C:\Program Files\Java\jdk1.8.0_202;C:\Program Files\apache-log4j-1.2.17;;., surefire.test.class.path=D:\Openclassrooms\Projet7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\target\test-classes;D:\Openclassrooms\Projet7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\target\classes;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-oauth2-client\2.5.5\spring-boot-starter-oauth2-client-2.5.5.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter\2.0.4.RELEASE\spring-boot-starter-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-logging\2.0.4.RELEASE\spring-boot-starter-logging-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;C:\Users\Eric\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar;C:\Users\Eric\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.10.0\log4j-to-slf4j-2.10.0.jar;C:\Users\Eric\.m2\repository\org\apache\logging\log4j\log4j-api\2.10.0\log4j-api-2.10.0.jar;C:\Users\Eric\.m2\repository\org\slf4j\jul-to-slf4j\1.7.25\jul-to-slf4j-1.7.25.jar;C:\Users\Eric\.m2\repository\javax\annotation\javax.annotation-api\1.3.2\javax.annotation-api-1.3.2.jar;C:\Users\Eric\.m2\repository\org\yaml\snakeyaml\1.19\snakeyaml-1.19.jar;C:\Users\Eric\.m2\repository\com\sun\mail\jakarta.mail\1.6.7\jakarta.mail-1.6.7.jar;C:\Users\Eric\.m2\repository\com\sun\activation\jakarta.activation\1.2.1\jakarta.activation-1.2.1.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-oauth2-client\5.0.7.RELEASE\spring-security-oauth2-client-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\com\nimbusds\oauth2-oidc-sdk\5.64.2\oauth2-oidc-sdk-5.64.2.jar;C:\Users\Eric\.m2\repository\javax\mail\mail\1.4.7\mail-1.4.7.jar;C:\Users\Eric\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\Eric\.m2\repository\com\github\stephenc\jcip\jcip-annotations\1.0-1\jcip-annotations-1.0-1.jar;C:\Users\Eric\.m2\repository\com\nimbusds\lang-tag\1.5\lang-tag-1.5.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-oauth2-core\5.0.7.RELEASE\spring-security-oauth2-core-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-oauth2-jose\5.0.7.RELEASE\spring-security-oauth2-jose-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\com\nimbusds\nimbus-jose-jwt\5.14\nimbus-jose-jwt-5.14.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-security\2.0.4.RELEASE\spring-boot-starter-security-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-aop\5.0.8.RELEASE\spring-aop-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-web\5.0.7.RELEASE\spring-security-web-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-core\5.5.1\spring-security-core-5.5.1.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-crypto\5.0.7.RELEASE\spring-security-crypto-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-beans\5.0.8.RELEASE\spring-beans-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-context\5.0.8.RELEASE\spring-context-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-core\5.0.8.RELEASE\spring-core-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-jcl\5.0.8.RELEASE\spring-jcl-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-expression\5.0.8.RELEASE\spring-expression-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-config\5.0.7.RELEASE\spring-security-config-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-test\5.0.5.RELEASE\spring-security-test-5.0.5.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-test\5.0.8.RELEASE\spring-test-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\mysql\mysql-connector-java\8.0.17\mysql-connector-java-8.0.17.jar;C:\Users\Eric\.m2\repository\com\google\protobuf\protobuf-java\3.6.1\protobuf-java-3.6.1.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\2.0.4.RELEASE\spring-boot-starter-data-jpa-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-aop\2.0.4.RELEASE\spring-boot-starter-aop-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\aspectj\aspectjweaver\1.8.13\aspectjweaver-1.8.13.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\2.0.4.RELEASE\spring-boot-starter-jdbc-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\com\zaxxer\HikariCP\2.7.9\HikariCP-2.7.9.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-jdbc\5.0.8.RELEASE\spring-jdbc-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\hibernate\hibernate-core\5.2.17.Final\hibernate-core-5.2.17.Final.jar;C:\Users\Eric\.m2\repository\org\jboss\logging\jboss-logging\3.3.2.Final\jboss-logging-3.3.2.Final.jar;C:\Users\Eric\.m2\repository\org\hibernate\javax\persistence\hibernate-jpa-2.1-api\1.0.2.Final\hibernate-jpa-2.1-api-1.0.2.Final.jar;C:\Users\Eric\.m2\repository\org\javassist\javassist\3.22.0-GA\javassist-3.22.0-GA.jar;C:\Users\Eric\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\Eric\.m2\repository\org\jboss\jandex\2.0.3.Final\jandex-2.0.3.Final.jar;C:\Users\Eric\.m2\repository\com\fasterxml\classmate\1.3.4\classmate-1.3.4.jar;C:\Users\Eric\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;C:\Users\Eric\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.0.1.Final\hibernate-commons-annotations-5.0.1.Final.jar;C:\Users\Eric\.m2\repository\javax\transaction\javax.transaction-api\1.2\javax.transaction-api-1.2.jar;C:\Users\Eric\.m2\repository\org\springframework\data\spring-data-jpa\2.0.9.RELEASE\spring-data-jpa-2.0.9.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\data\spring-data-commons\2.0.9.RELEASE\spring-data-commons-2.0.9.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-orm\5.0.8.RELEASE\spring-orm-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-tx\5.0.8.RELEASE\spring-tx-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-aspects\5.0.8.RELEASE\spring-aspects-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-web\2.0.4.RELEASE\spring-boot-starter-web-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-json\2.0.4.RELEASE\spring-boot-starter-json-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.9.6\jackson-databind-2.9.6.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.9.0\jackson-annotations-2.9.0.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.9.6\jackson-core-2.9.6.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.9.6\jackson-datatype-jdk8-2.9.6.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.9.6\jackson-datatype-jsr310-2.9.6.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.9.6\jackson-module-parameter-names-2.9.6.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\2.0.4.RELEASE\spring-boot-starter-tomcat-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\8.5.32\tomcat-embed-core-8.5.32.jar;C:\Users\Eric\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\8.5.32\tomcat-embed-el-8.5.32.jar;C:\Users\Eric\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\8.5.32\tomcat-embed-websocket-8.5.32.jar;C:\Users\Eric\.m2\repository\org\hibernate\validator\hibernate-validator\6.0.11.Final\hibernate-validator-6.0.11.Final.jar;C:\Users\Eric\.m2\repository\javax\validation\validation-api\2.0.1.Final\validation-api-2.0.1.Final.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-web\5.0.8.RELEASE\spring-web-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-webmvc\5.0.8.RELEASE\spring-webmvc-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-test\2.0.4.RELEASE\spring-boot-starter-test-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-test\2.0.4.RELEASE\spring-boot-test-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\2.0.4.RELEASE\spring-boot-test-autoconfigure-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\com\jayway\jsonpath\json-path\2.4.0\json-path-2.4.0.jar;C:\Users\Eric\.m2\repository\net\minidev\json-smart\2.3\json-smart-2.3.jar;C:\Users\Eric\.m2\repository\net\minidev\accessors-smart\1.2\accessors-smart-1.2.jar;C:\Users\Eric\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\Eric\.m2\repository\org\assertj\assertj-core\3.9.1\assertj-core-3.9.1.jar;C:\Users\Eric\.m2\repository\org\mockito\mockito-core\2.15.0\mockito-core-2.15.0.jar;C:\Users\Eric\.m2\repository\net\bytebuddy\byte-buddy\1.7.11\byte-buddy-1.7.11.jar;C:\Users\Eric\.m2\repository\net\bytebuddy\byte-buddy-agent\1.7.11\byte-buddy-agent-1.7.11.jar;C:\Users\Eric\.m2\repository\org\objenesis\objenesis\2.6\objenesis-2.6.jar;C:\Users\Eric\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Eric\.m2\repository\org\hamcrest\hamcrest-library\1.3\hamcrest-library-1.3.jar;C:\Users\Eric\.m2\repository\org\skyscreamer\jsonassert\1.5.0\jsonassert-1.5.0.jar;C:\Users\Eric\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Eric\.m2\repository\org\xmlunit\xmlunit-core\2.5.1\xmlunit-core-2.5.1.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-thymeleaf\2.0.4.RELEASE\spring-boot-starter-thymeleaf-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\thymeleaf\thymeleaf-spring5\3.0.9.RELEASE\thymeleaf-spring5-3.0.9.RELEASE.jar;C:\Users\Eric\.m2\repository\org\thymeleaf\thymeleaf\3.0.9.RELEASE\thymeleaf-3.0.9.RELEASE.jar;C:\Users\Eric\.m2\repository\org\attoparser\attoparser\2.0.4.RELEASE\attoparser-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\unbescape\unbescape\1.1.5.RELEASE\unbescape-1.1.5.RELEASE.jar;C:\Users\Eric\.m2\repository\org\thymeleaf\extras\thymeleaf-extras-java8time\3.0.1.RELEASE\thymeleaf-extras-java8time-3.0.1.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-devtools\2.0.4.RELEASE\spring-boot-devtools-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot\2.0.4.RELEASE\spring-boot-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\2.0.4.RELEASE\spring-boot-autoconfigure-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\com\h2database\h2\1.4.197\h2-1.4.197.jar;C:\Users\Eric\.m2\repository\org\projectlombok\lombok\1.16.22\lombok-1.16.22.jar;C:\Users\Eric\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.0\jakarta.validation-api-3.0.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\plugins\maven-surefire-plugin\2.22.2\maven-surefire-plugin-2.22.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\surefire\maven-surefire-common\2.22.2\maven-surefire-common-2.22.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\plugin-tools\maven-plugin-annotations\3.5.2\maven-plugin-annotations-3.5.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\surefire\surefire-api\2.22.2\surefire-api-2.22.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\surefire\surefire-logger-api\2.22.2\surefire-logger-api-2.22.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\surefire\surefire-booter\2.22.2\surefire-booter-2.22.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-artifact\2.2.1\maven-artifact-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-plugin-descriptor\2.2.1\maven-plugin-descriptor-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-project\2.2.1\maven-project-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-profile\2.2.1\maven-profile-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-artifact-manager\2.2.1\maven-artifact-manager-2.2.1.jar;C:\Users\Eric\.m2\repository\backport-util-concurrent\backport-util-concurrent\3.1\backport-util-concurrent-3.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-plugin-registry\2.2.1\maven-plugin-registry-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-model\2.2.1\maven-model-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-toolchain\2.2.1\maven-toolchain-2.2.1.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-java\0.9.10\plexus-java-0.9.10.jar;C:\Users\Eric\.m2\repository\com\thoughtworks\qdox\qdox\2.0-M8\qdox-2.0-M8.jar;C:\Users\Eric\.m2\repository\org\junit\vintage\junit-vintage-engine\5.8.0-M1\junit-vintage-engine-5.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\apiguardian\apiguardian-api\1.1.1\apiguardian-api-1.1.1.jar;C:\Users\Eric\.m2\repository\org\junit\platform\junit-platform-engine\1.8.0-M1\junit-platform-engine-1.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.0-M1\junit-jupiter-api-5.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Eric\.m2\repository\org\junit\platform\junit-platform-commons\1.8.0-M1\junit-platform-commons-1.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.0-M1\junit-jupiter-engine-5.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk8\1.2.51\kotlin-stdlib-jdk8-1.2.51.jar;C:\Users\Eric\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\1.2.51\kotlin-stdlib-1.2.51.jar;C:\Users\Eric\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-common\1.2.51\kotlin-stdlib-common-1.2.51.jar;C:\Users\Eric\.m2\repository\org\jetbrains\annotations\13.0\annotations-13.0.jar;C:\Users\Eric\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk7\1.2.51\kotlin-stdlib-jdk7-1.2.51.jar;C:\Users\Eric\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.0-M1\junit-jupiter-params-5.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\mockito\mockito-junit-jupiter\2.23.4\mockito-junit-jupiter-2.23.4.jar;C:\Users\Eric\.m2\repository\org\jacoco\jacoco-maven-plugin\0.8.7\jacoco-maven-plugin-0.8.7.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-plugin-api\3.0\maven-plugin-api-3.0.jar;C:\Users\Eric\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\1.4.2\sisu-inject-plexus-1.4.2.jar;C:\Users\Eric\.m2\repository\org\sonatype\sisu\sisu-inject-bean\1.4.2\sisu-inject-bean-1.4.2.jar;C:\Users\Eric\.m2\repository\org\sonatype\sisu\sisu-guice\2.1.7\sisu-guice-2.1.7-noaop.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-core\3.0\maven-core-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-settings\3.0\maven-settings-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-settings-builder\3.0\maven-settings-builder-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-repository-metadata\3.0\maven-repository-metadata-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-model-builder\3.0\maven-model-builder-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-aether-provider\3.0\maven-aether-provider-3.0.jar;C:\Users\Eric\.m2\repository\org\sonatype\aether\aether-impl\1.7\aether-impl-1.7.jar;C:\Users\Eric\.m2\repository\org\sonatype\aether\aether-spi\1.7\aether-spi-1.7.jar;C:\Users\Eric\.m2\repository\org\sonatype\aether\aether-api\1.7\aether-api-1.7.jar;C:\Users\Eric\.m2\repository\org\sonatype\aether\aether-util\1.7\aether-util-1.7.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-interpolation\1.14\plexus-interpolation-1.14.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.3\plexus-classworlds-2.2.3.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-component-annotations\1.5.5\plexus-component-annotations-1.5.5.jar;C:\Users\Eric\.m2\repository\org\sonatype\plexus\plexus-sec-dispatcher\1.3\plexus-sec-dispatcher-1.3.jar;C:\Users\Eric\.m2\repository\org\sonatype\plexus\plexus-cipher\1.4\plexus-cipher-1.4.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.22\plexus-utils-3.0.22.jar;C:\Users\Eric\.m2\repository\org\apache\maven\shared\file-management\1.2.1\file-management-1.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\shared\maven-shared-io\1.1\maven-shared-io-1.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\wagon\wagon-provider-api\1.0-alpha-6\wagon-provider-api-1.0-alpha-6.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-container-default\1.0-alpha-9\plexus-container-default-1.0-alpha-9.jar;C:\Users\Eric\.m2\repository\classworlds\classworlds\1.1-alpha-2\classworlds-1.1-alpha-2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\reporting\maven-reporting-api\3.0\maven-reporting-api-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\doxia\doxia-sink-api\1.0\doxia-sink-api-1.0.jar;C:\Users\Eric\.m2\repository\org\jacoco\org.jacoco.agent\0.8.7\org.jacoco.agent-0.8.7-runtime.jar;C:\Users\Eric\.m2\repository\org\jacoco\org.jacoco.core\0.8.7\org.jacoco.core-0.8.7.jar;C:\Users\Eric\.m2\repository\org\ow2\asm\asm\9.1\asm-9.1.jar;C:\Users\Eric\.m2\repository\org\ow2\asm\asm-commons\9.1\asm-commons-9.1.jar;C:\Users\Eric\.m2\repository\org\ow2\asm\asm-analysis\9.1\asm-analysis-9.1.jar;C:\Users\Eric\.m2\repository\org\ow2\asm\asm-tree\9.1\asm-tree-9.1.jar;C:\Users\Eric\.m2\repository\org\jacoco\org.jacoco.report\0.8.7\org.jacoco.report-0.8.7.jar;, java.specification.name=Java Platform API Specification, java.class.version=52.0, sun.management.compiler=HotSpot 64-Bit Tiered Compilers, os.version=10.0, user.home=C:\Users\Eric, user.timezone=Europe/Paris, java.awt.printerjob=sun.awt.windows.WPrinterJob, file.encoding=Cp1252, java.specification.version=1.8, java.class.path=D:\Openclassrooms\Projet7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\target\test-classes;D:\Openclassrooms\Projet7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton\target\classes;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-oauth2-client\2.5.5\spring-boot-starter-oauth2-client-2.5.5.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter\2.0.4.RELEASE\spring-boot-starter-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-logging\2.0.4.RELEASE\spring-boot-starter-logging-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;C:\Users\Eric\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar;C:\Users\Eric\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.10.0\log4j-to-slf4j-2.10.0.jar;C:\Users\Eric\.m2\repository\org\apache\logging\log4j\log4j-api\2.10.0\log4j-api-2.10.0.jar;C:\Users\Eric\.m2\repository\org\slf4j\jul-to-slf4j\1.7.25\jul-to-slf4j-1.7.25.jar;C:\Users\Eric\.m2\repository\javax\annotation\javax.annotation-api\1.3.2\javax.annotation-api-1.3.2.jar;C:\Users\Eric\.m2\repository\org\yaml\snakeyaml\1.19\snakeyaml-1.19.jar;C:\Users\Eric\.m2\repository\com\sun\mail\jakarta.mail\1.6.7\jakarta.mail-1.6.7.jar;C:\Users\Eric\.m2\repository\com\sun\activation\jakarta.activation\1.2.1\jakarta.activation-1.2.1.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-oauth2-client\5.0.7.RELEASE\spring-security-oauth2-client-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\com\nimbusds\oauth2-oidc-sdk\5.64.2\oauth2-oidc-sdk-5.64.2.jar;C:\Users\Eric\.m2\repository\javax\mail\mail\1.4.7\mail-1.4.7.jar;C:\Users\Eric\.m2\repository\javax\activation\activation\1.1\activation-1.1.jar;C:\Users\Eric\.m2\repository\com\github\stephenc\jcip\jcip-annotations\1.0-1\jcip-annotations-1.0-1.jar;C:\Users\Eric\.m2\repository\com\nimbusds\lang-tag\1.5\lang-tag-1.5.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-oauth2-core\5.0.7.RELEASE\spring-security-oauth2-core-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-oauth2-jose\5.0.7.RELEASE\spring-security-oauth2-jose-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\com\nimbusds\nimbus-jose-jwt\5.14\nimbus-jose-jwt-5.14.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-security\2.0.4.RELEASE\spring-boot-starter-security-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-aop\5.0.8.RELEASE\spring-aop-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-web\5.0.7.RELEASE\spring-security-web-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-core\5.5.1\spring-security-core-5.5.1.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-crypto\5.0.7.RELEASE\spring-security-crypto-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-beans\5.0.8.RELEASE\spring-beans-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-context\5.0.8.RELEASE\spring-context-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-core\5.0.8.RELEASE\spring-core-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-jcl\5.0.8.RELEASE\spring-jcl-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-expression\5.0.8.RELEASE\spring-expression-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-config\5.0.7.RELEASE\spring-security-config-5.0.7.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\security\spring-security-test\5.0.5.RELEASE\spring-security-test-5.0.5.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-test\5.0.8.RELEASE\spring-test-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\mysql\mysql-connector-java\8.0.17\mysql-connector-java-8.0.17.jar;C:\Users\Eric\.m2\repository\com\google\protobuf\protobuf-java\3.6.1\protobuf-java-3.6.1.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\2.0.4.RELEASE\spring-boot-starter-data-jpa-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-aop\2.0.4.RELEASE\spring-boot-starter-aop-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\aspectj\aspectjweaver\1.8.13\aspectjweaver-1.8.13.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\2.0.4.RELEASE\spring-boot-starter-jdbc-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\com\zaxxer\HikariCP\2.7.9\HikariCP-2.7.9.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-jdbc\5.0.8.RELEASE\spring-jdbc-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\hibernate\hibernate-core\5.2.17.Final\hibernate-core-5.2.17.Final.jar;C:\Users\Eric\.m2\repository\org\jboss\logging\jboss-logging\3.3.2.Final\jboss-logging-3.3.2.Final.jar;C:\Users\Eric\.m2\repository\org\hibernate\javax\persistence\hibernate-jpa-2.1-api\1.0.2.Final\hibernate-jpa-2.1-api-1.0.2.Final.jar;C:\Users\Eric\.m2\repository\org\javassist\javassist\3.22.0-GA\javassist-3.22.0-GA.jar;C:\Users\Eric\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\Eric\.m2\repository\org\jboss\jandex\2.0.3.Final\jandex-2.0.3.Final.jar;C:\Users\Eric\.m2\repository\com\fasterxml\classmate\1.3.4\classmate-1.3.4.jar;C:\Users\Eric\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar;C:\Users\Eric\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.0.1.Final\hibernate-commons-annotations-5.0.1.Final.jar;C:\Users\Eric\.m2\repository\javax\transaction\javax.transaction-api\1.2\javax.transaction-api-1.2.jar;C:\Users\Eric\.m2\repository\org\springframework\data\spring-data-jpa\2.0.9.RELEASE\spring-data-jpa-2.0.9.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\data\spring-data-commons\2.0.9.RELEASE\spring-data-commons-2.0.9.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-orm\5.0.8.RELEASE\spring-orm-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-tx\5.0.8.RELEASE\spring-tx-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-aspects\5.0.8.RELEASE\spring-aspects-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-web\2.0.4.RELEASE\spring-boot-starter-web-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-json\2.0.4.RELEASE\spring-boot-starter-json-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.9.6\jackson-databind-2.9.6.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.9.0\jackson-annotations-2.9.0.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.9.6\jackson-core-2.9.6.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.9.6\jackson-datatype-jdk8-2.9.6.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.9.6\jackson-datatype-jsr310-2.9.6.jar;C:\Users\Eric\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.9.6\jackson-module-parameter-names-2.9.6.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\2.0.4.RELEASE\spring-boot-starter-tomcat-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\8.5.32\tomcat-embed-core-8.5.32.jar;C:\Users\Eric\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\8.5.32\tomcat-embed-el-8.5.32.jar;C:\Users\Eric\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\8.5.32\tomcat-embed-websocket-8.5.32.jar;C:\Users\Eric\.m2\repository\org\hibernate\validator\hibernate-validator\6.0.11.Final\hibernate-validator-6.0.11.Final.jar;C:\Users\Eric\.m2\repository\javax\validation\validation-api\2.0.1.Final\validation-api-2.0.1.Final.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-web\5.0.8.RELEASE\spring-web-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\spring-webmvc\5.0.8.RELEASE\spring-webmvc-5.0.8.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-test\2.0.4.RELEASE\spring-boot-starter-test-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-test\2.0.4.RELEASE\spring-boot-test-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\2.0.4.RELEASE\spring-boot-test-autoconfigure-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\com\jayway\jsonpath\json-path\2.4.0\json-path-2.4.0.jar;C:\Users\Eric\.m2\repository\net\minidev\json-smart\2.3\json-smart-2.3.jar;C:\Users\Eric\.m2\repository\net\minidev\accessors-smart\1.2\accessors-smart-1.2.jar;C:\Users\Eric\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\Eric\.m2\repository\org\assertj\assertj-core\3.9.1\assertj-core-3.9.1.jar;C:\Users\Eric\.m2\repository\org\mockito\mockito-core\2.15.0\mockito-core-2.15.0.jar;C:\Users\Eric\.m2\repository\net\bytebuddy\byte-buddy\1.7.11\byte-buddy-1.7.11.jar;C:\Users\Eric\.m2\repository\net\bytebuddy\byte-buddy-agent\1.7.11\byte-buddy-agent-1.7.11.jar;C:\Users\Eric\.m2\repository\org\objenesis\objenesis\2.6\objenesis-2.6.jar;C:\Users\Eric\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Eric\.m2\repository\org\hamcrest\hamcrest-library\1.3\hamcrest-library-1.3.jar;C:\Users\Eric\.m2\repository\org\skyscreamer\jsonassert\1.5.0\jsonassert-1.5.0.jar;C:\Users\Eric\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\Eric\.m2\repository\org\xmlunit\xmlunit-core\2.5.1\xmlunit-core-2.5.1.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-starter-thymeleaf\2.0.4.RELEASE\spring-boot-starter-thymeleaf-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\thymeleaf\thymeleaf-spring5\3.0.9.RELEASE\thymeleaf-spring5-3.0.9.RELEASE.jar;C:\Users\Eric\.m2\repository\org\thymeleaf\thymeleaf\3.0.9.RELEASE\thymeleaf-3.0.9.RELEASE.jar;C:\Users\Eric\.m2\repository\org\attoparser\attoparser\2.0.4.RELEASE\attoparser-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\unbescape\unbescape\1.1.5.RELEASE\unbescape-1.1.5.RELEASE.jar;C:\Users\Eric\.m2\repository\org\thymeleaf\extras\thymeleaf-extras-java8time\3.0.1.RELEASE\thymeleaf-extras-java8time-3.0.1.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-devtools\2.0.4.RELEASE\spring-boot-devtools-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot\2.0.4.RELEASE\spring-boot-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\2.0.4.RELEASE\spring-boot-autoconfigure-2.0.4.RELEASE.jar;C:\Users\Eric\.m2\repository\com\h2database\h2\1.4.197\h2-1.4.197.jar;C:\Users\Eric\.m2\repository\org\projectlombok\lombok\1.16.22\lombok-1.16.22.jar;C:\Users\Eric\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.0\jakarta.validation-api-3.0.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\plugins\maven-surefire-plugin\2.22.2\maven-surefire-plugin-2.22.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\surefire\maven-surefire-common\2.22.2\maven-surefire-common-2.22.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\plugin-tools\maven-plugin-annotations\3.5.2\maven-plugin-annotations-3.5.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\surefire\surefire-api\2.22.2\surefire-api-2.22.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\surefire\surefire-logger-api\2.22.2\surefire-logger-api-2.22.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\surefire\surefire-booter\2.22.2\surefire-booter-2.22.2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-artifact\2.2.1\maven-artifact-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-plugin-descriptor\2.2.1\maven-plugin-descriptor-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-project\2.2.1\maven-project-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-profile\2.2.1\maven-profile-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-artifact-manager\2.2.1\maven-artifact-manager-2.2.1.jar;C:\Users\Eric\.m2\repository\backport-util-concurrent\backport-util-concurrent\3.1\backport-util-concurrent-3.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-plugin-registry\2.2.1\maven-plugin-registry-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-model\2.2.1\maven-model-2.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-toolchain\2.2.1\maven-toolchain-2.2.1.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-java\0.9.10\plexus-java-0.9.10.jar;C:\Users\Eric\.m2\repository\com\thoughtworks\qdox\qdox\2.0-M8\qdox-2.0-M8.jar;C:\Users\Eric\.m2\repository\org\junit\vintage\junit-vintage-engine\5.8.0-M1\junit-vintage-engine-5.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\apiguardian\apiguardian-api\1.1.1\apiguardian-api-1.1.1.jar;C:\Users\Eric\.m2\repository\org\junit\platform\junit-platform-engine\1.8.0-M1\junit-platform-engine-1.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.0-M1\junit-jupiter-api-5.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Eric\.m2\repository\org\junit\platform\junit-platform-commons\1.8.0-M1\junit-platform-commons-1.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.0-M1\junit-jupiter-engine-5.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk8\1.2.51\kotlin-stdlib-jdk8-1.2.51.jar;C:\Users\Eric\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\1.2.51\kotlin-stdlib-1.2.51.jar;C:\Users\Eric\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-common\1.2.51\kotlin-stdlib-common-1.2.51.jar;C:\Users\Eric\.m2\repository\org\jetbrains\annotations\13.0\annotations-13.0.jar;C:\Users\Eric\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk7\1.2.51\kotlin-stdlib-jdk7-1.2.51.jar;C:\Users\Eric\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.8.0-M1\junit-jupiter-params-5.8.0-M1.jar;C:\Users\Eric\.m2\repository\org\mockito\mockito-junit-jupiter\2.23.4\mockito-junit-jupiter-2.23.4.jar;C:\Users\Eric\.m2\repository\org\jacoco\jacoco-maven-plugin\0.8.7\jacoco-maven-plugin-0.8.7.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-plugin-api\3.0\maven-plugin-api-3.0.jar;C:\Users\Eric\.m2\repository\org\sonatype\sisu\sisu-inject-plexus\1.4.2\sisu-inject-plexus-1.4.2.jar;C:\Users\Eric\.m2\repository\org\sonatype\sisu\sisu-inject-bean\1.4.2\sisu-inject-bean-1.4.2.jar;C:\Users\Eric\.m2\repository\org\sonatype\sisu\sisu-guice\2.1.7\sisu-guice-2.1.7-noaop.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-core\3.0\maven-core-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-settings\3.0\maven-settings-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-settings-builder\3.0\maven-settings-builder-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-repository-metadata\3.0\maven-repository-metadata-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-model-builder\3.0\maven-model-builder-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\maven-aether-provider\3.0\maven-aether-provider-3.0.jar;C:\Users\Eric\.m2\repository\org\sonatype\aether\aether-impl\1.7\aether-impl-1.7.jar;C:\Users\Eric\.m2\repository\org\sonatype\aether\aether-spi\1.7\aether-spi-1.7.jar;C:\Users\Eric\.m2\repository\org\sonatype\aether\aether-api\1.7\aether-api-1.7.jar;C:\Users\Eric\.m2\repository\org\sonatype\aether\aether-util\1.7\aether-util-1.7.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-interpolation\1.14\plexus-interpolation-1.14.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-classworlds\2.2.3\plexus-classworlds-2.2.3.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-component-annotations\1.5.5\plexus-component-annotations-1.5.5.jar;C:\Users\Eric\.m2\repository\org\sonatype\plexus\plexus-sec-dispatcher\1.3\plexus-sec-dispatcher-1.3.jar;C:\Users\Eric\.m2\repository\org\sonatype\plexus\plexus-cipher\1.4\plexus-cipher-1.4.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-utils\3.0.22\plexus-utils-3.0.22.jar;C:\Users\Eric\.m2\repository\org\apache\maven\shared\file-management\1.2.1\file-management-1.2.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\shared\maven-shared-io\1.1\maven-shared-io-1.1.jar;C:\Users\Eric\.m2\repository\org\apache\maven\wagon\wagon-provider-api\1.0-alpha-6\wagon-provider-api-1.0-alpha-6.jar;C:\Users\Eric\.m2\repository\org\codehaus\plexus\plexus-container-default\1.0-alpha-9\plexus-container-default-1.0-alpha-9.jar;C:\Users\Eric\.m2\repository\classworlds\classworlds\1.1-alpha-2\classworlds-1.1-alpha-2.jar;C:\Users\Eric\.m2\repository\org\apache\maven\reporting\maven-reporting-api\3.0\maven-reporting-api-3.0.jar;C:\Users\Eric\.m2\repository\org\apache\maven\doxia\doxia-sink-api\1.0\doxia-sink-api-1.0.jar;C:\Users\Eric\.m2\repository\org\jacoco\org.jacoco.agent\0.8.7\org.jacoco.agent-0.8.7-runtime.jar;C:\Users\Eric\.m2\repository\org\jacoco\org.jacoco.core\0.8.7\org.jacoco.core-0.8.7.jar;C:\Users\Eric\.m2\repository\org\ow2\asm\asm\9.1\asm-9.1.jar;C:\Users\Eric\.m2\repository\org\ow2\asm\asm-commons\9.1\asm-commons-9.1.jar;C:\Users\Eric\.m2\repository\org\ow2\asm\asm-analysis\9.1\asm-analysis-9.1.jar;C:\Users\Eric\.m2\repository\org\ow2\asm\asm-tree\9.1\asm-tree-9.1.jar;C:\Users\Eric\.m2\repository\org\jacoco\org.jacoco.report\0.8.7\org.jacoco.report-0.8.7.jar;, user.name=Eric, java.vm.specification.version=1.8, sun.java.command=C:\Users\Eric\AppData\Local\Temp\surefire6834877416704990460\surefirebooter5809142637053755257.jar C:\Users\Eric\AppData\Local\Temp\surefire6834877416704990460 2021-11-21T01-23-52_437-jvmRun1 surefire2614814516058556068tmp surefire_07771502125366587021tmp, java.home=C:\Users\Eric\.jdks\corretto-1.8.0_282\jre, sun.arch.data.model=64, user.language=fr, java.specification.vendor=Oracle Corporation, awt.toolkit=sun.awt.windows.WToolkit, java.vm.info=mixed mode, java.version=1.8.0_282, java.ext.dirs=C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext, sun.boot.class.path=C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\lib\resources.jar;C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\lib\rt.jar;C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\lib\sunrsasign.jar;C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\lib\jsse.jar;C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\lib\jce.jar;C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\lib\charsets.jar;C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\lib\jfr.jar;C:\Users\Eric\.jdks\corretto-1.8.0_282\jre\classes, java.vendor=Amazon.com Inc., localRepository=C:\Users\Eric\.m2\repository, file.separator=\, java.vendor.url.bug=https://github.com/corretto/corretto-8/issues/, sun.io.unicode.encoding=UnicodeLittle, sun.cpu.endian=little, sun.desktop=windows, sun.cpu.isalist=amd64}}, SystemEnvironmentPropertySource@84976327 {name='systemEnvironment', properties={PATH=C:\Program Files\Oculus\Support\oculus-runtime;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Eric\AppData\Local\Microsoft\WindowsApps;C:\Users\Eric\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\apache-maven-3.6.3\bin;C:\Program Files\Java\jdk1.8.0_202;C:\Program Files\apache-log4j-1.2.17;, USERDOMAIN_ROAMINGPROFILE=DESKTOP-FA0T68S, LOG4J_HOME=C:\Program Files\apache-log4j-1.2.17, PROCESSOR_LEVEL=23, SYSTEMDRIVE=C:, SESSIONNAME=Console, ALLUSERSPROFILE=C:\ProgramData, PROCESSOR_ARCHITECTURE=AMD64, AMDRMSDKPATH=C:\Program Files\AMD\RyzenMasterSDK\, DRIVERDATA=C:\Windows\System32\Drivers\DriverData, PROGRAMFILES=C:\Program Files, PSMODULEPATH=C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules, PROGRAMDATA=C:\ProgramData, USERNAME=Eric, FPS_BROWSER_USER_PROFILE_STRING=Default, ONEDRIVE=C:\Users\Eric\OneDrive - SAS VAL SOLUTIONS, PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC, WINDIR=C:\WINDOWS, HOMEPATH=\Users\Eric, PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 113 Stepping 0, AuthenticAMD, M2_HOME=C:\Program Files\apache-maven-3.6.3\bin, PUBLIC=C:\Users\Public, =::=::\, LOCALAPPDATA=C:\Users\Eric\AppData\Local, COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files, USERDOMAIN=DESKTOP-FA0T68S, FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer, LOGONSERVER=\\DESKTOP-FA0T68S, JAVA_HOME=C:\Program Files\Java\jdk1.8.0_202, PROMPT=$P$G, PROGRAMFILES(X86)=C:\Program Files (x86), SONAR_TOKEN=1582831fd710b536e389e0d98af9407d29892f16, APPDATA=C:\Users\Eric\AppData\Roaming, PROGRAMW6432=C:\Program Files, SYSTEMROOT=C:\WINDOWS, OS=Windows_NT, ONEDRIVECOMMERCIAL=C:\Users\Eric\OneDrive - SAS VAL SOLUTIONS, COMMONPROGRAMW6432=C:\Program Files\Common Files, COMPUTERNAME=DESKTOP-FA0T68S, COMMONPROGRAMFILES=C:\Program Files\Common Files, COMSPEC=C:\WINDOWS\system32\cmd.exe, AMDRMPATH=C:\Program Files\AMD\RyzenMaster\, PROCESSOR_REVISION=7100, =D:=D:\Openclassrooms\Projet7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton, TEMP=C:\Users\Eric\AppData\Local\Temp, HOMEDRIVE=C:, USERPROFILE=C:\Users\Eric, OCULUSBASE=C:\Program Files\Oculus\, TMP=C:\Users\Eric\AppData\Local\Temp, NUMBER_OF_PROCESSORS=12, IDEA_INITIAL_DIRECTORY=C:\WINDOWS\System32}}]
+01:23:54.261 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true, server.port=-1}
+01:23:54.261 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding PropertySource 'Inlined Test Properties' with highest search precedence
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.0.4.RELEASE)
+
+2021-11-21 01:23:54.575  INFO 50452 --- [           main] c.n.s.testController.BidListControlTest  : Starting BidListControlTest on DESKTOP-FA0T68S with PID 50452 (started by Eric in D:\Openclassrooms\Projet7\JavaDA_PROJECT7_RESTAPI\Poseiden-skeleton)
+2021-11-21 01:23:54.578  INFO 50452 --- [           main] c.n.s.testController.BidListControlTest  : No active profile set, falling back to default profiles: default
+2021-11-21 01:23:54.604  INFO 50452 --- [           main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7f19430f: startup date [Sun Nov 21 01:23:54 CET 2021]; root of context hierarchy
+2021-11-21 01:23:54.894  WARN 50452 --- [kground-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2021-11-21 01:23:55.701  INFO 50452 --- [           main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2021-11-21 01:23:55.907  INFO 50452 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-11-21 01:23:56.061  INFO 50452 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@7f19430f: startup date [Sun Nov 21 01:23:54 CET 2021]; root of context hierarchy
+2021-11-21 01:23:56.127  INFO 50452 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bidList/validate],methods=[POST]}" onto public java.lang.String com.nnk.springboot.controllers.BidListController.validate(com.nnk.springboot.domain.BidList,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2021-11-21 01:23:56.129  INFO 50452 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bidList/delete/{id}],methods=[GET]}" onto public java.lang.String com.nnk.springboot.controllers.BidListController.deleteBid(java.lang.Integer,org.springframework.ui.Model)
+2021-11-21 01:23:56.129  INFO 50452 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bidList/add],methods=[GET]}" onto public java.lang.String com.nnk.springboot.controllers.BidListController.addNewBidlist(com.nnk.springboot.domain.BidList)
+2021-11-21 01:23:56.129  INFO 50452 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bidlist/{id}],methods=[GET]}" onto public com.nnk.springboot.domain.BidList com.nnk.springboot.controllers.BidListController.getBidlistById(int)
+2021-11-21 01:23:56.130  INFO 50452 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bidList/list]}" onto public java.lang.String com.nnk.springboot.controllers.BidListController.home(org.springframework.ui.Model)
+2021-11-21 01:23:56.130  INFO 50452 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bidList/update/{id}],methods=[GET]}" onto public java.lang.String com.nnk.springboot.controllers.BidListController.showUpdateForm(java.lang.Integer,org.springframework.ui.Model)
+2021-11-21 01:23:56.130  INFO 50452 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/bidList/update/{id}],methods=[POST]}" onto public java.lang.String com.nnk.springboot.controllers.BidListController.updateBid(java.lang.Integer,com.nnk.springboot.domain.BidList,org.springframework.validation.BindingResult,org.springframework.ui.Model)
+2021-11-21 01:23:56.132  INFO 50452 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-11-21 01:23:56.133  INFO 50452 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2021-11-21 01:23:56.152  INFO 50452 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-11-21 01:23:56.153  INFO 50452 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-11-21 01:23:56.322  INFO 50452 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring FrameworkServlet ''
+2021-11-21 01:23:56.322  INFO 50452 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization started
+2021-11-21 01:23:56.333  INFO 50452 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : FrameworkServlet '': initialization completed in 11 ms
+2021-11-21 01:23:56.640  INFO 50452 --- [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 6f6958f0-4c1c-42c9-8667-9e76c24ef4b7
+
+2021-11-21 01:23:56.772  INFO 50452 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2be1f991, org.springframework.security.web.context.SecurityContextPersistenceFilter@41f958f8, org.springframework.security.web.header.HeaderWriterFilter@3952fa33, org.springframework.security.web.csrf.CsrfFilter@5fc38804, org.springframework.security.web.authentication.logout.LogoutFilter@628082cd, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@a1dbbf4, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@27a7676d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5b08a421, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3b6d0859, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@10a84c27, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3f1b68fd, org.springframework.security.web.session.SessionManagementFilter@600a5d01, org.springframework.security.web.access.ExceptionTranslationFilter@6664d5e9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@770644a3]
+2021-11-21 01:23:56.810  INFO 50452 --- [           main] c.n.s.testController.BidListControlTest  : Started BidListControlTest in 2.538 seconds (JVM running for 4.194)
+2021-11-21 01:23:56.826 ERROR 50452 --- [           main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@113c4ad6] to prepare test instance [com.nnk.springboot.testController.BidListControlTest@55710b6e]
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.nnk.springboot.testController.BidListControlTest': Unsatisfied dependency expressed through field 'bidListRepository'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.nnk.springboot.repositories.BidListRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:586) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:372) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1341) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:393) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118) ~[spring-test-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) ~[spring-test-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener.prepareTestInstance(SpringBootDependencyInjectionTestExecutionListener.java:44) ~[spring-boot-test-autoconfigure-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246) ~[spring-test-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.12.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115) [junit-4.12.jar:4.12]
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42) [junit-vintage-engine-5.8.0-M1.jar:5.8.0-M1]
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80) [junit-vintage-engine-5.8.0-M1.jar:5.8.0-M1]
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72) [junit-vintage-engine-5.8.0-M1.jar:5.8.0-M1]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220) [junit-platform-launcher-1.3.1.jar:1.3.1]
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188) [junit-platform-launcher-1.3.1.jar:1.3.1]
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202) [junit-platform-launcher-1.3.1.jar:1.3.1]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181) [junit-platform-launcher-1.3.1.jar:1.3.1]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128) [junit-platform-launcher-1.3.1.jar:1.3.1]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150) ~[surefire-junit-platform-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124) ~[surefire-junit-platform-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) ~[surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) ~[surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) ~[surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) ~[surefire-booter-2.22.2.jar:2.22.2]
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.nnk.springboot.repositories.BidListRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1506) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1101) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1062) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	... 39 common frames omitted
+
+]]></system-out>
+    <system-err><![CDATA[
+
+
+============================
+CONDITIONS EVALUATION REPORT
+============================
+
+
+Positive matches:
+-----------------
+
+   ErrorMvcAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.servlet.Servlet', 'org.springframework.web.servlet.DispatcherServlet'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+
+   ErrorMvcAutoConfiguration#basicErrorController matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.web.servlet.error.ErrorController; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration#errorAttributes matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.web.servlet.error.ErrorAttributes; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration matched:
+      - @ConditionalOnProperty (server.error.whitelabel.enabled) matched (OnPropertyCondition)
+      - ErrorTemplate Missing did not find error template view (ErrorMvcAutoConfiguration.ErrorTemplateMissingCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#beanNameViewResolver matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.BeanNameViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#defaultErrorView matched:
+      - @ConditionalOnMissingBean (names: error; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   HttpMessageConvertersAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.converter.HttpMessageConverter'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   HttpMessageConvertersAutoConfiguration#messageConverters matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.http.HttpMessageConverters; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   HttpMessageConvertersAutoConfiguration.StringHttpMessageConverterConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.converter.StringHttpMessageConverter'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   HttpMessageConvertersAutoConfiguration.StringHttpMessageConverterConfiguration#stringHttpMessageConverter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.http.converter.StringHttpMessageConverter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'com.fasterxml.jackson.databind.ObjectMapper'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   JacksonAutoConfiguration.Jackson2ObjectMapperBuilderCustomizerConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.converter.json.Jackson2ObjectMapperBuilder'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperBuilderConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.converter.json.Jackson2ObjectMapperBuilder'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperBuilderConfiguration#jacksonObjectMapperBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.http.converter.json.Jackson2ObjectMapperBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.converter.json.Jackson2ObjectMapperBuilder'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperConfiguration#jacksonObjectMapper matched:
+      - @ConditionalOnMissingBean (types: com.fasterxml.jackson.databind.ObjectMapper; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonAutoConfiguration.ParameterNamesModuleConfiguration matched:
+      - @ConditionalOnClass found required class 'com.fasterxml.jackson.module.paramnames.ParameterNamesModule'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   JacksonAutoConfiguration.ParameterNamesModuleConfiguration#parameterNamesModule matched:
+      - @ConditionalOnMissingBean (types: com.fasterxml.jackson.module.paramnames.ParameterNamesModule; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonHttpMessageConvertersConfiguration.MappingJackson2HttpMessageConverterConfiguration matched:
+      - @ConditionalOnClass found required class 'com.fasterxml.jackson.databind.ObjectMapper'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+      - @ConditionalOnProperty (spring.http.converters.preferred-json-mapper=jackson) matched (OnPropertyCondition)
+      - @ConditionalOnBean (types: com.fasterxml.jackson.databind.ObjectMapper; SearchStrategy: all) found bean 'jacksonObjectMapper' (OnBeanCondition)
+
+   JacksonHttpMessageConvertersConfiguration.MappingJackson2HttpMessageConverterConfiguration#mappingJackson2HttpMessageConverter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.http.converter.json.MappingJackson2HttpMessageConverter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   MessageSourceAutoConfiguration matched:
+      - ResourceBundle found bundle URL [file:/D:/Openclassrooms/Projet7/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/target/classes/messages.properties] (MessageSourceAutoConfiguration.ResourceBundleCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.context.MessageSource; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   MockMvcAutoConfiguration matched:
+      - found 'session' scope (OnWebApplicationCondition)
+
+   MockMvcAutoConfiguration#dispatcherServletPath matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.servlet.DispatcherServletPath; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   MockMvcAutoConfiguration#mockMvc matched:
+      - @ConditionalOnMissingBean (types: org.springframework.test.web.servlet.MockMvc; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   MockMvcAutoConfiguration#mockMvcBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.test.web.servlet.MockMvcBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   MockMvcSecurityAutoConfiguration matched:
+      - @ConditionalOnProperty (spring.test.mockmvc.secure=true) matched (OnPropertyCondition)
+
+   MockMvcSecurityConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   MockMvcSecurityConfiguration#securityMockMvcBuilderCustomizer matched:
+      - @ConditionalOnBean (names: springSecurityFilterChain; SearchStrategy: all) found bean 'springSecurityFilterChain' (OnBeanCondition)
+
+   NoOpCacheConfiguration matched:
+      - Cache org.springframework.boot.autoconfigure.cache.NoOpCacheConfiguration NONE cache type (CacheCondition)
+
+   SecurityAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.authentication.DefaultAuthenticationEventPublisher'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   SecurityAutoConfiguration#authenticationEventPublisher matched:
+      - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationEventPublisher; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   SpringBootWebSecurityConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ThymeleafAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.thymeleaf.templatemode.TemplateMode'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   ThymeleafAutoConfiguration.DefaultTemplateResolverConfiguration matched:
+      - @ConditionalOnMissingBean (names: defaultTemplateResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafDefaultConfiguration#templateEngine matched:
+      - @ConditionalOnMissingBean (types: org.thymeleaf.spring5.SpringTemplateEngine; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafJava8TimeDialect matched:
+      - @ConditionalOnClass found required class 'org.thymeleaf.extras.java8time.dialect.Java8TimeDialect'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafJava8TimeDialect#java8TimeDialect matched:
+      - @ConditionalOnMissingBean (types: org.thymeleaf.extras.java8time.dialect.Java8TimeDialect; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafWebMvcConfiguration matched:
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnProperty (spring.thymeleaf.enabled) matched (OnPropertyCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafWebMvcConfiguration.ThymeleafViewResolverConfiguration#thymeleafViewResolver matched:
+      - @ConditionalOnMissingBean (names: thymeleafViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   UserDetailsServiceAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+      - @ConditionalOnBean (types: org.springframework.security.config.annotation.ObjectPostProcessor; SearchStrategy: all) found bean 'objectPostProcessor'; @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   UserDetailsServiceAutoConfiguration#inMemoryUserDetailsManager matched:
+      - @ConditionalOnMissingBean (types: org.springframework.security.oauth2.client.registration.ClientRegistrationRepository; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ValidationAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'javax.validation.executable.ExecutableValidator'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+      - @ConditionalOnResource found location classpath:META-INF/services/javax.validation.spi.ValidationProvider (OnResourceCondition)
+
+   ValidationAutoConfiguration#defaultValidator matched:
+      - @ConditionalOnMissingBean (types: javax.validation.Validator; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ValidationAutoConfiguration#methodValidationPostProcessor matched:
+      - @ConditionalOnMissingBean (types: org.springframework.validation.beanvalidation.MethodValidationPostProcessor; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.servlet.Servlet', 'org.springframework.web.servlet.DispatcherServlet', 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration#hiddenHttpMethodFilter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.filter.HiddenHttpMethodFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration#httpPutFormContentFilter matched:
+      - @ConditionalOnProperty (spring.mvc.formcontent.putfilter.enabled) matched (OnPropertyCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.web.filter.HttpPutFormContentFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#defaultViewResolver matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.InternalResourceViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#requestContextFilter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.context.request.RequestContextListener,org.springframework.web.filter.RequestContextFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#viewResolver matched:
+      - @ConditionalOnBean (types: org.springframework.web.servlet.ViewResolver; SearchStrategy: all) found beans 'defaultViewResolver', 'beanNameViewResolver', 'mvcViewResolver'; @ConditionalOnMissingBean (names: viewResolver; types: org.springframework.web.servlet.view.ContentNegotiatingViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter.FaviconConfiguration matched:
+      - @ConditionalOnProperty (spring.mvc.favicon.enabled) matched (OnPropertyCondition)
+
+   WebSecurityEnablerConfiguration matched:
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnBean (types: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter; SearchStrategy: all) found bean 'org.springframework.boot.autoconfigure.security.servlet.SpringBootWebSecurityConfiguration$DefaultConfigurerAdapter'; @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+   CacheAutoConfiguration:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.cache.interceptor.CacheAspectSupport; SearchStrategy: all) did not find any beans of type org.springframework.cache.interceptor.CacheAspectSupport (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.cache.CacheManager'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   CacheAutoConfiguration.CacheManagerJpaDependencyConfiguration:
+      Did not match:
+         - Ancestor org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration did not match (ConditionEvaluationReport.AncestorsMatchedCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   CaffeineCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'com.github.benmanes.caffeine.cache.Caffeine', 'org.springframework.cache.caffeine.CaffeineCacheManager' (OnClassCondition)
+
+   CouchbaseCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'com.couchbase.client.java.Bucket', 'com.couchbase.client.spring.cache.CouchbaseCacheManager' (OnClassCondition)
+
+   EhCacheCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'net.sf.ehcache.Cache', 'org.springframework.cache.ehcache.EhCacheCacheManager' (OnClassCondition)
+
+   ErrorMvcAutoConfiguration.DefaultErrorViewResolverConfiguration#conventionErrorViewResolver:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.web.servlet.DispatcherServlet; SearchStrategy: all) did not find any beans of type org.springframework.web.servlet.DispatcherServlet (OnBeanCondition)
+
+   FreeMarkerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'freemarker.template.Configuration', 'org.springframework.ui.freemarker.FreeMarkerConfigurationFactory' (OnClassCondition)
+
+   GenericCacheConfiguration:
+      Did not match:
+         - Cache org.springframework.boot.autoconfigure.cache.GenericCacheConfiguration unknown cache type (CacheCondition)
+
+   GroovyTemplateAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'groovy.text.markup.MarkupTemplateEngine' (OnClassCondition)
+
+   GsonAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.google.gson.Gson' (OnClassCondition)
+
+   GsonHttpMessageConvertersConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.google.gson.Gson' (OnClassCondition)
+
+   HazelcastCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'com.hazelcast.core.HazelcastInstance', 'com.hazelcast.spring.cache.HazelcastCacheManager' (OnClassCondition)
+
+   HypermediaAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'org.springframework.hateoas.Resource', 'org.springframework.plugin.core.Plugin' (OnClassCondition)
+
+   InfinispanCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.infinispan.spring.provider.SpringEmbeddedCacheManager' (OnClassCondition)
+
+   JCacheCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'javax.cache.Caching', 'org.springframework.cache.jcache.JCacheCacheManager' (OnClassCondition)
+
+   JacksonAutoConfiguration.JodaDateTimeJacksonConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'org.joda.time.DateTime', 'com.fasterxml.jackson.datatype.joda.ser.DateTimeSerializer', 'com.fasterxml.jackson.datatype.joda.cfg.JacksonJodaDateFormat' (OnClassCondition)
+
+   JacksonHttpMessageConvertersConfiguration.MappingJackson2XmlHttpMessageConverterConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.fasterxml.jackson.dataformat.xml.XmlMapper' (OnClassCondition)
+
+   JsonbAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.json.bind.Jsonb' (OnClassCondition)
+
+   JsonbHttpMessageConvertersConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.json.bind.Jsonb' (OnClassCondition)
+
+   MockMvcWebClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.gargoylesoftware.htmlunit.WebClient' (OnClassCondition)
+
+   MockMvcWebDriverAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.openqa.selenium.htmlunit.HtmlUnitDriver' (OnClassCondition)
+
+   MustacheAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.samskivert.mustache.Mustache' (OnClassCondition)
+
+   RedisCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.redis.connection.RedisConnectionFactory' (OnClassCondition)
+
+   SecurityDataConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.data.repository.query.SecurityEvaluationContextExtension' (OnClassCondition)
+
+   SimpleCacheConfiguration:
+      Did not match:
+         - Cache org.springframework.boot.autoconfigure.cache.SimpleCacheConfiguration unknown cache type (CacheCondition)
+
+   ThymeleafAutoConfiguration.DataAttributeDialectConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.github.mxab.thymeleaf.extras.dataattribute.dialect.DataAttributeDialect' (OnClassCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafReactiveConfiguration:
+      Did not match:
+         - not a reactive web application (OnWebApplicationCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafSecurityDialectConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect' (OnClassCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafWebFluxConfiguration:
+      Did not match:
+         - not a reactive web application (OnWebApplicationCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafWebLayoutConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'nz.net.ultraq.thymeleaf.LayoutDialect' (OnClassCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafWebMvcConfiguration#resourceUrlEncodingFilter:
+      Did not match:
+         - @ConditionalOnEnabledResourceChain did not find class org.webjars.WebJarAssetLocator (OnEnabledResourceChainCondition)
+      Matched:
+         - @ConditionalOnMissingBean (types: org.springframework.web.servlet.resource.ResourceUrlEncodingFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.ResourceChainCustomizerConfiguration:
+      Did not match:
+         - @ConditionalOnEnabledResourceChain did not find class org.webjars.WebJarAssetLocator (OnEnabledResourceChainCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#beanNameViewResolver:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.BeanNameViewResolver; SearchStrategy: all) found beans of type 'org.springframework.web.servlet.view.BeanNameViewResolver' beanNameViewResolver (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#localeResolver:
+      Did not match:
+         - @ConditionalOnProperty (spring.mvc.locale) did not find property 'locale' (OnPropertyCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+]]></system-err>
+  </testcase>
+  <testcase name="createBidlistWhenPostMethod" classname="com.nnk.springboot.testController.BidListControlTest" time="0.001">
+    <error message="Error creating bean with name &apos;com.nnk.springboot.testController.BidListControlTest&apos;: Unsatisfied dependency expressed through field &apos;bidListRepository&apos;; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type &apos;com.nnk.springboot.repositories.BidListRepository&apos; available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}" type="org.springframework.beans.factory.UnsatisfiedDependencyException">org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.nnk.springboot.testController.BidListControlTest': Unsatisfied dependency expressed through field 'bidListRepository'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.nnk.springboot.repositories.BidListRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.nnk.springboot.repositories.BidListRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+</error>
+    <system-out><![CDATA[2021-11-21 01:23:56.832 ERROR 50452 --- [           main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@113c4ad6] to prepare test instance [com.nnk.springboot.testController.BidListControlTest@1f03c0e8]
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'com.nnk.springboot.testController.BidListControlTest': Unsatisfied dependency expressed through field 'bidListRepository'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.nnk.springboot.repositories.BidListRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:586) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:91) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:372) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1341) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireBeanProperties(AbstractAutowireCapableBeanFactory.java:393) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:118) ~[spring-test-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) ~[spring-test-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener.prepareTestInstance(SpringBootDependencyInjectionTestExecutionListener.java:44) ~[spring-boot-test-autoconfigure-2.0.4.RELEASE.jar:2.0.4.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246) ~[spring-test-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137) [junit-4.12.jar:4.12]
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115) [junit-4.12.jar:4.12]
+	at org.junit.vintage.engine.execution.RunnerExecutor.execute(RunnerExecutor.java:42) [junit-vintage-engine-5.8.0-M1.jar:5.8.0-M1]
+	at org.junit.vintage.engine.VintageTestEngine.executeAllChildren(VintageTestEngine.java:80) [junit-vintage-engine-5.8.0-M1.jar:5.8.0-M1]
+	at org.junit.vintage.engine.VintageTestEngine.execute(VintageTestEngine.java:72) [junit-vintage-engine-5.8.0-M1.jar:5.8.0-M1]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220) [junit-platform-launcher-1.3.1.jar:1.3.1]
+	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188) [junit-platform-launcher-1.3.1.jar:1.3.1]
+	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202) [junit-platform-launcher-1.3.1.jar:1.3.1]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181) [junit-platform-launcher-1.3.1.jar:1.3.1]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128) [junit-platform-launcher-1.3.1.jar:1.3.1]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150) ~[surefire-junit-platform-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124) ~[surefire-junit-platform-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384) ~[surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345) ~[surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126) ~[surefire-booter-2.22.2.jar:2.22.2]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418) ~[surefire-booter-2.22.2.jar:2.22.2]
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.nnk.springboot.repositories.BidListRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1506) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1101) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1062) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583) ~[spring-beans-5.0.8.RELEASE.jar:5.0.8.RELEASE]
+	... 39 common frames omitted
+
+]]></system-out>
+    <system-err><![CDATA[
+
+
+============================
+CONDITIONS EVALUATION REPORT
+============================
+
+
+Positive matches:
+-----------------
+
+   ErrorMvcAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.servlet.Servlet', 'org.springframework.web.servlet.DispatcherServlet'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+
+   ErrorMvcAutoConfiguration#basicErrorController matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.web.servlet.error.ErrorController; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration#errorAttributes matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.web.servlet.error.ErrorAttributes; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration matched:
+      - @ConditionalOnProperty (server.error.whitelabel.enabled) matched (OnPropertyCondition)
+      - ErrorTemplate Missing did not find error template view (ErrorMvcAutoConfiguration.ErrorTemplateMissingCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#beanNameViewResolver matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.BeanNameViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ErrorMvcAutoConfiguration.WhitelabelErrorViewConfiguration#defaultErrorView matched:
+      - @ConditionalOnMissingBean (names: error; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   HttpMessageConvertersAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.converter.HttpMessageConverter'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   HttpMessageConvertersAutoConfiguration#messageConverters matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.http.HttpMessageConverters; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   HttpMessageConvertersAutoConfiguration.StringHttpMessageConverterConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.converter.StringHttpMessageConverter'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   HttpMessageConvertersAutoConfiguration.StringHttpMessageConverterConfiguration#stringHttpMessageConverter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.http.converter.StringHttpMessageConverter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'com.fasterxml.jackson.databind.ObjectMapper'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   JacksonAutoConfiguration.Jackson2ObjectMapperBuilderCustomizerConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.converter.json.Jackson2ObjectMapperBuilder'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperBuilderConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.converter.json.Jackson2ObjectMapperBuilder'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperBuilderConfiguration#jacksonObjectMapperBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.http.converter.json.Jackson2ObjectMapperBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.http.converter.json.Jackson2ObjectMapperBuilder'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   JacksonAutoConfiguration.JacksonObjectMapperConfiguration#jacksonObjectMapper matched:
+      - @ConditionalOnMissingBean (types: com.fasterxml.jackson.databind.ObjectMapper; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonAutoConfiguration.ParameterNamesModuleConfiguration matched:
+      - @ConditionalOnClass found required class 'com.fasterxml.jackson.module.paramnames.ParameterNamesModule'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   JacksonAutoConfiguration.ParameterNamesModuleConfiguration#parameterNamesModule matched:
+      - @ConditionalOnMissingBean (types: com.fasterxml.jackson.module.paramnames.ParameterNamesModule; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JacksonHttpMessageConvertersConfiguration.MappingJackson2HttpMessageConverterConfiguration matched:
+      - @ConditionalOnClass found required class 'com.fasterxml.jackson.databind.ObjectMapper'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+      - @ConditionalOnProperty (spring.http.converters.preferred-json-mapper=jackson) matched (OnPropertyCondition)
+      - @ConditionalOnBean (types: com.fasterxml.jackson.databind.ObjectMapper; SearchStrategy: all) found bean 'jacksonObjectMapper' (OnBeanCondition)
+
+   JacksonHttpMessageConvertersConfiguration.MappingJackson2HttpMessageConverterConfiguration#mappingJackson2HttpMessageConverter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.http.converter.json.MappingJackson2HttpMessageConverter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   MessageSourceAutoConfiguration matched:
+      - ResourceBundle found bundle URL [file:/D:/Openclassrooms/Projet7/JavaDA_PROJECT7_RESTAPI/Poseiden-skeleton/target/classes/messages.properties] (MessageSourceAutoConfiguration.ResourceBundleCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.context.MessageSource; SearchStrategy: current) did not find any beans (OnBeanCondition)
+
+   MockMvcAutoConfiguration matched:
+      - found 'session' scope (OnWebApplicationCondition)
+
+   MockMvcAutoConfiguration#dispatcherServletPath matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.autoconfigure.web.servlet.DispatcherServletPath; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   MockMvcAutoConfiguration#mockMvc matched:
+      - @ConditionalOnMissingBean (types: org.springframework.test.web.servlet.MockMvc; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   MockMvcAutoConfiguration#mockMvcBuilder matched:
+      - @ConditionalOnMissingBean (types: org.springframework.test.web.servlet.MockMvcBuilder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   MockMvcSecurityAutoConfiguration matched:
+      - @ConditionalOnProperty (spring.test.mockmvc.secure=true) matched (OnPropertyCondition)
+
+   MockMvcSecurityConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   MockMvcSecurityConfiguration#securityMockMvcBuilderCustomizer matched:
+      - @ConditionalOnBean (names: springSecurityFilterChain; SearchStrategy: all) found bean 'springSecurityFilterChain' (OnBeanCondition)
+
+   NoOpCacheConfiguration matched:
+      - Cache org.springframework.boot.autoconfigure.cache.NoOpCacheConfiguration NONE cache type (CacheCondition)
+
+   SecurityAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.authentication.DefaultAuthenticationEventPublisher'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   SecurityAutoConfiguration#authenticationEventPublisher matched:
+      - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationEventPublisher; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   SpringBootWebSecurityConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ThymeleafAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.thymeleaf.templatemode.TemplateMode'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   ThymeleafAutoConfiguration.DefaultTemplateResolverConfiguration matched:
+      - @ConditionalOnMissingBean (names: defaultTemplateResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafDefaultConfiguration#templateEngine matched:
+      - @ConditionalOnMissingBean (types: org.thymeleaf.spring5.SpringTemplateEngine; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafJava8TimeDialect matched:
+      - @ConditionalOnClass found required class 'org.thymeleaf.extras.java8time.dialect.Java8TimeDialect'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafJava8TimeDialect#java8TimeDialect matched:
+      - @ConditionalOnMissingBean (types: org.thymeleaf.extras.java8time.dialect.Java8TimeDialect; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafWebMvcConfiguration matched:
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnProperty (spring.thymeleaf.enabled) matched (OnPropertyCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafWebMvcConfiguration.ThymeleafViewResolverConfiguration#thymeleafViewResolver matched:
+      - @ConditionalOnMissingBean (names: thymeleafViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   UserDetailsServiceAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+      - @ConditionalOnBean (types: org.springframework.security.config.annotation.ObjectPostProcessor; SearchStrategy: all) found bean 'objectPostProcessor'; @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   UserDetailsServiceAutoConfiguration#inMemoryUserDetailsManager matched:
+      - @ConditionalOnMissingBean (types: org.springframework.security.oauth2.client.registration.ClientRegistrationRepository; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ValidationAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'javax.validation.executable.ExecutableValidator'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+      - @ConditionalOnResource found location classpath:META-INF/services/javax.validation.spi.ValidationProvider (OnResourceCondition)
+
+   ValidationAutoConfiguration#defaultValidator matched:
+      - @ConditionalOnMissingBean (types: javax.validation.Validator; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   ValidationAutoConfiguration#methodValidationPostProcessor matched:
+      - @ConditionalOnMissingBean (types: org.springframework.validation.beanvalidation.MethodValidationPostProcessor; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.servlet.Servlet', 'org.springframework.web.servlet.DispatcherServlet', 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration#hiddenHttpMethodFilter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.filter.HiddenHttpMethodFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration#httpPutFormContentFilter matched:
+      - @ConditionalOnProperty (spring.mvc.formcontent.putfilter.enabled) matched (OnPropertyCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.web.filter.HttpPutFormContentFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#defaultViewResolver matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.InternalResourceViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#requestContextFilter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.context.request.RequestContextListener,org.springframework.web.filter.RequestContextFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#viewResolver matched:
+      - @ConditionalOnBean (types: org.springframework.web.servlet.ViewResolver; SearchStrategy: all) found beans 'defaultViewResolver', 'beanNameViewResolver', 'mvcViewResolver'; @ConditionalOnMissingBean (names: viewResolver; types: org.springframework.web.servlet.view.ContentNegotiatingViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter.FaviconConfiguration matched:
+      - @ConditionalOnProperty (spring.mvc.favicon.enabled) matched (OnPropertyCondition)
+
+   WebSecurityEnablerConfiguration matched:
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnBean (types: org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter; SearchStrategy: all) found bean 'org.springframework.boot.autoconfigure.security.servlet.SpringBootWebSecurityConfiguration$DefaultConfigurerAdapter'; @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+   CacheAutoConfiguration:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.cache.interceptor.CacheAspectSupport; SearchStrategy: all) did not find any beans of type org.springframework.cache.interceptor.CacheAspectSupport (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.cache.CacheManager'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   CacheAutoConfiguration.CacheManagerJpaDependencyConfiguration:
+      Did not match:
+         - Ancestor org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration did not match (ConditionEvaluationReport.AncestorsMatchedCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean'; @ConditionalOnMissingClass did not find unwanted class (OnClassCondition)
+
+   CaffeineCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'com.github.benmanes.caffeine.cache.Caffeine', 'org.springframework.cache.caffeine.CaffeineCacheManager' (OnClassCondition)
+
+   CouchbaseCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'com.couchbase.client.java.Bucket', 'com.couchbase.client.spring.cache.CouchbaseCacheManager' (OnClassCondition)
+
+   EhCacheCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'net.sf.ehcache.Cache', 'org.springframework.cache.ehcache.EhCacheCacheManager' (OnClassCondition)
+
+   ErrorMvcAutoConfiguration.DefaultErrorViewResolverConfiguration#conventionErrorViewResolver:
+      Did not match:
+         - @ConditionalOnBean (types: org.springframework.web.servlet.DispatcherServlet; SearchStrategy: all) did not find any beans of type org.springframework.web.servlet.DispatcherServlet (OnBeanCondition)
+
+   FreeMarkerAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'freemarker.template.Configuration', 'org.springframework.ui.freemarker.FreeMarkerConfigurationFactory' (OnClassCondition)
+
+   GenericCacheConfiguration:
+      Did not match:
+         - Cache org.springframework.boot.autoconfigure.cache.GenericCacheConfiguration unknown cache type (CacheCondition)
+
+   GroovyTemplateAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'groovy.text.markup.MarkupTemplateEngine' (OnClassCondition)
+
+   GsonAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.google.gson.Gson' (OnClassCondition)
+
+   GsonHttpMessageConvertersConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.google.gson.Gson' (OnClassCondition)
+
+   HazelcastCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'com.hazelcast.core.HazelcastInstance', 'com.hazelcast.spring.cache.HazelcastCacheManager' (OnClassCondition)
+
+   HypermediaAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'org.springframework.hateoas.Resource', 'org.springframework.plugin.core.Plugin' (OnClassCondition)
+
+   InfinispanCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.infinispan.spring.provider.SpringEmbeddedCacheManager' (OnClassCondition)
+
+   JCacheCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'javax.cache.Caching', 'org.springframework.cache.jcache.JCacheCacheManager' (OnClassCondition)
+
+   JacksonAutoConfiguration.JodaDateTimeJacksonConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'org.joda.time.DateTime', 'com.fasterxml.jackson.datatype.joda.ser.DateTimeSerializer', 'com.fasterxml.jackson.datatype.joda.cfg.JacksonJodaDateFormat' (OnClassCondition)
+
+   JacksonHttpMessageConvertersConfiguration.MappingJackson2XmlHttpMessageConverterConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.fasterxml.jackson.dataformat.xml.XmlMapper' (OnClassCondition)
+
+   JsonbAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.json.bind.Jsonb' (OnClassCondition)
+
+   JsonbHttpMessageConvertersConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'javax.json.bind.Jsonb' (OnClassCondition)
+
+   MockMvcWebClientAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.gargoylesoftware.htmlunit.WebClient' (OnClassCondition)
+
+   MockMvcWebDriverAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.openqa.selenium.htmlunit.HtmlUnitDriver' (OnClassCondition)
+
+   MustacheAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.samskivert.mustache.Mustache' (OnClassCondition)
+
+   RedisCacheConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.data.redis.connection.RedisConnectionFactory' (OnClassCondition)
+
+   SecurityDataConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.security.data.repository.query.SecurityEvaluationContextExtension' (OnClassCondition)
+
+   SimpleCacheConfiguration:
+      Did not match:
+         - Cache org.springframework.boot.autoconfigure.cache.SimpleCacheConfiguration unknown cache type (CacheCondition)
+
+   ThymeleafAutoConfiguration.DataAttributeDialectConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'com.github.mxab.thymeleaf.extras.dataattribute.dialect.DataAttributeDialect' (OnClassCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafReactiveConfiguration:
+      Did not match:
+         - not a reactive web application (OnWebApplicationCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafSecurityDialectConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.thymeleaf.extras.springsecurity4.dialect.SpringSecurityDialect' (OnClassCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafWebFluxConfiguration:
+      Did not match:
+         - not a reactive web application (OnWebApplicationCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafWebLayoutConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'nz.net.ultraq.thymeleaf.LayoutDialect' (OnClassCondition)
+
+   ThymeleafAutoConfiguration.ThymeleafWebMvcConfiguration#resourceUrlEncodingFilter:
+      Did not match:
+         - @ConditionalOnEnabledResourceChain did not find class org.webjars.WebJarAssetLocator (OnEnabledResourceChainCondition)
+      Matched:
+         - @ConditionalOnMissingBean (types: org.springframework.web.servlet.resource.ResourceUrlEncodingFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.ResourceChainCustomizerConfiguration:
+      Did not match:
+         - @ConditionalOnEnabledResourceChain did not find class org.webjars.WebJarAssetLocator (OnEnabledResourceChainCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#beanNameViewResolver:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.BeanNameViewResolver; SearchStrategy: all) found beans of type 'org.springframework.web.servlet.view.BeanNameViewResolver' beanNameViewResolver (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#localeResolver:
+      Did not match:
+         - @ConditionalOnProperty (spring.mvc.locale) did not find property 'locale' (OnPropertyCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+]]></system-err>
+  </testcase>
+</testsuite>

@@ -1,18 +1,15 @@
 package com.nnk.springboot.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Getter
 @Setter
 @Entity
-@AllArgsConstructor
 @Table(name = "rulename")
 @NoArgsConstructor
+@Builder
 public class RuleName {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,4 +28,13 @@ public class RuleName {
     @Column(name = "sqlPart")
     String sqlPart;
 
+    public RuleName(Integer id, String name, String description, String json, String template, String sqlStr, String sqlPart) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.json = json;
+        this.template = template;
+        this.sqlStr = sqlStr;
+        this.sqlPart = sqlPart;
+    }
 }

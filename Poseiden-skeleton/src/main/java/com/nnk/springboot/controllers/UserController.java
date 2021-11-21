@@ -59,12 +59,10 @@ public class UserController {
         if (!passwordIsValid) {
             model.addAttribute("errorMsg", errorMessageInvalidPassword);
             logger.error(" ERROR POST /user/validate > Invalid Password");
-
         }
 
         return "user/add";
     }
-
 
     /**
      * Read all user

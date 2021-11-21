@@ -27,6 +27,7 @@ public class BidListController {
     @Autowired
     private BidListService bidListService;
 
+
     /**
      * Create - Add a new BidList
      */
@@ -74,7 +75,6 @@ public class BidListController {
     @GetMapping("/bidlist/{id}")
     public BidList getBidlistById(@PathVariable("id") int id) {
         Optional<BidList> bidListOptional = bidListService.findById(id);
-
         if (bidListOptional.isPresent()) {
             logger.info(" SUCCESS READ /bidlist/" + id);
             return bidListOptional.get();

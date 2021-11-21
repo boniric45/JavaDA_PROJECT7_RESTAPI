@@ -1,22 +1,30 @@
 package com.nnk.springboot.testService;
 
-
 import com.nnk.springboot.domain.RuleName;
 import com.nnk.springboot.repositories.RuleNameRepository;
 import com.nnk.springboot.services.RuleNameService;
 import org.junit.Test;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class RuleNameServiceTest {
 
-
-    private static final int id = 1;
     @InjectMocks
     RuleNameService ruleNameService;
 
@@ -24,58 +32,121 @@ public class RuleNameServiceTest {
     RuleNameRepository ruleNameRepository;
 
     /**
-     * Test Create Rule Name
+     * Test Create a new RuleName
      */
     @Test
-    public void testCreateRulename() {
-        RuleName ruleName = mock(RuleName.class);
+    @Order(1)
+    public void testCreateRuleName() {
+        // Given
+        RuleName ruleName = new RuleName(1, "Name", "Description", "json", "template", "sql", "sqlPart");
+
+        // When
         ruleNameService.createRuleName(ruleName);
-        verify(ruleNameRepository).save(ruleName);
+        when(ruleNameRepository.save(any(RuleName.class))).thenReturn(ruleName);
+
+        // Then
+        RuleName savedRuleName = ruleNameRepository.save(ruleName);
+        assertThat(savedRuleName.getName()).isNotNull();
     }
 
     /**
-     * Test Read Rule Name by id
+     * Test Read All RuleName
      */
     @Test
-    public void testReadRulenameById() {
-        ruleNameService.findById(id);
-        verify(ruleNameRepository).findById(id);
+    @Order(2)
+    public void testGetAllRuleName() {
+        // Given
+        List<RuleName> ruleNameList = new ArrayList<>();
+        RuleName ruleName1 = new RuleName(1, "Name1", "Description", "json", "template", "sql", "sqlPart");
+        RuleName ruleName2 = new RuleName(2, "Name2", "Description", "json", "template", "sql", "sqlPart");
+        RuleName ruleName3 = new RuleName(3, "Name3", "Description", "json", "template", "sql", "sqlPart");
+
+        ruleNameList.add(ruleName1);
+        ruleNameList.add(ruleName2);
+        ruleNameList.add(ruleName3);
+
+        // When
+        when(ruleNameService.findAll()).thenReturn(ruleNameList);
+        List<RuleName> ruleList = ruleNameService.findAll();
+
+        // Then
+        assertEquals(3, ruleList.size());
+
     }
 
     /**
-     * Test Read all Rule Name
+     * Test Read RuleName by id
      */
     @Test
-    public void testReadAllRulename() {
-        ruleNameService.findAll();
-        verify(ruleNameRepository).findAll();
-    }
+    @Order(3)
+    public void testGetRuleNameById() {
+        // Given
+        when(ruleNameService.findById(1)).thenReturn(java.util.Optional.of(new RuleName(1, "Name", "Description", "json", "template", "sql", "sqlPart")));
 
+        // When
+        RuleName ruleNameResult = ruleNameService.findById(1).get();
 
-    /**
-     * Test Update Rule Name
-     */
-    @Test
-    public void testUpdateRulename() {
-        RuleName ruleName = mock(RuleName.class);
-        when(ruleName.getId()).thenReturn(id);
-        when(ruleName.getName()).thenReturn("Test Name");
-        when(ruleName.getDescription()).thenReturn("Test Description");
-        when(ruleName.getJson()).thenReturn("Test Json");
-        when(ruleName.getTemplate()).thenReturn("Test Template");
-        when(ruleName.getSqlStr()).thenReturn("Test Sql");
-        when(ruleName.getSqlPart()).thenReturn("Test SqlPart");
-        when(ruleNameRepository.findById(id)).thenReturn(java.util.Optional.of(ruleName));
-        ruleNameService.updateRuleName(ruleName);
-        verify(ruleNameRepository).save(ruleName);
+        // Then
+        assertEquals("Name", ruleNameResult.getName());
+        assertEquals("Description", ruleNameResult.getDescription());
+        assertEquals("json", ruleNameResult.getJson());
+        assertEquals("template", ruleNameResult.getTemplate());
+        assertEquals("sql", ruleNameResult.getSqlStr());
+        assertEquals("sqlPart", ruleNameResult.getSqlPart());
+
     }
 
     /**
-     * Test Delete Rule Name by id
+     * Test Update RuleName
      */
     @Test
-    public void testDeleteRulenameById() {
-        ruleNameService.deleteById(id);
-        verify(ruleNameRepository).deleteById(id);
+    @Order(4)
+    public void testUpdateRuleName() {
+        // Given
+        RuleName ruleName = new RuleName(1, "Name", "Description", "json", "template", "sql", "sqlPart");
+        given(ruleNameRepository.findById(ruleName.getId())).willReturn(Optional.of(ruleName));
+        RuleName ruleNameUpdate = new RuleName(1, "NameUpdate", "DescriptionUpdate", "jsonUpdate", "templateUpdate", "sqlUpdate", "sqlPartUpdate");
+
+        // When
+        ruleNameService.updateRuleName(ruleNameUpdate);
+
+        // Then
+        verify(ruleNameRepository).save(ruleNameUpdate);
+    }
+
+    /**
+     * Test Delete RuleName by ID
+     */
+    @Test
+    @Order(5)
+    public void testDeleteRuleNameById() {
+        // Given
+        RuleName ruleName = new RuleName(1, "Name", "Description", "json", "template", "sql", "sqlPart");
+
+        // When
+        when(ruleNameRepository.findById(ruleName.getId())).thenReturn(Optional.of(ruleName));
+        ruleNameService.deleteById(ruleName.getId());
+
+        // Then
+        verify(ruleNameRepository).deleteById(ruleName.getId());
+    }
+
+    /**
+     * Test RuleName exist in DB
+     */
+    @Test
+    @Order(6)
+    public void RuleNameExistInDbSucces() {
+        // Given
+        RuleName ruleName = new RuleName(1, "Name", "Description", "json", "template", "sql", "sqlPart");
+        List<RuleName> ruleNameList = new ArrayList<>();
+
+        // When
+        ruleNameList.add(ruleName);
+        when(ruleNameRepository.findAll()).thenReturn(ruleNameList);
+
+        // Then
+        List fetChedRuleName = ruleNameService.findAll();
+        assertThat(fetChedRuleName.size()).isGreaterThan(0);
     }
 }

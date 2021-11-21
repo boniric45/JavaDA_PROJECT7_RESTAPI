@@ -1,8 +1,7 @@
 package com.nnk.springboot.domain;
 
 import jakarta.validation.constraints.Pattern;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -11,6 +10,9 @@ import java.sql.Timestamp;
 @Setter
 @Entity
 @Table(name = "trade")
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Trade {
 
     @Id
@@ -64,6 +66,13 @@ public class Trade {
     @Transient
     @Column(name = "revisionDate")
     private Timestamp revisionDate;
+
+    public Trade(Integer tradeId, String account, String type, Double buyQuantity) {
+        this.tradeId = tradeId;
+        this.account = account;
+        this.type = type;
+        this.buyQuantity = buyQuantity;
+    }
 
     // fix Bugs
     public Timestamp getTradeDate() {

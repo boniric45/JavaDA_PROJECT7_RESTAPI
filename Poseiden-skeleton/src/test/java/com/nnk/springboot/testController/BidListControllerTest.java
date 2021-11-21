@@ -1,5 +1,7 @@
 package com.nnk.springboot.testController;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nnk.springboot.controllers.BidListController;
 import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.services.BidListService;
@@ -11,36 +13,52 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.ui.ExtendedModelMap;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.context.WebApplicationContext;
 
+import java.io.IOException;
+
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNull;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.isA;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
+@WebMvcTest(controllers = BidListController.class)
+@DataJpaTest
+@WithMockUser(username = "admin", authorities = { "ADMIN", "USER" })
 public class BidListControllerTest {
 
     private static final int ID = 1;
+
     @Rule
     public ExpectedException expectedEx = ExpectedException.none();
 
     @InjectMocks
     BidListController bidListController;
 
-    @Mock
+    @Autowired
     BidListService bidListService;
 
     @Mock
@@ -58,20 +76,27 @@ public class BidListControllerTest {
     @Autowired
     private WebApplicationContext context;
 
-    @Before
-    public void setup() {
-        mvc = MockMvcBuilders
-                .webAppContextSetup(context)
-                .apply(springSecurity())
-                .build();
-    }
+//    @Before
+//    public void setup() {
+//        mvc = MockMvcBuilders
+//                .webAppContextSetup(context)
+//                .apply(springSecurity())
+//                .build();
+//    }
 
     /**
      * Test Create a new BidList
      */
     @Test
-    public void testCreateBidList() {
-        assertThat(bidListController.addNewBidlist(bidList), is("bidList/add"));
+    @WithMockUser(username = "admin", authorities = { "ADMIN", "USER" })
+    public void testCreateBidList() throws Exception {
+        // Given
+        BidList bidList = new BidList( 10,"accounts", "type", 15.40);
+
+        // When
+        when(bidListService.createBidList(bidList)).thenReturn(bidList); // ok
+
+        verify(bidListService.findById(10)).isPresent();
     }
 
     /**
@@ -83,7 +108,9 @@ public class BidListControllerTest {
         when(bidList.getAccount()).thenReturn("account");
         when(bidList.getType()).thenReturn("type");
         when(bidList.getBidQuantity()).thenReturn(12.51);
+
         assertThat(bidListController.validate(bidList, bindingResult, model), is("redirect:/bidList/list"));
+
     }
 
     /**
@@ -215,6 +242,14 @@ public class BidListControllerTest {
             bidListController.deleteBid(bidListIdTest, model);
         } catch (IllegalArgumentException illegalArgumentException) {
             assert (illegalArgumentException.getMessage().contains("Invalid Bid Id:" + bidListIdTest));
+        }
+    }
+
+    public static class JsonUtil {
+        public static byte[] toJson(Object object) throws IOException {
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+            return mapper.writeValueAsBytes(object);
         }
     }
 }

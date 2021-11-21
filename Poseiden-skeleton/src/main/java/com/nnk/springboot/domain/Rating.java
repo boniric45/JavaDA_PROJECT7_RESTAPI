@@ -1,18 +1,16 @@
 package com.nnk.springboot.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
+@Entity
 @Getter
 @Setter
-@AllArgsConstructor
-@Entity
-@Table(name = "rating")
+
 @NoArgsConstructor
+@Builder
+@Table(name = "rating")
 public class Rating {
 
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,4 +30,11 @@ public class Rating {
     @Column(name = "orderNumber")
     Integer orderNumber;
 
+    public Rating(Integer id, String moodysRating, String sandPRating, String fitchRating, Integer orderNumber) {
+        this.id = id;
+        this.moodysRating = moodysRating;
+        this.sandPRating = sandPRating;
+        this.fitchRating = fitchRating;
+        this.orderNumber = orderNumber;
+    }
 }

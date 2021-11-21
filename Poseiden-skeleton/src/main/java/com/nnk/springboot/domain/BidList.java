@@ -1,10 +1,8 @@
 package com.nnk.springboot.domain;
 
 import jakarta.validation.constraints.Pattern;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
 import javax.persistence.*;
 import java.security.Timestamp;
 
@@ -13,6 +11,7 @@ import java.security.Timestamp;
 @Setter
 @AllArgsConstructor // Generate all Arg Contructor
 @NoArgsConstructor
+@Builder
 @Table(name = "bidlist")
 public class BidList {
 
@@ -73,4 +72,17 @@ public class BidList {
     @Column(name = "side")
     String side;
 
+// Constructor for test
+    public BidList(int BidListId,String account, String type, Double bidQuantity) {
+        this.BidListId=BidListId;
+        this.account = account;
+        this.type = type;
+        this.bidQuantity = bidQuantity;
+    }
+
+    public BidList(String account, String type, double bidQuantity) {
+        this.account = account;
+        this.type = type;
+        this.bidQuantity = bidQuantity;
+    }
 }

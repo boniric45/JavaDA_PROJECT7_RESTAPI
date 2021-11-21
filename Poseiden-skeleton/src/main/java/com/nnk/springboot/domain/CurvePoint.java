@@ -1,8 +1,7 @@
 package com.nnk.springboot.domain;
 
 import jakarta.validation.constraints.Pattern;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -11,7 +10,9 @@ import java.sql.Timestamp;
 @Setter
 @Entity
 @Table(name = "curvepoint")
-
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class CurvePoint {
 
     @Id
@@ -34,6 +35,13 @@ public class CurvePoint {
     @Transient
     @Column(name = "creationDate")
     private Timestamp creationDate;
+
+     public CurvePoint(Integer id, Integer curveId, Double term, Double value) {
+        this.id = id;
+        this.curveId = curveId;
+        this.term = term;
+        this.value = value;
+    }
 
     // Fix Bugs
     public Timestamp getAsOfDate() {

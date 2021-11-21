@@ -1,4 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: com.nnk.springboot.testController.BidListControllerTest
 -------------------------------------------------------------------------------
-Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.437 s - in com.nnk.springboot.testController.BidListControllerTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.003 s <<< FAILURE! - in com.nnk.springboot.testController.BidListControllerTest
+initializationError  Time elapsed: 0 s  <<< ERROR!
+java.lang.IllegalStateException: Configuration error: found multiple declarations of @BootstrapWith for test class [com.nnk.springboot.testController.BidListControllerTest]: [@org.springframework.test.context.BootstrapWith(value=class org.springframework.boot.test.context.SpringBootTestContextBootstrapper), @org.springframework.test.context.BootstrapWith(value=class org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper)]
+

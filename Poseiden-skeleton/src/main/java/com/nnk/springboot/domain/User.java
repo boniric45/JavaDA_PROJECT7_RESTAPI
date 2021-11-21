@@ -1,19 +1,16 @@
 package com.nnk.springboot.domain;
 
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Getter
 @Setter
 @Entity
-@AllArgsConstructor
 @Table(name = "users")
 @NoArgsConstructor
+@Builder
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,4 +29,11 @@ public class User {
     @Column(name = "role")
     private String role;
 
+    public User(Integer id, String username, String password, String fullname, String role) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.fullname = fullname;
+        this.role = role;
+    }
 }

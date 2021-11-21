@@ -3,23 +3,28 @@ package com.nnk.springboot.testService;
 import com.nnk.springboot.domain.Trade;
 import com.nnk.springboot.repositories.TradeRepository;
 import com.nnk.springboot.services.TradeService;
-import com.nnk.springboot.utils.DigitalFormValidator;
 import org.junit.Test;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.stereotype.Component;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class TradeServiceTest {
 
-    private static final Integer id = 1;
     @InjectMocks
     TradeService tradeService;
 
@@ -27,58 +32,118 @@ public class TradeServiceTest {
     TradeRepository tradeRepository;
 
     /**
-     * Test Create Trade
+     * Test Create a new Trade
      */
     @Test
+    @Order(1)
     public void testCreateTrade() {
-        Trade trade = mock(Trade.class);
+        // Given
+        Trade trade = new Trade(1, "Account", "type", 15.20);
+
+        // When
         tradeService.createTrade(trade);
-        verify(tradeRepository).save(trade);
+        when(tradeRepository.save(any(Trade.class))).thenReturn(trade);
+
+        // Then
+        Trade savedTrade = tradeRepository.save(trade);
+        assertThat(savedTrade.getAccount()).isNotNull();
     }
 
+    /**
+     * Test Read All Trade
+     */
+    @Test
+    @Order(2)
+    public void testGetAllTrade() {
+        // Given
+        List<Trade> tradeList = new ArrayList<>();
+        Trade trade1 = new Trade(1, "Account1", "type1", 15.20);
+        Trade trade2 = new Trade(2, "Account2", "type2", 16.20);
+        Trade trade3 = new Trade(3, "Account3", "type3", 17.20);
+        tradeList.add(trade1);
+        tradeList.add(trade2);
+        tradeList.add(trade3);
+
+        // When
+        when(tradeService.findAllTrade()).thenReturn(tradeList);
+        List<Trade> tradeListResult = tradeService.findAllTrade();
+
+        // Then
+        assertEquals(3, tradeListResult.size());
+
+    }
 
     /**
      * Test Read Trade by id
      */
     @Test
-    public void testReadTradeById() {
-        tradeService.findById(id);
-        verify(tradeRepository).findById(id);
-    }
+    @Order(3)
+    public void testGetTradeById() {
+        // Given
+        when(tradeService.findById(1)).thenReturn(java.util.Optional.of(new Trade(1, "Account", "type", 17.5)));
 
-    /**
-     * Test Read all Trade
-     */
-    @Test
-    public void testReadAllTrade() {
-        tradeService.findAllTrade();
-        verify(tradeRepository).findAll();
-    }
+        // When
+        Trade tradeResult = tradeService.findById(1).get();
+        String bidQuantity = String.valueOf(tradeResult.getBuyQuantity());
 
+        // Then
+        assertEquals("Account", tradeResult.getAccount());
+        assertEquals("type", tradeResult.getType());
+        assertEquals("17.5", bidQuantity);
+
+    }
 
     /**
      * Test Update Trade
      */
     @Test
+    @Order(4)
     public void testUpdateTrade() {
-        Trade trade = mock(Trade.class);
+        // Given
+        Trade trade = new Trade(1, "Account1", "type1", 15.20);
+        given(tradeRepository.findById(trade.getTradeId())).willReturn(Optional.of(trade));
+        Trade tradeUpdated = new Trade(1, "Account2", "type2", 19.20);
 
-        when(trade.getTradeId()).thenReturn(id);
-        when(trade.getAccount()).thenReturn("Test Account");
-        when(trade.getType()).thenReturn("Test type");
-        when(trade.getBuyQuantity()).thenReturn(2.0);
-        when(tradeRepository.findById(id)).thenReturn(java.util.Optional.of(trade));
-        tradeService.updateTrade(trade);
-        verify(tradeRepository).save(trade);
+        // When
+        tradeService.updateTrade(tradeUpdated);
+
+        // Then
+        verify(tradeRepository).save(tradeUpdated);
     }
 
-
     /**
-     * Test Delete Trade by id
+     * Test Delete Trade by ID
      */
     @Test
+    @Order(5)
     public void testDeleteTradeById() {
-        tradeService.deleteTradeById(id);
-        verify(tradeRepository).deleteById(id);
+        // Given
+        Trade trade = new Trade(1, "Account1", "type1", 15.20);
+
+        // When
+        when(tradeRepository.findById(trade.getTradeId())).thenReturn(Optional.of(trade));
+        tradeService.deleteTradeById(trade.getTradeId());
+
+        // Then
+        verify(tradeRepository).deleteById(trade.getTradeId());
+    }
+
+    /**
+     * Test Trade exist in DB
+     */
+    @Test
+    @Order(6)
+    public void tradeExistInDbSucces() {
+        // Given
+        Trade trade = new Trade(1, "Account1", "type1", 15.20);
+        List<Trade> listTrade = new ArrayList<>();
+
+        // When
+        listTrade.add(trade);
+        when(tradeRepository.findAll()).thenReturn(listTrade);
+
+        // Then
+        List fetChedTrade = tradeService.findAllTrade();
+        assertThat(fetChedTrade.size()).isGreaterThan(0);
     }
 }
