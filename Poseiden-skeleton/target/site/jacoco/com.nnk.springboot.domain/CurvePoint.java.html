@@ -6,18 +6,18 @@ import lombok.*;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-@Getter
-<span class="nc" id="L10">@Setter</span>
 @Entity
+@Getter
+<span class="pc" id="L11">@Setter</span>
+<span class="fc" id="L12">@AllArgsConstructor</span>
+<span class="fc" id="L13">@NoArgsConstructor</span>
+<span class="pc" id="L14">@Builder</span>
 @Table(name = &quot;curvepoint&quot;)
-<span class="pc" id="L13">@Builder</span>
-<span class="fc" id="L14">@AllArgsConstructor</span>
-<span class="fc" id="L15">@NoArgsConstructor</span>
 public class CurvePoint {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = &quot;Id&quot;, nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
 <span class="fc" id="L21">    Integer id;</span>
     @Column(name = &quot;CurveId&quot;)
 <span class="fc" id="L23">    Integer curveId;</span>

@@ -42,15 +42,15 @@ import java.util.Optional;
     @PostMapping(&quot;/bidList/validate&quot;)
     public String validate(@Valid BidList bidList, BindingResult result, Model model) {
 
-<span class="nc bnc" id="L45" title="All 4 branches missed.">        if (!result.hasErrors() &amp;&amp; DigitalFormValidator.formIsOk(bidList.getBidQuantity())) {</span>
-<span class="nc" id="L46">            logger.info(&quot; SUCCESS POST /bidList/validate&quot;);</span>
+<span class="pc bpc" id="L45" title="1 of 4 branches missed.">        if (!result.hasErrors() &amp;&amp; DigitalFormValidator.formIsOk(bidList.getBidQuantity())) {</span>
+<span class="fc" id="L46">            logger.info(&quot; SUCCESS POST /bidList/validate&quot;);</span>
 <span class="nc" id="L47">            bidListService.createBidList(bidList);</span>
 <span class="nc" id="L48">            model.addAttribute(&quot;bidList&quot;, bidListService.findAll());</span>
 <span class="nc" id="L49">            return &quot;redirect:/bidList/list&quot;;</span>
         } else {
-<span class="nc" id="L51">            logger.error(&quot; ERROR POST /bidList/validate : Account &gt; &quot; + bidList.getAccount() + &quot; Type &gt; &quot; + bidList.getType() + &quot; Bid Quantity &gt; &quot; + bidList.getBidQuantity());</span>
-<span class="nc" id="L52">            bidList.setBidQuantity(0.00);</span>
-<span class="nc" id="L53">            return &quot;bidList/add&quot;;</span>
+<span class="fc" id="L51">            logger.error(&quot; ERROR POST /bidList/validate : Account &gt; &quot; + bidList.getAccount() + &quot; Type &gt; &quot; + bidList.getType() + &quot; Bid Quantity &gt; &quot; + bidList.getBidQuantity());</span>
+<span class="fc" id="L52">            bidList.setBidQuantity(0.00);</span>
+<span class="fc" id="L53">            return &quot;bidList/add&quot;;</span>
         }
     }
 
@@ -104,17 +104,17 @@ import java.util.Optional;
     public String updateBid(@PathVariable(&quot;id&quot;) Integer id, @Valid BidList bidList,
                             BindingResult result, Model model) {
 
-<span class="nc bnc" id="L107" title="All 4 branches missed.">        if (!result.hasErrors() &amp;&amp; DigitalFormValidator.formIsOk(bidList.getBidQuantity())) {</span>
-<span class="nc" id="L108">            bidList.setBidListId(id);</span>
+<span class="pc bpc" id="L107" title="1 of 4 branches missed.">        if (!result.hasErrors() &amp;&amp; DigitalFormValidator.formIsOk(bidList.getBidQuantity())) {</span>
+<span class="fc" id="L108">            bidList.setBidListId(id);</span>
 <span class="nc" id="L109">            bidListService.createBidList(bidList);</span>
 <span class="nc" id="L110">            model.addAttribute(&quot;bidList&quot;, bidListService.findAll());</span>
 <span class="nc" id="L111">            logger.info(&quot; SUCCESS POST /bidList/update/&quot; + id);</span>
 <span class="nc" id="L112">            return &quot;redirect:/bidList/list&quot;;</span>
 
         } else {
-<span class="nc" id="L115">            logger.error(&quot; ERROR  /bidList/update/&quot; + id);</span>
-<span class="nc" id="L116">            bidList.setBidQuantity(0.00);</span>
-<span class="nc" id="L117">            return &quot;redirect:/bidList/update&quot;;</span>
+<span class="fc" id="L115">            logger.error(&quot; ERROR  /bidList/update/&quot; + id);</span>
+<span class="fc" id="L116">            bidList.setBidQuantity(0.00);</span>
+<span class="fc" id="L117">            return &quot;redirect:/bidList/update&quot;;</span>
         }
     }
 

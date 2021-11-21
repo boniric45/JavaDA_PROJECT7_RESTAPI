@@ -1,6 +1,5 @@
 package com.nnk.springboot.testRepository;
 
-import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.domain.RuleName;
 import com.nnk.springboot.repositories.RuleNameRepository;
 import org.assertj.core.api.Assertions;
@@ -17,7 +16,6 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import javax.persistence.EntityManager;
 import javax.sql.DataSource;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -71,10 +69,11 @@ public class RuleNameEntityRepositoryTest {
     // Junit test for Read RuleName
     @Test
     @Order(3)
+    @Rollback(value = false)
     public void getRuleNameTest() {
         // Given
         RuleName ruleName = RuleName.builder()
-                .id(1)
+                .id(2)
                 .name("Test Name")
                 .description("Test Description")
                 .json("Test Json")
@@ -83,12 +82,13 @@ public class RuleNameEntityRepositoryTest {
                 .sqlPart("Test SqlPart")
                 .build();
 
+
         // When
         ruleNameRepository.save(ruleName);
-        RuleName ruleNameResult = ruleNameRepository.findById(1).get();
+        RuleName ruleNameResult = ruleNameRepository.getOne(ruleName.getId());
 
         // Then
-        assertThat(ruleNameResult.getId()).isEqualTo(1);
+        assertThat(ruleNameResult.getId()).isEqualTo(2);
     }
 
     // Junit test for Read All RuleName
@@ -132,8 +132,13 @@ public class RuleNameEntityRepositoryTest {
 
         // When
         ruleNameRepository.save(ruleName);
+        RuleName ruleNameResult = new RuleName();
 
-        RuleName ruleNameResult = ruleNameRepository.findById(1).get();
+        Optional<RuleName> optionalRuleName = ruleNameRepository.findById(1);
+        if (optionalRuleName.isPresent()) {
+            ruleNameResult = optionalRuleName.get();
+        }
+
         ruleNameResult.setName("Update Name");
         ruleNameResult.setDescription("Update Description");
         ruleNameResult.setJson("Update Json");
@@ -189,30 +194,20 @@ public class RuleNameEntityRepositoryTest {
     @Order(7)
     public void deleteRuleNameByIdTest() {
         // Given
-        RuleName ruleName = RuleName.builder()
-                .id(1)
-                .name("Test Name")
-                .description("Test Description")
-                .json("Test Json")
-                .template("Test template")
-                .sqlStr("Test Sql")
-                .sqlPart("Test SqlPart")
-                .build();
-
-        RuleName ruleName2 = null;
+        RuleName ruleName = new RuleName("name", "description", "json", "template", "sqlStr", "sqlPart");
+        ruleNameRepository.save(ruleName);
+        RuleName ruleNameResult = null;
 
         // When
-        ruleNameRepository.save(ruleName);
-        ruleNameRepository.deleteById(1);
+        ruleNameRepository.deleteById(ruleName.getId());
 
-
-        Optional<RuleName> optionalRuleName = ruleNameRepository.findById(1);
+        Optional<RuleName> optionalRuleName = ruleNameRepository.findById(ruleName.getId());
         if (optionalRuleName.isPresent()) {
-            ruleName2 = optionalRuleName.get();
+            ruleNameResult = optionalRuleName.get();
         }
 
         // Then
-        Assertions.assertThat(ruleName2).isNull();
+        Assertions.assertThat(ruleNameResult).isNull();
 
     }
 

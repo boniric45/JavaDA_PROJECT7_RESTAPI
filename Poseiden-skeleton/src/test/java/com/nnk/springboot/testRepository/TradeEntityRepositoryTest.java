@@ -1,6 +1,5 @@
 package com.nnk.springboot.testRepository;
 
-import com.nnk.springboot.domain.BidList;
 import com.nnk.springboot.domain.Trade;
 import com.nnk.springboot.repositories.TradeRepository;
 import org.assertj.core.api.Assertions;
@@ -11,13 +10,13 @@ import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import javax.persistence.EntityManager;
 import javax.sql.DataSource;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -27,6 +26,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@SpringBootTest
 public class TradeEntityRepositoryTest {
 
     @Autowired
@@ -63,7 +63,6 @@ public class TradeEntityRepositoryTest {
         // When
         tradeRepository.save(trade);
 
-
         // Then
         Assertions.assertThat(trade.getTradeId()).isGreaterThan(0);
     }
@@ -83,7 +82,7 @@ public class TradeEntityRepositoryTest {
         // When
         tradeRepository.save(trade);
 
-        Trade tradeResult = tradeRepository.findById(1).get();
+        Trade tradeResult = tradeRepository.getOne(trade.getTradeId());
 
         // Then
         assertThat(tradeResult.getTradeId()).isEqualTo(1);
@@ -117,7 +116,7 @@ public class TradeEntityRepositoryTest {
     public void updateTradeTest() {
         // Given
         Trade trade = Trade.builder()
-                .tradeId(1)
+                .tradeId(10)
                 .account("Test Account")
                 .type("Test Type")
                 .buyQuantity(12.23)
@@ -125,8 +124,11 @@ public class TradeEntityRepositoryTest {
 
         // When
         tradeRepository.save(trade);
-
-        Trade tradeResult = tradeRepository.findById(1).get();
+        Trade tradeResult = new Trade();
+        Optional<Trade> optionalTrade = tradeRepository.findById(trade.getTradeId());
+        if (optionalTrade.isPresent()) {
+            tradeResult = optionalTrade.get();
+        }
         tradeResult.setAccount("Update Account");
         tradeResult.setType("Update Type");
         tradeResult.setBuyQuantity(15.35);
@@ -174,23 +176,20 @@ public class TradeEntityRepositoryTest {
     public void deleteTradeByIdTest() {
         // Given
         Trade trade = Trade.builder()
-                .tradeId(1)
                 .account("Test Account")
                 .type("Test Type")
                 .buyQuantity(12.23)
                 .build();
 
         Trade trade2 = null;
-
         // When
         tradeRepository.save(trade);
-        tradeRepository.deleteById(1);
+        tradeRepository.deleteById(trade.getTradeId());
 
-        Optional<Trade> optionalTrade = tradeRepository.findById(1);
+        Optional<Trade> optionalTrade = tradeRepository.findById(trade.getTradeId());
         if (optionalTrade.isPresent()) {
             trade2 = optionalTrade.get();
         }
-
         // Then
         Assertions.assertThat(trade2).isNull();
 

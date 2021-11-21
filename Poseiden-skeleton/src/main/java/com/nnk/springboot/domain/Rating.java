@@ -7,15 +7,14 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-
 @NoArgsConstructor
-@Builder
+@AllArgsConstructor
 @Table(name = "rating")
 public class Rating {
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     @Column(name = "Id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Integer id;
 
     @Column(name = "moodysRating")
@@ -30,8 +29,7 @@ public class Rating {
     @Column(name = "orderNumber")
     Integer orderNumber;
 
-    public Rating(Integer id, String moodysRating, String sandPRating, String fitchRating, Integer orderNumber) {
-        this.id = id;
+    public Rating( String moodysRating, String sandPRating, String fitchRating, Integer orderNumber) {
         this.moodysRating = moodysRating;
         this.sandPRating = sandPRating;
         this.fitchRating = fitchRating;

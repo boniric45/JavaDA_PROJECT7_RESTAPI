@@ -61,6 +61,7 @@ public class CurvePointEntityRepositoryTest {
 
         // Then
         Assertions.assertThat(curvePoint.getId()).isGreaterThan(0);
+
     }
 
     //    // Junit test for Read CurvePoint
@@ -68,18 +69,14 @@ public class CurvePointEntityRepositoryTest {
     @Order(3)
     public void getCurvePointTest() {
         // Given
-        CurvePoint curvePoint = CurvePoint.builder()
-                .curveId(1)
-                .term(10.2)
-                .value(3.2)
-                .build();
+        CurvePoint curvePoint = new CurvePoint(2,3,10.2,3.2);
 
         // When
         curvePointRepository.save(curvePoint);
-        CurvePoint curvePointResult = curvePointRepository.findById(1).get();
+        CurvePoint curvePointResult = curvePointRepository.findById(2).get();
 
         // Then
-        assertThat(curvePointResult.getId()).isEqualTo(1);
+        assertThat(curvePointResult.getId()).isEqualTo(2);
     }
 
     //     Junit test for Read All CurvePoint
@@ -107,15 +104,11 @@ public class CurvePointEntityRepositoryTest {
     @Order(5)
     public void updateCurvePointTest() {
         // Given
-        CurvePoint curvePoint = CurvePoint.builder()
-                .curveId(1)
-                .term(10.2)
-                .value(3.2)
-                .build();
+        CurvePoint curvePoint = new CurvePoint(4,3,10.2,3.2);
 
         // When
         curvePointRepository.save(curvePoint);
-        CurvePoint curvePointResult = curvePointRepository.findById(1).get();
+        CurvePoint curvePointResult = curvePointRepository.findById(4).get();
         curvePointResult.setCurveId(2);
         curvePointResult.setTerm(11.3);
         curvePointResult.setValue(56.48);
@@ -134,11 +127,7 @@ public class CurvePointEntityRepositoryTest {
     @Order(6)
     public void deleteCurvePointTest() {
         // Given
-        CurvePoint curvePoint = CurvePoint.builder()
-                .curveId(2)
-                .term(10.2)
-                .value(3.2)
-                .build();
+        CurvePoint curvePoint = new CurvePoint(3,3,10.2,3.2);
 
         CurvePoint curvePoint2 = null;
 
@@ -147,7 +136,7 @@ public class CurvePointEntityRepositoryTest {
 
         curvePointRepository.delete(curvePoint);
 
-        Optional<CurvePoint> optionalCurvePoint = curvePointRepository.findById(2);
+        Optional<CurvePoint> optionalCurvePoint = curvePointRepository.findById(3);
         if (optionalCurvePoint.isPresent()) {
             curvePoint2 = optionalCurvePoint.get();
         }
@@ -162,19 +151,15 @@ public class CurvePointEntityRepositoryTest {
     @Order(7)
     public void deleteCurvePointByIdTest() {
         // Given
-        CurvePoint curvePoint = CurvePoint.builder()
-                .curveId(1)
-                .term(10.2)
-                .value(3.2)
-                .build();
+        CurvePoint curvePoint = new CurvePoint(7,3,10.2,3.2);
 
         CurvePoint curvePoint2 = null;
 
         // When
         curvePointRepository.save(curvePoint);
-        curvePointRepository.deleteById(1);
+        curvePointRepository.deleteById(7);
 
-        Optional<CurvePoint> optionalCurvePoint = curvePointRepository.findById(1);
+        Optional<CurvePoint> optionalCurvePoint = curvePointRepository.findById(7);
         if (optionalCurvePoint.isPresent()) {
             curvePoint2 = optionalCurvePoint.get();
         }

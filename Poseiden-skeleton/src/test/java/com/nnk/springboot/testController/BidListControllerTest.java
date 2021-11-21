@@ -17,6 +17,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -45,9 +46,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-@WebMvcTest(controllers = BidListController.class)
-@DataJpaTest
-@WithMockUser(username = "admin", authorities = { "ADMIN", "USER" })
+//@WebMvcTest(controllers = BidListController.class)
+//@DataJpaTest
 public class BidListControllerTest {
 
     private static final int ID = 1;
@@ -91,12 +91,12 @@ public class BidListControllerTest {
     @WithMockUser(username = "admin", authorities = { "ADMIN", "USER" })
     public void testCreateBidList() throws Exception {
         // Given
-        BidList bidList = new BidList( 10,"accounts", "type", 15.40);
+        BidList bidList = new BidList( 1,"accounts", "type", 15.40);
 
         // When
         when(bidListService.createBidList(bidList)).thenReturn(bidList); // ok
 
-        verify(bidListService.findById(10)).isPresent();
+        verify(bidListService.findById(1)).isPresent();
     }
 
     /**

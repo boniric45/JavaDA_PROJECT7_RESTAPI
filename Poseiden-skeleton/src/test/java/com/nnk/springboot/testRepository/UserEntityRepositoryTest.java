@@ -70,7 +70,6 @@ public class UserEntityRepositoryTest {
     public void getUserTest() {
         // Given
         User user = User.builder()
-                .id(2)
                 .fullname("Test FullName")
                 .username("Test Username")
                 .role("Test Role")
@@ -79,10 +78,10 @@ public class UserEntityRepositoryTest {
         // When
         userRepository.save(user);
 
-        User userResult = userRepository.findById(2).get();
+        User userResult = userRepository.findById(user.getId()).get();
 
         // Then
-        assertThat(userResult.getId()).isEqualTo(2);
+        assertThat(userResult.getId()).isEqualTo(user.getId());
     }
 
     // Junit test for Read All User
@@ -112,8 +111,7 @@ public class UserEntityRepositoryTest {
     public void updateUserTest() {
         // Given
         User user = User.builder()
-                .id(1)
-                .fullname("Test FullName")
+                    .fullname("Test FullName")
                 .username("Test Username")
                 .role("Test Role")
                 .build();
@@ -121,7 +119,7 @@ public class UserEntityRepositoryTest {
         // When
         userRepository.save(user);
 
-        User userResult = userRepository.findById(1).get();
+        User userResult = userRepository.findById(user.getId()).get();
         userResult.setFullname("Update FullName");
         userResult.setUsername("Update Username");
         userResult.setRole("Update Role");
@@ -169,20 +167,17 @@ public class UserEntityRepositoryTest {
     public void deleteUserByIdTest() {
         // Given
         User user = User.builder()
-                .id(1)
                 .fullname("Test FullName")
                 .username("Test Username")
                 .role("Test Role")
                 .build();
-
         User user2 = null;
 
         // When
         userRepository.save(user);
-        userRepository.deleteById(1);
+        userRepository.deleteById(user.getId());
 
-
-        Optional<User> optionalUser = userRepository.findById(1);
+        Optional<User> optionalUser = userRepository.findById(user.getId());
         if (optionalUser.isPresent()) {
             user2 = optionalUser.get();
         }

@@ -26,8 +26,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class BidListEntityRepositoryTest {
 
-    @Autowired
-    private DataSource dataSource;
+    @Autowired    private DataSource dataSource;
     @Autowired
     private JdbcTemplate jdbcTemplate;
     @Autowired

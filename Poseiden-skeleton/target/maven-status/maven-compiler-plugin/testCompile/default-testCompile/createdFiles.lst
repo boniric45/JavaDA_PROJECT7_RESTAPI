@@ -20,5 +20,6 @@ com\nnk\springboot\testRepository\BidListEntityRepositoryTest.class
 com\nnk\springboot\testService\RuleNameServiceTest.class
 com\nnk\springboot\testController\TradeControllerTest.class
 com\nnk\springboot\testController\UserControllerTest.class
+com\nnk\springboot\testController\BidListControllerTest$JsonUtil.class
 com\nnk\springboot\testRepository\TradeEntityRepositoryTest.class
 com\nnk\springboot\testController\RatingControllerTest.class
